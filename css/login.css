@@ -1,8 +1,41 @@
 .loginDiv{
-    width: 300px;
+    width: 400px;
     height: 300px;
     background: #2d3345;
     margin: 185px auto;
     border-radius: 5px;
+    padding: 15px;
 }
 
+.headers{
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
+
+.inputTable{
+    align-items: center;
+    color: white;
+}
+.h1-1{
+    font-size: 24px;
+    color: antiquewhite;
+}
+
+.h1-2{
+    font-size: 24px;
+    color: bisque;
+}
+
+.loginInp{
+    width: 280px;
+    height: 22px;
+    border-radius: 10px;
+    align-items: center;
+
+}
+
+.loginButtons{
+    width: 140px;
+    height: 40px;
+}
