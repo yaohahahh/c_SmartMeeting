@@ -40,3 +40,27 @@ function blurpwd(){
         // alert("请输入用户名");
     }
 }
+
+function login(){
+    var username = $("#username").val()
+    var pwd = $("#pwd").val()
+
+
+    alert(employeeJsonArray)
+
+    for(var i=0;i<employeeJsonArray.length;i++){
+        alert(employeeJsonArray.phone)
+        if (employeeJsonArray[i].phone==username &&
+            employeeJsonArray[i].password==pwd &&
+            employeeJsonArray[i].auditstatus=="1"){
+            if(employeeJsonArray[i].status=="1"){
+                window.location.href = "admin_index.html"
+                //跳转到管理员首页
+            }else {
+                window.location.href = "index.html"
+                //跳转到普通用户首页
+            }
+        }
+    }
+    $("#errorspan").html("登录失败")
+}
