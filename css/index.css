@@ -1,12 +1,12 @@
 *{
-	margin:0px;    /*Íâ¼ä¾àÎª0*/
-	padding: 0px;  /*ÄÚ¼ä¾àÎª0*/
+	margin:0px;    /*ï¿½ï¿½ï¿½ï¿½Îª0*/
+	padding: 0px;  /*ï¿½Ú¼ï¿½ï¿½Îª0*/
 }
 a{
-	text-decoration: none;  /*È¥³ýa±êÇ©ÎÄ±¾ÏÂ»®Ïß*/
+	text-decoration: none;  /*È¥ï¿½ï¿½aï¿½ï¿½Ç©ï¿½Ä±ï¿½ï¿½Â»ï¿½ï¿½ï¿½*/
 }
 a:hover{
-	cursor:pointer;  /*µ±Êó±êÐü¸¡µ½a±êÇ©ÉÏÊ±£¬ÏÔÊ¾Ð¡ÊÖÍ¼±ê*/
+	cursor:pointer;  /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½aï¿½ï¿½Ç©ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾Ð¡ï¿½ï¿½Í¼ï¿½ï¿½*/
 }
 body{
 	overflow: hidden;
@@ -28,7 +28,7 @@ header{
 	font-weight: bold;
 }
 .left {
-    height: 650px;
+    height:1000px;
     background: #2A3542;
 }
 .menu{

@@ -5,9 +5,9 @@
 		<title></title>
 		<link rel="stylesheet" href="css/common.css" />
 		<link rel="stylesheet" href="css/index.css" />
-		<link rel="stylesheet" href="js/bootstrap-3.4.1-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="js/bootstrap-3.4.1-dist/css/bootstrap.css" />
 		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
-		<script type="text/javascript" src="js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/common.js" ></script>
 		<script type="text/javascript" src="js/index.js" ></script>
 	</head>
@@ -15,14 +15,16 @@
 		<!--首页头部部分-->
 		<header>
 			<!--头部logo图片-->
-			<img src="img/main/head/logo/LOGO.jpg" />
+
+<!--			<img src="img/main/head/logo/LOGO.jpg" />-->
 			<!--SmartMeeting会议管理系统显示区域-->
+			<span style="padding-left: 15px"></span>
 			<span style="font-weight:bold;line-height:44px;font-size:18px;font-family:'Britannic Bold';color:#3BC5BB;">SmartMeeting</span>
 			<span style="font-weight:bold;line-height:44px;font-size:18px;font-family:'Segoe UI Emoji Bold';color:#FF9A4C;">会议管理系统</span>
 			
 			<!--头部右侧区域-->
 			<div class="headerRight">
-				<span id="loginSpan">欢迎登录，sunys</span>
+				<span id="loginSpan">欢迎登录，用户1</span>
 				<img style="margin-left:20px;" src="img/StatBar_time.gif" />
 				<!--展现当前系统时间区域-->
 				<span id="nowTime"></span>
@@ -41,7 +43,7 @@
 		        	<!--菜单栏区域采用ul无序列表的形式-->
 			        <ul class="menu">
 			            <li class="active">
-			            	<a href="#" style="margin-right: 50px;">个人通知</a>
+			            	<a href="#" style="margin-right: 50px; font-size: 15px;">个人通知</a>
 			            	<span class="glyphicon glyphicon-menu-right"></span>
 			            	<ul class="sub-menu">
 				               <li><a class="subactive" href="#">最新通知</a></li>
@@ -49,8 +51,9 @@
 				               <li><a href="#">我的会议</a></li>
 				            </ul>
 			            </li>
+						<li></li>
 			            <li>
-			            	<a href="#" style="margin-right: 50px;">人员管理</a>
+			            	<a href="#" style="margin-right: 50px;font-size: 15px">人员管理</a>
 			            	<span class="glyphicon glyphicon-menu-right"></span>
 			            	<ul class="sub-menu">
 				               <li><a href="#">部门管理</a></li>
@@ -59,8 +62,9 @@
 				               <li><a href="#">搜索员工</a></li>
 				            </ul>
 			            </li>
+						<li></li>
 			            <li>
-			            	<a href="#" style="margin-right: 50px;">会议预定</a>
+			            	<a href="#" style="margin-right: 50px; font-size: 15px">会议预定</a>
 			            	<span class="glyphicon glyphicon-menu-right"></span>
 			            	<ul class="sub-menu">
 				               <li><a href="#">添加会议室</a></li>
@@ -76,6 +80,7 @@
 		        <!--右侧主体区域，占位10列-->
 		        <div class="col-md-10 main" style="padding:0;">
 		            <iframe width="100%" height="650px" style="border: none;" id="myFrame" name="myFrame"></iframe>
+
 		        </div>
 		    </div>
 		</div>

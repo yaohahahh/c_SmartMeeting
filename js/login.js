@@ -44,23 +44,23 @@ function blurpwd(){
 function login(){
     var username = $("#username").val()
     var pwd = $("#pwd").val()
-
-
-    alert(employeeJsonArray)
+    var status = 0
 
     for(var i=0;i<employeeJsonArray.length;i++){
-        alert(employeeJsonArray.phone)
         if (employeeJsonArray[i].phone==username &&
             employeeJsonArray[i].password==pwd &&
             employeeJsonArray[i].auditstatus=="1"){
             if(employeeJsonArray[i].status=="1"){
+                $("#errorspan").html("管理员登录成功")
                 window.location.href = "admin_index.html"
                 //跳转到管理员首页
             }else {
+                $("#errorspan").html("普通用户登陆成功")
                 window.location.href = "index.html"
                 //跳转到普通用户首页
             }
         }
     }
-    $("#errorspan").html("登录失败")
+    if(status==1){$("#errorspan").html("登录失败")}
+
 }
