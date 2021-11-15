@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="js/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/common.js" ></script>
 		<script type="text/javascript" src="js/index.js" ></script>
+		<script type="text/javascript" src="js/menu.js"></script>
 	</head>
 	<body>
 		<!--首页头部部分-->
@@ -56,7 +57,7 @@
 			            	<a href="#" style="margin-right: 50px;font-size: 15px">人员管理</a>
 			            	<span class="glyphicon glyphicon-menu-right"></span>
 			            	<ul class="sub-menu">
-				               <li><a href="#">部门管理</a></li>
+				               <li><a href="#" id="deptSearch" onclick="deptSearch()">部门管理</a></li>
 				               <li><a href="#">员工注册</a></li>
 				               <li><a href="#">注册审批</a></li>
 				               <li><a href="#">搜索员工</a></li>
@@ -80,7 +81,6 @@
 		        <!--右侧主体区域，占位10列-->
 		        <div class="col-md-10 main" style="padding:0;">
 		            <iframe width="100%" height="650px" style="border: none;" id="myFrame" name="myFrame"></iframe>
-
 		        </div>
 		    </div>
 		</div>
