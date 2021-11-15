@@ -45,6 +45,7 @@ function login(){
     var username = $("#username").val()
     var pwd = $("#pwd").val()
     var status = 0
+    alert(employeeJsonArray)
 
     for(var i=0;i<employeeJsonArray.length;i++){
         if (employeeJsonArray[i].phone==username &&

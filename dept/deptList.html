@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap-3.4.1-dist/js/paginathing.js" ></script>
 		<!-- <script type="text/javascript" src="../js/data.js"></script> -->
-		<script type="text/javascript" src="../Json/depts.js"></script>
+		<!-- <script type="text/javascript" src="../Json/depts.js"></script> -->
 		<script type="text/javascript" src="../js/deptlist.js"></script>
 	</head>
 	<body>
@@ -19,7 +19,7 @@
 			<form>
 				<div>
 					部门名称：<input type="text" id="name" />
-	    			<input type="button" value="搜索" />
+	    			<input type="button" value="搜索" onclick="showSearchList()"/>
 	    			<input type="button" value="删除" />
 	    			<input style="float: right;" type="button" value="添加" />
 				</div>
@@ -62,16 +62,6 @@
 		</div>
 		
 		<div>
-		  <!--分页区域，采用bootstrap分页-->
-		  <ul class="pagination" style="float: right;margin-right: 20px;">
-			    <li><a href="#">&laquo;</a></li>
-			    <li class="active"><a href="#">1</a></li>
-			    <li><a href="#">2</a></li>
-			    <li><a href="#">3</a></li>
-			    <li><a href="#">4</a></li>
-			    <li><a href="#">5</a></li>
-			    <li><a href="#">&raquo;</a></li>
-			</ul>
 		</div>
 		
 	</body>

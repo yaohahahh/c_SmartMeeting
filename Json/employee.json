@@ -1,4 +1,4 @@
-var employeeJsonArray = [
+[
     {
         "id":1,
         "name":"aaa",
@@ -22,7 +22,7 @@ var employeeJsonArray = [
         "depid":1,
         "levelid":1,
         "salary":4500,
-        "joindate":"2020-10-09",
+        "joindate":"2020-10-09"
     },
     {
         "id":2,
@@ -47,6 +47,6 @@ var employeeJsonArray = [
         "depid":1,
         "levelid":1,
         "salary":4500,
-        "joindate":"2020-10-09",
+        "joindate":"2020-10-09"
     }
 ]
