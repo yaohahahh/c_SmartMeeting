@@ -53,16 +53,12 @@ function setPages(){
 }
 
 function showAddDept(){
-    // window.location.href = "../dept/addDept.html"
-    saveDept()
+    window.location.href = "addDept.html"
 }
 
 function saveDept(){
-    // var dname = $('#name').val()
-    // var desc = $('#remark').val()
-
-    var dname = "testadd"
-    var desc = "testaddddddddddd"
+    var dname = $('#name').val()
+    var desc = $('#remark').val()
 
     var dept = {
         "did":deptJsonArray.length+1,
