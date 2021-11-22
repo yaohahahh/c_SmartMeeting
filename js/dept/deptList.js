@@ -5,7 +5,7 @@ $(function(){
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
         var trStr = "<tr>"+
-        "<td><input type='checkbox' /></td>"+
+        "<td><input type='checkbox' name='id' value='"+dept.did+"'/></td>"+
         "<td>"+dept.dname+"</td>"+
         "<td>"+dept.desc+"</td>"+
         "<td><img onclick='showEditDept("+dept.did+")' src='../img/update.gif' /></td>"+
@@ -28,15 +28,18 @@ function showSearchList(){
      
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
-        if(dept.dname.indexOf(name)!=-1){
-            var trStr = "<tr>"+
-            "<td><input type='checkbox' /></td>"+
-            "<td>"+dept.dname+"</td>"+
-            "<td>"+dept.desc+"</td>"+
-            "<td><img src='../img/update.gif' /></td>"+
-            "</tr>";
-            $("#deptList").append(trStr);
-        }
+        if(dept!=undefined){
+            if(dept.dname.indexOf(name)!=-1){
+                var trStr = "<tr>"+
+                "<td><input type='checkbox' name='id' value='"+dept.did+"'/></td>"+
+                "<td>"+dept.dname+"</td>"+
+                "<td>"+dept.desc+"</td>"+
+                "<td><img onclick='showEditDept("+dept.did+")' src='../img/update.gif' /></td>"+
+                "</tr>";
+                $("#deptList").append(trStr);
+            }
+        
+        }  
     }
     
     setPages()
@@ -73,4 +76,35 @@ function saveDept(){
 
 function showEditDept(did){
     window.location.href = "editDept.html?did="+did;
+}
+
+//删除选中
+function delChecked(){
+	var checkeds = $("input[name='id']:checked");
+	if(checkeds.length>0){
+		var flag = window.confirm("确定要删除吗？");
+		if(flag){
+			alert("用户点击了确定删除");
+			for(var i=0;i<checkeds.length;i++){
+				var thisChecked = checkeds[i];
+				var delDid = $(thisChecked).val();
+                alert(delDid);
+				delJson(delDid);
+			}
+			
+		}
+		showSearchList();
+	}else{
+		alert("请选择要删除的数据");
+	}
+	
+}
+
+function delJson(delDid){
+	for(var i=0;i<deptJsonArray.length;i++){
+        if(deptJsonArray[i].did==delDid){
+            delete deptJsonArray[i];
+            return;
+        }
+    }
 }
