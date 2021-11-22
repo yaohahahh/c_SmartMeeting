@@ -8,7 +8,7 @@ $(function(){
         "<td><input type='checkbox' /></td>"+
         "<td>"+dept.dname+"</td>"+
         "<td>"+dept.desc+"</td>"+
-        "<td><img src='../img/update.gif' /></td>"+
+        "<td><img onclick='showEditDept("+dept.did+")' src='../img/update.gif' /></td>"+
         "</tr>";
         $("#deptList").append(trStr);
     }
@@ -73,4 +73,8 @@ function saveDept(){
     alert("添加成功");
     window.location.href = "../dept/deptList.html"
         
+}
+
+function showEditDept(did){
+    window.location.href = "editDept.html?did="+did;
 }
