@@ -8,7 +8,7 @@ $(function(){
         "<td><input type='checkbox' name='id' value='"+dept.did+"'/></td>"+
         "<td>"+dept.dname+"</td>"+
         "<td>"+dept.desc+"</td>"+
-        "<td><img onclick='showEditDept("+dept.did+")' src='../img/update.gif' /></td>"+
+        "<td><img onclick='showEditDept("+dept.did+")' src='../../img/update.gif' /></td>"+
         "</tr>";
         $("#deptList").append(trStr);
     }
@@ -34,7 +34,7 @@ function showSearchList(){
                 "<td><input type='checkbox' name='id' value='"+dept.did+"'/></td>"+
                 "<td>"+dept.dname+"</td>"+
                 "<td>"+dept.desc+"</td>"+
-                "<td><img onclick='showEditDept("+dept.did+")' src='../img/update.gif' /></td>"+
+                "<td><img onclick='showEditDept("+dept.did+")' src='../../img/update.gif' /></td>"+
                 "</tr>";
                 $("#deptList").append(trStr);
             }

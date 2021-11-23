@@ -4,8 +4,10 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" href="css/common.css" />
+		
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="js/bootstrap-3.4.1-dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="css/mainBody.css" />
 		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
 		<script type="text/javascript" src="js/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/common.js" ></script>
@@ -14,6 +16,7 @@
 		<script type="text/javascript" src="js/data.js"></script>
 	</head>
 	<body>
+	<div id="main">
 		<!--首页头部部分-->
 		<header>
 			<!--头部logo图片-->
@@ -43,6 +46,10 @@
 		    	<!--左侧菜单栏区域，占位2列-->
 		        <div style=" margin:0;padding:0;" class="col-md-2 left">
 		        	<!--菜单栏区域采用ul无序列表的形式-->
+					<div align="center"  class="basicLogo">
+						<img class="p1"src="img/round-table.png" />
+					</div>
+
 			        <ul class="menu">
 			            <li class="active">
 			            	<a href="#" style="margin-right: 50px; font-size: 15px;">个人通知</a>
@@ -53,18 +60,16 @@
 				               <li><a href="#">我的会议</a></li>
 				            </ul>
 			            </li>
-						<li></li>
 			            <li>
 			            	<a href="#" style="margin-right: 50px;font-size: 15px">人员管理</a>
 			            	<span class="glyphicon glyphicon-menu-right"></span>
 			            	<ul class="sub-menu">
 				               <li><a href="#" id="deptSearch" onclick="deptSearch()">部门管理</a></li>
-				               <li><a href="#">员工注册</a></li>
+				               <li><a href="#" id="addPeople" onclick="addPeoplePage()">员工注册</a></li>
 				               <li><a href="#">注册审批</a></li>
 				               <li><a href="#">搜索员工</a></li>
 				            </ul>
 			            </li>
-						<li></li>
 			            <li>
 			            	<a href="#" style="margin-right: 50px; font-size: 15px">会议预定</a>
 			            	<span class="glyphicon glyphicon-menu-right"></span>
@@ -73,6 +78,14 @@
 				               <li><a href="#">查看会议室</a></li>
 				               <li><a href="#">预定会议</a></li>
 				               <li><a href="#">搜索会议</a></li>
+				            </ul>
+			            </li>
+						<li>
+			            	<a href="#" style="margin-right: 50px; font-size: 15px">其它</a>
+			            	<span class="glyphicon glyphicon-menu-right"></span>
+			            	<ul class="sub-menu">
+				               <li><a href="#">制作人员</a></li>
+							   <li><a href="#">关于我们</a></li>
 				            </ul>
 			            </li>
 			            
@@ -85,6 +98,6 @@
 		        </div>
 		    </div>
 		</div>
-
+	</div>
 	</body>
 </html>

@@ -2,7 +2,12 @@
 function deptSearch(){
 	checkMenu("deptSearch");
 	//让id="myFrame"的链接指向到用户列表页面
-	$('#myFrame').attr('src', "dept/deptList.html");
+	$('#myFrame').attr('src', "PeopleManagement/dept/deptList.html");
+}
+
+function addPeoplePage(){
+	checkMenu("addPeople");
+	$('#myFrame').attr('src', "PeopleManagement/people/addPeople.html");
 }
 
 //改变选中菜单样式

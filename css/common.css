@@ -19,3 +19,13 @@ a:hover{
 .pagination-container{
 	float: right;
 }
+
+.nav-tabs{
+	margin:5px;
+}
+
+.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "/ ";
+    padding: 0 5px;
+}
