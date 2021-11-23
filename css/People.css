@@ -1,0 +1,29 @@
+.form-inline{
+    padding: 50px;
+}
+
+.form-group{
+    margin: 10px;
+}
+
+.mainadd{
+    margin:50px;
+}
+
+.addbtn{
+    padding: 45px;
+}
+
+.submit-btn{
+    border:2px solid;
+    border-color:#FF9A4C;
+}
+
+.submit-btn2{
+   background-color: #FF9A4C;
+   color: whitesmoke;
+}
+
+.submit-btn3{
+    color: #FF9A4C;
+ }

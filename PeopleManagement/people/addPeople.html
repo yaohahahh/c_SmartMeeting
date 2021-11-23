@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>addPeople</title>
     <link rel="stylesheet" href="../../css/common.css" />
+	<link rel="stylesheet" href="../../css/People.css" />
     <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/demo.css" />
+	<link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/bootstrap-datetimepicker.min.css" media="screen" />
     <script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
     <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/paginathing.js" ></script>
+	<script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap-datetimepicker.min.js"></script>
+
 
     <script src="js/Vue/vuetest.js"></script>
     <script src="js/Vue/vue.js"></script>
@@ -18,7 +22,6 @@
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">员工注册</a></li>
 		</ul>
-
 		<!-- 面包屑导航1.0 -->
 		<ul class="breadcrumb">
 			当前位置：
@@ -27,7 +30,201 @@
 			<li class="active">员工注册</li>
 		</ul>
 
+		<div class="mainadd">
+					<!-- 内容 -->
+		<form class="class="col-md-10 col-md-offset-1 form-inline" role="form">
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">姓名</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入姓名">
+					</div>
+				</div>
+			</div>
 
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">身份证号：</label>
+						<input type="text" class="form-control" id="name" placeholder="身份证号">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-1">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">性别：</label>
+						<select class="form-control">
+							<option>男</option>
+							<option>女</option>
+							<option>其它</option>
+							<option>不方便</option>
+							<option>恐龙</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="col-md-5">
+				<div class="row">
+					<label for="name">邮箱：</label>
+					<input type="text" class="form-control" id="name" placeholder="请输入邮箱">
+				</div>
+			</div>	 -->
+
+			<div class="col-md-4">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">邮箱：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入邮箱">
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-5">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">学历：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入学历">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-5">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">专业：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入专业">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">政治面貌：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入政治面貌">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">手机：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入手机号：">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">微信号：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入微信号">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-5">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">联系地址：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入联系地址">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">邮政编码：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入邮政编码">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">出生日期：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入出生日期">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">民族：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入民族">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">备注：</label>
+						<input type="text" class="form-control" id="name" placeholder="请输入备注">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">所属部门</label>
+							<select class="form-control">
+				  			<option>开发部</option>
+				  			<option>测试部</option>
+				  			<option>其它</option>
+							</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<div class="row">
+					<div class="form-group">
+						<label for="name">所属薪资范围：</label>
+						<select class="form-control">
+						  <option>3k-5k</option>
+						  <option>5k-8k</option>
+						  <option>8k-10k</option>
+						  <option>10k-15k</option>
+						  <option>15k-20k</option>
+						  <option>20k以上</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="submit-btn">
+				<div class="col-md-2">
+					<div class="row addbtn">
+						<div class="col-md-8">
+							<button type="submit" class="btn submit-btn2">提交</button>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row addbtn">
+						<div class="col-md-8">
+							<button type="submit" class="btn submit-btn3">取消</button>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</form>
+		</div>
+		
+
+		 
 
 </body>
 </html>
