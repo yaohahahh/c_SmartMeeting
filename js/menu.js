@@ -16,9 +16,9 @@ function checkMenu(menuA){
 	var subactive = $(".sub-menu>li>a.subactive");
 	//如果现在点击的菜单不是当前活跃的菜单，证明需要改变样式
 	if(subactive.text()!=$("#"+menuA).text()){
-		$(subactive).parent().css("background","#35404D");
+		$(subactive).parent().css("background","#FFFFFF");
 		$(subactive).removeClass("subactive");
 		$("#"+menuA).attr("class","subactive");
-		$(menuA).parent().css("background","rgb(82 100 121)");
+		$(menuA).parent().css("background","#FFFFFF");
 	}
 }

@@ -13,48 +13,67 @@ body{
 }
 header{
 	height: 44px;
-	background-color: #35404D;
+	background-color: #FCFDFE;
+	border-bottom:2px solid;
+    border-color:#DBDBDB;
 }
 .headerRight{
 	float: right;
 	width: 550px;
 	height: 100%;
-	color: #f1f1f1;
+	color: #586575;
 	line-height: 44px;
 	font-size: 14px;
 }
 .headerRight a{
-	color: #f1f1f1;
+	color: #586575;
 	font-weight: bold;
 }
 .left {
-    height:1000px;
-    background: #2A3542;
+	/* set window height */
+    height: 820px;
+    background: #FCFDFE;
+	border-right:2px solid;
+    border-color:#DBDBDB;
 }
 .menu{
 	margin-top: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 .menu li{
+	padding-top: 5px;
+	padding-bottom: 5px;
 	list-style: none;
 	height: 30px;
 	width:100%;
 	text-align: center;
 	line-height: 30px;
-	color:#cccccc;
+	color:#586575;
+	border-bottom:1px solid;
+    border-color:#DBDBDB;
 }
 .menu>li:hover{
 	background-color: #3BC5BB;
 	color:white;
 }
 .menu>li:hover>a{
-	color:white;
+	color:#FCFDFE;
 	text-decoration: none;
 }
 .menu li>a{
-	color:#cccccc;
+	color:#586575;
 }
 .sub-menu{
 	display: none;
+}
+/* .sub-menu>li{
+	padding: 5px;
+	background: #FCFDFE!important;
+    color: #586575;
+} */
+.sub-menu>li:hover>a{
+	color:#2885e2;
 }
 .sub-menu a{
 	margin-right:65px;
@@ -65,5 +84,4 @@ header{
 .sub-menu a:hover{
 	text-decoration: none;
 }
-
 
