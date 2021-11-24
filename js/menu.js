@@ -10,6 +10,10 @@ function addPeoplePage(){
 	$('#myFrame').attr('src', "PeopleManagement/people/addPeople.html");
 }
 
+function showPeople(){
+	checkMenu("showPeople");
+	$('#myFrame').attr('src', "PeopleManagement/people/peopleList.html");
+}
 //改变选中菜单样式
 function checkMenu(menuA){
 	//找到当前活跃的二级菜单
