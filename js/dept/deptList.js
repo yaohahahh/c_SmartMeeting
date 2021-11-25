@@ -88,7 +88,6 @@ function delChecked(){
 			for(var i=0;i<checkeds.length;i++){
 				var thisChecked = checkeds[i];
 				var delDid = $(thisChecked).val();
-                alert(delDid);
 				delJson(delDid);
 			}
 			

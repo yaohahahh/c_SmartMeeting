@@ -12,7 +12,7 @@
     <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/paginathing.js" ></script>
 	<script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap-datetimepicker.min.js"></script>
-
+	<script type="text/javascript" src="../../js/People/editPeople.js"></script>
 
     <script src="js/Vue/vuetest.js"></script>
     <script src="js/Vue/vue.js"></script>
@@ -38,7 +38,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">姓名</label>
-						<input type="text" class="form-control" id="name" placeholder="请输入姓名">
+						<input type="text" class="form-control" id="name" placeholder="请输入姓名" value="">
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">身份证号：</label>
-						<input type="text" class="form-control" id="cardid" placeholder="身份证号">
+						<input type="text" class="form-control" id="cardid" placeholder="身份证号" value="">
 					</div>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">性别：</label>
-						<select class="form-control" id="sex">
+						<select class="form-control" id="sex" value="">
 							<option>男</option>
 							<option>女</option>
 							<option>其它</option>
@@ -78,7 +78,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">邮箱：</label>
-						<input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+						<input type="text" class="form-control" id="email" placeholder="请输入邮箱" value="">
 					</div>
 				</div>
 			</div>
@@ -87,7 +87,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">学历：</label>
-						<input type="text" class="form-control" id="education" placeholder="请输入学历">
+						<input type="text" class="form-control" id="education" placeholder="请输入学历" value="">
 					</div>
 				</div>
 			</div>
@@ -96,7 +96,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">专业：</label>
-						<input type="text" class="form-control" id="speciality" placeholder="请输入专业">
+						<input type="text" class="form-control" id="speciality" placeholder="请输入专业" value="">
 					</div>
 				</div>
 			</div>
@@ -105,7 +105,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">政治面貌：</label>
-						<input type="text" class="form-control" id="party" placeholder="请输入政治面貌">
+						<input type="text" class="form-control" id="party" placeholder="请输入政治面貌" value="">
 					</div>
 				</div>
 			</div>
@@ -114,7 +114,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">手机：</label>
-						<input type="text" class="form-control" id="phone" placeholder="请输入手机号：">
+						<input type="text" class="form-control" id="phone" placeholder="请输入手机号：" value="">
 					</div>
 				</div>
 			</div>
@@ -123,7 +123,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">微信号：</label>
-						<input type="text" class="form-control" id="wechat" placeholder="请输入微信号">
+						<input type="text" class="form-control" id="wechat" placeholder="请输入微信号" value="">
 					</div>
 				</div>
 			</div>
@@ -132,7 +132,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">联系地址：</label>
-						<input type="text" class="form-control" id="address" placeholder="请输入联系地址">
+						<input type="text" class="form-control" id="address" placeholder="请输入联系地址" value="">
 					</div>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">邮政编码：</label>
-						<input type="text" class="form-control" id="postcode" placeholder="请输入邮政编码">
+						<input type="text" class="form-control" id="postcode" placeholder="请输入邮政编码" value="">
 					</div>
 				</div>
 			</div>
@@ -150,7 +150,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">出生日期：</label>
-						<input type="text" class="form-control" id="birthday" placeholder="请输入出生日期">
+						<input type="text" class="form-control" id="birthday" placeholder="请输入出生日期" value="">
 					</div>
 				</div>
 			</div>
@@ -159,7 +159,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">民族：</label>
-						<input type="text" class="form-control" id="race" placeholder="请输入民族">
+						<input type="text" class="form-control" id="race" placeholder="请输入民族" value="">
 					</div>
 				</div>
 			</div>
@@ -168,7 +168,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">备注：</label>
-						<input type="text" class="form-control" id="remark" placeholder="请输入备注">
+						<input type="text" class="form-control" id="remark" placeholder="请输入备注" value="">
 					</div>
 				</div>
 			</div>
@@ -177,7 +177,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">所属部门</label>
-							<select class="form-control" id="depid">
+							<select class="form-control" id="depid" value="">
 				  			<option>开发部</option>
 				  			<option>测试部</option>
 				  			<option>其它</option>
@@ -190,7 +190,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">所属薪资范围：</label>
-						<select class="form-control" id="levelid">
+						<select class="form-control" id="levelid" value="">
 						  <option>3k-5k</option>
 						  <option>5k-8k</option>
 						  <option>8k-10k</option>
@@ -206,7 +206,7 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="name">薪资：</label>
-						<input type="text" class="form-control" id="salary" placeholder="薪资">
+						<input type="text" class="form-control" id="salary" placeholder="薪资" value="">
 					</div>
 				</div>
 			</div>
@@ -223,7 +223,7 @@
 				<div class="col-md-2">
 					<div class="row addbtn">
 						<div class="col-md-8">
-							<button type="submit" class="btn submit-btn2">提交</button>
+							<input type="button" class="btn submit-btn3" value="修改" onclick="updatePeople()"/>
 						</div>
 						
 					</div>
@@ -231,7 +231,7 @@
 				<div class="col-md-2">
 					<div class="row addbtn">
 						<div class="col-md-8">
-							<button type="submit" class="btn submit-btn3">取消</button>
+							<input type="button" class="btn submit-btn3" value="取消" onclick="window.location.href='peopleList.html'"/>
 						</div>
 						
 					</div>

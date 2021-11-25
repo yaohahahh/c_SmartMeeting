@@ -97,5 +97,34 @@ function cancelSearch(){
 }
 
 function showEditEmployee(id){
-    window.location.href = "../people/editPeople.html?id="+id
+    window.location.href = "editPeople.html?id="+id;
+}
+
+function delChecked(){
+    var checkeds = $("input[name='id']:checked");
+	if(checkeds.length>0){
+		var flag = window.confirm("确定要删除吗？");
+		if(flag){
+			alert("用户点击了确定删除");
+			for(var i=0;i<checkeds.length;i++){
+				var thisChecked = checkeds[i];
+				var delDid = $(thisChecked).val();
+				delPJson(delDid);
+			}
+			
+		}
+		showEmployeeList();
+	}else{
+		alert("请选择要删除的数据");
+	}
+	
+}
+
+function delPJson(delid){
+	for(var i=0;i<employeeJsonArray.length;i++){
+        if(employeeJsonArray[i].id==delid){
+            delete employeeJsonArray[i];
+            return;
+        }
+    }
 }
