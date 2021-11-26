@@ -97,6 +97,7 @@ function cancelSearch(){
 }
 
 function showEditEmployee(id){
+    alert("编辑员工信息，id="+id)
     window.location.href = "editPeople.html?id="+id;
 }
 
