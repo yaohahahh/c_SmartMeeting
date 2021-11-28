@@ -14,6 +14,11 @@ function showPeople(){
 	checkMenu("showPeople");
 	$('#myFrame').attr('src', "PeopleManagement/people/peopleList.html");
 }
+
+function regCheck(){
+	checkMenu("regCheck");
+	$('#myFrame').attr('src', "PeopleManagement/people/regCheck.html");
+}
 //改变选中菜单样式
 function checkMenu(menuA){
 	//找到当前活跃的二级菜单

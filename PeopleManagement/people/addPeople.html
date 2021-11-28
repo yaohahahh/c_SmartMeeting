@@ -12,6 +12,8 @@
     <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/paginathing.js" ></script>
 	<script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="../../js/People/peopleList.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
 
 
     <script src="js/Vue/vuetest.js"></script>
@@ -31,198 +33,202 @@
 		</ul>
 
 		<div class="mainadd">
-					<!-- 内容 -->
-		<form class="class="col-md-10 col-md-offset-1 form-inline" role="form">
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">姓名</label>
-						<input type="text" class="form-control" id="name" placeholder="请输入姓名">
-					</div>
-				</div>
+			<!-- 内容 -->
+<form class="class="col-md-10 col-md-offset-1 form-inline" role="form">
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">姓名</label>
+				<input type="text" class="form-control" id="name" placeholder="请输入姓名" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">身份证号：</label>
-						<input type="text" class="form-control" id="cardid" placeholder="身份证号">
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">身份证号：</label>
+				<input type="text" class="form-control" id="cardid" placeholder="身份证号" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-1">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">性别：</label>
-						<select class="form-control" id="sex">
-							<option>男</option>
-							<option>女</option>
-							<option>其它</option>
-							<option>不方便</option>
-							<option>恐龙</option>
-						</select>
-					</div>
-				</div>
+	<div class="col-md-1">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">性别：</label>
+				<select class="form-control" id="sex" value="">
+					<option value="">请选择</option>	
+					<option>男</option>
+					<option>女</option>
+					<option>其它</option>
+					<option>不方便</option>
+					<option>恐龙</option>
+				</select>
 			</div>
+		</div>
+	</div>
 
-			<!-- <div class="col-md-5">
-				<div class="row">
-					<label for="name">邮箱：</label>
-					<input type="text" class="form-control" id="name" placeholder="请输入邮箱">
-				</div>
-			</div>	 -->
+	<!-- <div class="col-md-5">
+		<div class="row">
+			<label for="name">邮箱：</label>
+			<input type="text" class="form-control" id="name" placeholder="请输入邮箱">
+		</div>
+	</div>	 -->
 
-			<div class="col-md-4">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">邮箱：</label>
-						<input type="text" class="form-control" id="email" placeholder="请输入邮箱">
-					</div>
-				</div>
+	<div class="col-md-4">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">邮箱：</label>
+				<input type="text" class="form-control" id="email" placeholder="请输入邮箱" value="">
 			</div>
-			
-			<div class="col-md-5">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">学历：</label>
-						<input type="text" class="form-control" id="education" placeholder="请输入学历">
-					</div>
-				</div>
+		</div>
+	</div>
+	
+	<div class="col-md-5">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">学历：</label>
+				<input type="text" class="form-control" id="education" placeholder="请输入学历" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-5">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">专业：</label>
-						<input type="text" class="form-control" id="speciality" placeholder="请输入专业">
-					</div>
-				</div>
+	<div class="col-md-5">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">专业：</label>
+				<input type="text" class="form-control" id="speciality" placeholder="请输入专业" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">政治面貌：</label>
-						<input type="text" class="form-control" id="party" placeholder="请输入政治面貌">
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">政治面貌：</label>
+				<input type="text" class="form-control" id="party" placeholder="请输入政治面貌" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-4">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">手机：</label>
-						<input type="text" class="form-control" id="phone" placeholder="请输入手机号：">
-					</div>
-				</div>
+	<div class="col-md-4">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">手机：</label>
+				<input type="text" class="form-control" id="phone" placeholder="请输入手机号：" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">微信号：</label>
-						<input type="text" class="form-control" id="wechat" placeholder="请输入微信号">
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">微信号：</label>
+				<input type="text" class="form-control" id="wechat" placeholder="请输入微信号" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-5">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">联系地址：</label>
-						<input type="text" class="form-control" id="address" placeholder="请输入联系地址">
-					</div>
-				</div>
+	<div class="col-md-5">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">联系地址：</label>
+				<input type="text" class="form-control" id="address" placeholder="请输入联系地址" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-3">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">邮政编码：</label>
-						<input type="text" class="form-control" id="postcode" placeholder="请输入邮政编码">
-					</div>
-				</div>
+	<div class="col-md-3">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">邮政编码：</label>
+				<input type="text" class="form-control" id="postcode" placeholder="请输入邮政编码" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">出生日期：</label>
-						<input type="text" class="form-control" id="birthday" placeholder="请输入出生日期">
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">出生日期：</label>
+				<input type="text" class="form-control" id="birthday" placeholder="请输入出生日期" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">民族：</label>
-						<input type="text" class="form-control" id="race" placeholder="请输入民族">
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">民族：</label>
+				<input type="text" class="form-control" id="race" placeholder="请输入民族" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-6">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">备注：</label>
-						<input type="text" class="form-control" id="remark" placeholder="请输入备注">
-					</div>
-				</div>
+	<div class="col-md-6">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">备注：</label>
+				<input type="text" class="form-control" id="remark" placeholder="请输入备注" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-3">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">所属部门</label>
-							<select class="form-control" id="depid">
-				  			<option>开发部</option>
-				  			<option>测试部</option>
-				  			<option>其它</option>
-							</select>
-					</div>
-				</div>
+	<div class="col-md-3">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">所属部门</label>
+					<select class="form-control" id="dep" value="">
+						<option value="">请选择</option>	
+						<option>开发部</option>
+						<option>测试部</option>
+						<option>运维部</option>
+					  	<option>市场部</optio>
+					</select>
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">所属薪资范围：</label>
-						<select class="form-control" id="levelid">
-						  <option>3k-5k</option>
-						  <option>5k-8k</option>
-						  <option>8k-10k</option>
-						  <option>10k-15k</option>
-						  <option>15k-20k</option>
-						  <option>20k以上</option>
-						</select>
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">所属薪资范围：</label>
+				<select class="form-control" id="levelid" value="">
+					<option value="">请选择</option>	
+					<option>3k-5k</option>
+					<option>5k-8k</option>
+					<option>8k-10k</option>
+					<option>10k-15k</option>
+					<option>15k-20k</option>
+					<option>20k以上</option>
+				</select>
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-2">
-				<div class="row">
-					<div class="form-group">
-						<label for="name">薪资：</label>
-						<input type="text" class="form-control" id="salary" placeholder="薪资">
-					</div>
-				</div>
+	<div class="col-md-2">
+		<div class="row">
+			<div class="form-group">
+				<label for="name">薪资：</label>
+				<input type="text" class="form-control" id="salary" placeholder="薪资" value="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-md-10">
-				<div class="row">
-					<div class="form-group">
-						<label for="name"></label>
-					</div>
-				</div>
+	<div class="col-md-10">
+		<div class="row">
+			<div class="form-group">
+				<label for="name"></label>
 			</div>
+		</div>
+	</div>
 
 			<div class="submit-btn">
 				<div class="col-md-2">
 					<div class="row addbtn">
 						<div class="col-md-8">
-							<button type="submit" class="btn submit-btn2">提交</button>
+							<button type="submit" class="btn submit-btn2" onclick="addPeople()">提交</button>
 						</div>
 						
 					</div>
@@ -230,7 +236,7 @@
 				<div class="col-md-2">
 					<div class="row addbtn">
 						<div class="col-md-8">
-							<button type="submit" class="btn submit-btn3">取消</button>
+							<button type="submit" class="btn submit-btn3" onclick="cancelAdd()">取消</button>
 						</div>
 						
 					</div>

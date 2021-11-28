@@ -1,8 +1,6 @@
 var id  = getParam("id");
-alert(id)
 var employeeJsonArray = window.parent.employeeJsonArray;
 $(function(){
-    alert("init");
     for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].id==id){
             $("#name").val(employeeJsonArray[i].name);
@@ -19,7 +17,7 @@ $(function(){
             $("#birthday").val(employeeJsonArray[i].birthday);
             $("#race").val(employeeJsonArray[i].race);
             $("#remark").val(employeeJsonArray[i].remark);
-            $("#depid").val(employeeJsonArray[i].depid);
+            $("#dep").val(employeeJsonArray[i].dep);
             $("#levelid").val(employeeJsonArray[i].levelid);
             $("#salary").val(employeeJsonArray[i].salary);
             
@@ -29,7 +27,6 @@ $(function(){
 });
 
 function updatePeople(){
-    alert("update")
     var cname = $("#name").val();
     var ccardid = $("#cardid").val();
     var csex = $("#sex").val();
@@ -44,7 +41,7 @@ function updatePeople(){
     var cbirthday = $("#birthday").val();
     var crace = $("#race").val();
     var cremark = $("#remark").val();
-    var cdepid = $("#depid").val();
+    var cdep = $("#dep").val();
     var clevelid = $("#levelid").val();
     var csalary = $("#salary").val();
 
@@ -64,7 +61,7 @@ function updatePeople(){
             employeeJsonArray[i].birthday = cbirthday;
             employeeJsonArray[i].race = crace;
             employeeJsonArray[i].remark = cremark;
-            employeeJsonArray[i].depid = cdepid;
+            employeeJsonArray[i].dep = cdep;
             employeeJsonArray[i].levelid = clevelid;
             employeeJsonArray[i].salary = csalary;
 

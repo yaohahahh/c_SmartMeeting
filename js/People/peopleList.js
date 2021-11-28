@@ -1,19 +1,24 @@
 var employeeJsonArray = window.parent.employeeJsonArray;
 $(function(){
     //获取得到员工信息列表
+    
     for(var i=0;i<employeeJsonArray.length;i++){
+        if(employeeJsonArray[i].status=="0"){
+            continue;
+        }
         var employee = employeeJsonArray[i];
         var trStr = "<tr>"+
         "<td><input type='checkbox' name='id' value='"+employee.id+"'/></td>"+
         "<td>"+employee.name+"</td>"+
         "<td>"+employee.sex+"</td>"+
         "<td>"+employee.email+"</td>"+
+        "<td>"+employee.dep+"</td>"+
         "<td>"+employee.speciality+"</td>"+
         "<td>"+employee.education+"</td>"+
         "<td>"+employee.party+"</td>"+
         "<td>"+employee.wechat+"</td>"+
         "<td>"+employee.phone+"</td>"+
-        "<td><img onclick='showEditEmployee("+employee.id+")' src='../../img/update.gif' /></td>"+
+        "<td><img onclick='showEditEmployee("+employee.id+")' src='../../img/update.gif' /></td>"
         "</tr>";
         $("#employeeList").append(trStr);
     }
@@ -41,6 +46,41 @@ function showEmployeeList(){
                 "<td>"+employee.name+"</td>"+
                 "<td>"+employee.sex+"</td>"+
                 "<td>"+employee.email+"</td>"+
+                "<td>"+employee.dep+"</td>"+
+                "<td>"+employee.speciality+"</td>"+
+                "<td>"+employee.education+"</td>"+
+                "<td>"+employee.party+"</td>"+
+                "<td>"+employee.wechat+"</td>"+
+                "<td>"+employee.phone+"</td>"+
+                "<td><img onclick='showEditEmployee("+employee.id+")' src='../../img/update.gif' /></td>"
+                "</tr>";
+                $("#employeeList").append(trStr);
+            }
+        }  
+    }   
+    setPages()
+}
+
+//展现满足条件的员工信息列表数据
+function showDeptEmployeeList(){
+
+    $("#employeeList").html("")
+    
+    var dep = $("#dep").val()
+    if(dep==null){
+        return
+    }
+     
+    for(var i=0;i<employeeJsonArray.length;i++){
+        var employee = employeeJsonArray[i];
+        if(employee!=undefined){
+            if(employee.dep.indexOf(dep)!=-1){
+                var trStr = "<tr>"+
+                "<td><input type='checkbox' name='id' value='"+employee.id+"'/></td>"+
+                "<td>"+employee.name+"</td>"+
+                "<td>"+employee.sex+"</td>"+
+                "<td>"+employee.email+"</td>"+
+                "<td>"+employee.dep+"</td>"+
                 "<td>"+employee.speciality+"</td>"+
                 "<td>"+employee.education+"</td>"+
                 "<td>"+employee.party+"</td>"+
@@ -65,19 +105,66 @@ function setPages(){
     })
 }
 
-function addPeople(){
-    var dname = $('#name').val()
-    var desc = $('#remark').val()
 
-    var dept = {
-        "did":deptJsonArray.length+1,
-        "dname":dname,
-        "desc":desc
+
+
+
+function addPeople(){
+    var cname = $("#name").val();
+    var ccardid = $("#cardid").val();
+    var csex = $("#sex").val();
+    var cemail = $("#email").val();
+    var ceducation = $("#education").val();
+    var cspeciality = $("#speciality").val();
+    var cparty = $("#party").val();
+    var cphone = $("#phone").val();
+    var cwechat = $("#wechat").val();
+    var caddress = $("#address").val();
+    var cpostcode = $("#postcode").val();
+    var cbirthday = $("#birthday").val();
+    var crace = $("#race").val();
+    var cremark = $("#remark").val();
+    var cdep = $("#dep").val();
+    var clevelid = $("#levelid").val();
+    var csalary = $("#salary").val();
+
+    var newPeople = {
+        "id":employeeJsonArray.length+1,
+        "name":cname,
+        "cardid":ccardid,
+        "sex":csex,
+        "email":cemail,
+        "education":ceducation,
+        "speciality":cspeciality,
+        "phone":cphone,
+        "password":"123456",
+        "auditstatus":cphone,
+        "status":"0",
+        "party":cparty,
+        "wechat":cwechat,
+        "address":caddress,
+        "postcode":cpostcode,
+        "birthday":cbirthday,
+        "race":crace,
+        "remark":cremark,
+        "depid":3,
+        "dep":cdep,
+        "levelid":clevelid,
+        "salary":csalary,
+        "joindate":"2020-10-09"
     }
-    deptJsonArray[deptJsonArray.length] = dept
+
+    employeeJsonArray[employeeJsonArray.length] = newPeople;
     alert("添加成功");
-    window.location.href = "../people/addPeople.html"
+    checkMenu("showPeople");
+	$('#myFrame').attr('src', "PeopleManagement/people/peopleList.html");
 }
+
+function cancelAdd(){
+    window.location.href = "adminIndex.html";
+    // showPeople();
+}
+
 
 //全选操作
 function checkAll(){
@@ -93,11 +180,11 @@ function checkAll(){
 
 function cancelSearch(){
     $("#name").val("")
+    $("#dep").val("")
     showEmployeeList()
 }
 
 function showEditEmployee(id){
-    alert("编辑员工信息，id="+id)
     window.location.href = "editPeople.html?id="+id;
 }
 
