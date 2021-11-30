@@ -35,13 +35,13 @@ function reserveMeetingPage(){
 function addMeeting(){
 	checkMenu("addmeeting");
 	//让id="myFrame"的链接指向到用户列表页面
-	$('#myFrame').attr('src', "MeetingRoom/meet/addMeet.html");
+	$('#myFrame').attr('src', "MeetingRoom/meet/meeting.html");
 }
 
 function showMeetingRoom(){
 	checkMenu("showmeetingroom");
 	//让id="myFrame"的链接指向到用户列表页面
-	$('#myFrame').attr('src', "MeetingRoom/meet/meeting.html");
+	$('#myFrame').attr('src', "MeetingRoom/meet/checkmeet.html");
 }
 
 //改变选中菜单样式

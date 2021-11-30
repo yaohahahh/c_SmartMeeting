@@ -36,11 +36,11 @@ function showSearchMeet(){
 
            if (inShow) {
                var Str = "<tr>" +
-                   "<td><input type='checkbox' name='id' value='" +meet.mid+ "' /></td>" +
+                   "<td><input type='checkbox' name='id' value='" +meet.id+ "' /></td>" +
                    "<td>" + meet.name + "</td>" +
                    "<td>" + meet.place + "</td>" +
                    "<td>" + meet.large + "</td>" +
-                   "<td><img onclick='showEditMeet("+meet.mid+")' src='../img/update.gif' /></td>" +
+                   "<td><img onclick='showEditMeet("+meet.id+")' src='../img/update.gif' /></td>" +
                    "</tr>";
                $("#meeting").append(Str);
            }
@@ -63,7 +63,7 @@ function showAddMeet(){
 }
 
 function showEditMeet(mid){
-    window.location.href="editRoom.html?mid="+mid;
+    window.location.href="editRoom.html?id="+mid;
 }
 
 function checkAllmeet()
@@ -85,7 +85,7 @@ function delJson(delmid)
     for(var i=0; i<meetJsonArray.length;i++)
     {
         var meet =meetJsonArray[i];
-        if(meet.mid==delmid)
+        if(meet.id==delmid)
         {
             delete meetJsonArray[i];
             return;
