@@ -1,26 +1,38 @@
 var employeeJsonArray = window.parent.employeeJsonArray;
 $(function(){
     //获取得到员工信息列表
+
+    var name = $("#name").val()
+    if(name==null){
+        return
+    }
     
     for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].status=="0"){
             continue;
+        }else{
+            if(employeeJsonArray[i]!=undefined && employeeJsonArray[i].name!='undefined'){
+                var employee = employeeJsonArray[i];
+                var trStr = "<tr>"+
+                "<td><input type='checkbox' name='id' value='"+employee.id+"'/></td>"+
+                "<td>"+employee.name+"</td>"+
+                "<td>"+employee.sex+"</td>"+
+                "<td>"+employee.email+"</td>"+
+                "<td>"+employee.dep+"</td>"+
+                "<td>"+employee.speciality+"</td>"+
+                "<td>"+employee.education+"</td>"+
+                "<td>"+employee.party+"</td>"+
+                "<td>"+employee.wechat+"</td>"+
+                "<td>"+employee.phone+"</td>"+
+                "<td><img onclick='showEditEmployee("+employee.id+")' src='../../img/update.gif' /></td>"
+                "</tr>";
+                $("#employeeList").append(trStr);
+            }else{
+                continue;
+            }
+
         }
-        var employee = employeeJsonArray[i];
-        var trStr = "<tr>"+
-        "<td><input type='checkbox' name='id' value='"+employee.id+"'/></td>"+
-        "<td>"+employee.name+"</td>"+
-        "<td>"+employee.sex+"</td>"+
-        "<td>"+employee.email+"</td>"+
-        "<td>"+employee.dep+"</td>"+
-        "<td>"+employee.speciality+"</td>"+
-        "<td>"+employee.education+"</td>"+
-        "<td>"+employee.party+"</td>"+
-        "<td>"+employee.wechat+"</td>"+
-        "<td>"+employee.phone+"</td>"+
-        "<td><img onclick='showEditEmployee("+employee.id+")' src='../../img/update.gif' /></td>"
-        "</tr>";
-        $("#employeeList").append(trStr);
+        
     }
 
     setPages()
@@ -39,8 +51,11 @@ function showEmployeeList(){
      
     for(var i=0;i<employeeJsonArray.length;i++){
         var employee = employeeJsonArray[i];
-        if(employee!=undefined){
+        if(employee!=undefined && employee.name!='undefined'){
             if(employee.name.indexOf(name)!=-1){
+                if(employee.status=="0"){
+                    continue;
+                }
                 var trStr = "<tr>"+
                 "<td><input type='checkbox' name='id' value='"+employee.id+"'/></td>"+
                 "<td>"+employee.name+"</td>"+
@@ -73,8 +88,11 @@ function showDeptEmployeeList(){
      
     for(var i=0;i<employeeJsonArray.length;i++){
         var employee = employeeJsonArray[i];
-        if(employee!=undefined){
+        if(employee!=undefined && employee.name!='undefined'){
             if(employee.dep.indexOf(dep)!=-1){
+                if(employee.status=="0"){
+                    continue;
+                }
                 var trStr = "<tr>"+
                 "<td><input type='checkbox' name='id' value='"+employee.id+"'/></td>"+
                 "<td>"+employee.name+"</td>"+
@@ -211,7 +229,8 @@ function delChecked(){
 function delPJson(delid){
 	for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].id==delid){
-            delete employeeJsonArray[i];
+            // delete employeeJsonArray[i];
+            employeeJsonArray[i].name = "undefined";
             return;
         }
     }

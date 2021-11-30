@@ -1,4 +1,5 @@
 //初始化数据
+var loginUser;
 
 //初始化员工列表
 var employeeJsonArray;
@@ -6,6 +7,7 @@ $.ajax({
     url:"../Json/employee.json",
     type:"get",
     dataType:"json",
+    async:false,
     success: function (res){
         console.log(res);
         employeeJsonArray = res;

@@ -3,8 +3,9 @@ $(function(){
 	//每1秒刷新一次时间
     setInterval(function(){
     	$("#nowTime").html(getTime());
-    },1);
-    
+    },1000);
+
+    // $("#loginspan").html("欢迎登录,"+loginUser.name);
     
     /**********以下部分是菜单的一二级的相关动态样式**********/
     //活动下的一级菜单的高度是自动填充的

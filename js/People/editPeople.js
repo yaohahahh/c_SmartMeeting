@@ -64,8 +64,7 @@ function updatePeople(){
             employeeJsonArray[i].dep = cdep;
             employeeJsonArray[i].levelid = clevelid;
             employeeJsonArray[i].salary = csalary;
-
-
+            employeeJsonArray[i].status = "1"
 
             alert("修改成功");
             window.location.href="peopleList.html";

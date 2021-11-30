@@ -55,12 +55,12 @@ function login(){
             if(employeeJsonArray[i].status=="1"){
                 status+=1;
                 $("#errorspan").html("管理员登录成功")
-                window.location.href = "admin_index.html"
+                window.location.href = "admin_index.html?loginUserId="+employeeJsonArray[i].id;
                 //跳转到管理员首页
             }else {
                 status+=1;
                 $("#errorspan").html("普通用户登陆成功")
-                window.location.href = "index.html"
+                window.location.href = "index.html?loginUserId="+employeeJsonArray[i].id;
                 //跳转到普通用户首页
             }
 
