@@ -59,7 +59,7 @@ function setPage(){
 }
 
 function showAddMeet(){
-    window.location.href="../../meet/addMeet.html";
+    window.location.href="../../MeetingRoom/meet/meeting.html";
 }
 
 function showEditMeet(mid){

@@ -17,5 +17,5 @@ saveMeet = function (){
     };
     meetJsonArray[meetJsonArray.length] = meet;
     alert("添加成功");
-    window.location.href="../weblearning/meet/meeting.html";
+    window.location.href="../../MeetingRoom/meet/meeting.html";
 }
