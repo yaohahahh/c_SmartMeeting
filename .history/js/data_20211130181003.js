@@ -62,11 +62,3 @@ $.ajax({
     }
 });
 
-var meetJsonArray;
-$.ajax({
-    url:"json/meeting.json",
-    dataType:"json",
-    success:function(resp){
-        meetJsonArray=resp;
-    }
-})
