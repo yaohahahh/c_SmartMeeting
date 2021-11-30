@@ -1,15 +1,14 @@
-var mid =getParam("mid");
+var id =getParam("id");
 var meetJsonArray = window.parent.meetingRoomJsonArray;
 
 $(function ()
 {
     for (var i = 0; i < meetJsonArray.length; i++) {
         var meet = meetJsonArray[i];
-        if (meet.mid == mid) {
+        if (meet.id == id) {
             $("#name").val(meet.name);
             $("#place").val(meet.place);
-            $("#large").val(meet.large);
-            // $("#book").val(meet.book);
+            $("#large").val(meet.large);;
 
             break;
         }
@@ -23,7 +22,7 @@ function updateMeet(){
     var large=$("#large").val();
     for (var i = 0; i < meetJsonArray.length; i++) {
         var meet = meetJsonArray[i];
-        if (meet.mid == mid) {
+        if (meet.id == id) {
             meet.name=name;
             meet.place=place;
             meet.large=large;
