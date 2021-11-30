@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/reserve.css" />
+    <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/demo.css" />
+    <script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+    <script type="text/javascript" src="../js/dept/deptList.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap-3.4.1-dist/js/paginathing.js"></script>
+    <script type="text/javascript" src="../js/room/reserve.js" ></script>
+    <script type="text/javascript" src="../js/data.js" ></script>
+    <style type="text/css">
+        #divfrom{
+            float:left;
+            width:150px;
+        }
+        #divto{
+            float:left;
+            width:150px;
+        }
+        #divoperator{
+            float:left;
+            width:50px;
+            padding:60px 5px;
+        }
+        #divoperator input[type="button"]{
+            margin:10px 0;
+        }
+        #selDepartments{
+            display:block;
+            width:100%;
+        }
+        #selEmployees{
+            display:block;
+            width:100%;
+            height:200px;
+        }
+        #selSelectedEmployees{
+            display:block;
+            width:100%;
+            height:225px;
+        }
+    </style>
+</head>
+<body onload="body_load()">
+    <ul class="breadcrumb">
+        当前位置：
+        <li><a href="#">Home</a></li>
+        <li><a href="#">会议预定</a></li>
+        <li><a href="#">预定</a></li>
+    </ul>
+    <form>
+        <div style="margin:50px;">
+            会议名称：<input type="text" id="title" />
+            <br/><br/>
+            预计参加人数：<input type="text" id="num" />
+            <br/><br/>
+            预计开始时间：<input type="text" id="starttime" />
+            <br/><br/>
+            预计结束时间：<input type="text" id="endtime" />
+            <br/><br/>
+            会议室：<select id="mid" onclick="chooseRoom()">
+<!--                <option>第一会议室</option>-->
+<!--                <option>第二会议室</option>-->
+<!--                <option>第三会议室</option>-->
+            </select>
+            <br/><br/>
+            会议说明：<input type="text" id="remark" />
+            <br/><br/>
+            <div style="height: 200px;">
+                <div style="float: left;">选择参会人员：</div>
+                <div id="divfrom">
+                    <select id="selDepartments" onchange="fillEmployees()">
+                    </select>
+                    <select id="selEmployees" multiple="true">
+                    </select>
+                </div>
+                <div id="divoperator">
+                    <input type="button" class="clickbutton" value="&gt;" onclick="selectEmployees()"/>
+                    <input type="button" class="clickbutton" value="&lt;" onclick="deSelectEmployees()"/>
+                </div>
+                <div id="divto">
+                    <select id="selSelectedEmployees" multiple="true">
+                    </select>
+                </div>
+            </div>
+            <br /><br /><br />
+            <input type="button" value="预定" onclick="reserveMeeting()"/>
+            &nbsp;&nbsp;
+
+        </div>
+    </form>
+</body>
+</html>

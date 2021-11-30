@@ -36,3 +36,29 @@ $.ajax({
 })
 
 
+
+
+var meetingJsonArray;
+$.ajax({
+    contentType: false,
+    processData: false,
+    async:false,
+    url:"json/meetings.json",
+    dataType:"json",
+    success:function(resp){
+        meetingJsonArray = resp;
+    }
+});
+
+var meetingRoomJsonArray;
+$.ajax({
+    contentType: false,
+    processData: false,
+    async:false,
+    url:"json/meetingRoom.json",
+    dataType:"json",
+    success:function(resp){
+        meetingRoomJsonArray = resp;
+    }
+});
+

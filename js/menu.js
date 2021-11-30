@@ -19,6 +19,31 @@ function regCheck(){
 	checkMenu("regCheck");
 	$('#myFrame').attr('src', "PeopleManagement/people/regCheck.html");
 }
+
+function meetingSearch(){
+	checkMenu("meetingSearch");
+	//让id="myFrame"的链接指向到用户列表页面
+	$('#myFrame').attr('src', "MeetingRoom/findRoom.html");
+}
+
+function reserveMeetingPage(){
+	checkMenu("reserveMeetingPage");
+	//让id="myFrame"的链接指向到用户列表页面
+	$('#myFrame').attr('src', "MeetingRoom/reserve.html");
+}
+
+function addMeeting(){
+	checkMenu("addmeeting");
+	//让id="myFrame"的链接指向到用户列表页面
+	$('#myFrame').attr('src', "MeetingRoom/meet/addMeet.html");
+}
+
+function showMeetingRoom(){
+	checkMenu("showmeetingroom");
+	//让id="myFrame"的链接指向到用户列表页面
+	$('#myFrame').attr('src', "MeetingRoom/meet/meeting.html");
+}
+
 //改变选中菜单样式
 function checkMenu(menuA){
 	//找到当前活跃的二级菜单
