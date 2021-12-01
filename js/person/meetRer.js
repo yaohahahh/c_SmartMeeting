@@ -32,7 +32,7 @@ function showSearchList(){
 		}
 		
 		if(inShow){
-			if(meet.mper==loginUser){
+			if(meet.mper==loginUserName){
 			var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.mname+"</td>"+

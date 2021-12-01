@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="js/data.js"></script>
 		<script type="text/javascript" src="js/room/findRoom.js" ></script>
 		<script type="text/javascript" src="js/room/reserve.js" ></script>
+		<script> var loginUserId = getParam("loginUserId"); </script>
 	</head>
 	<body>
 	<div id="main">
@@ -57,7 +58,7 @@
 			            	<span class="glyphicon glyphicon-menu-right"></span>
 			            	<ul class="sub-menu">
 								<li><a class="subactive" href="#" id="meetNotice" onclick="meetNotice()">最新通知</a></li>
-								<li><a href="#" id="meetRer" onclick="meetRer()">我的预定</a></li>
+								<li><a href="#" id="meetRer" onclick="meetRer(loginUserId)">我的预定</a></li>
 								<li><a href="#" id="meetSearch" onclick="meetSearch()">我的会议</a></li>
 				            </ul>
 			            </li>
