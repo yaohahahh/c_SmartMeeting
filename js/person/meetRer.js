@@ -11,6 +11,13 @@ function showSearchList(){
     $("#meetRer").html("");
     $(".pagination-container").html("");
     var name=$("#name").val();
+	var loginUserId = getParam("loginUserId");
+	for (var i=0; i<employeeJsonArray.length; i++) {
+		if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
+			loginUser = employeeJsonArray[i];
+			break;
+		}
+	}
     for(var i=0;i<meetJsonArray.length;i++){
 		var meet = meetJsonArray[i];
 		if(meet!=undefined){
@@ -25,7 +32,7 @@ function showSearchList(){
 		}
 		
 		if(inShow){
-			if(meet.mper=="张三"){
+			if(meet.mper==loginUser){
 			var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.mname+"</td>"+
