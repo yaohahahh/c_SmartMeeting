@@ -64,7 +64,7 @@ $.ajax({
 
 var meetJsonArray;
 $.ajax({
-    url:"json/meeting.json",
+    url:"json/meetings.json",
     dataType:"json",
     success:function(resp){
         meetJsonArray=resp;
