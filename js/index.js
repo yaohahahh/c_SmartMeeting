@@ -53,6 +53,13 @@ $(function(){
 
 
 function syncUser(){
+	var loginUserId = getParam("loginUserId");
+		for (var i=0; i<employeeJsonArray.length; i++) {
+			if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
+				loginUser = employeeJsonArray[i];
+				break;
+			}
+		}
 	$("#loginSpan").html("欢迎登录,"+loginUser.name);
 }
 
