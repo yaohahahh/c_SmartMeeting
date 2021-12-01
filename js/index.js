@@ -51,7 +51,7 @@ $(function(){
 	syncUser();
 });
 
-
+var loginUserName;
 function syncUser(){
 	var loginUserId = getParam("loginUserId");
 		for (var i=0; i<employeeJsonArray.length; i++) {
@@ -61,5 +61,7 @@ function syncUser(){
 			}
 		}
 	$("#loginSpan").html("欢迎登录,"+loginUser.name);
+	loginUserName=loginUser.name;
 }
+
 

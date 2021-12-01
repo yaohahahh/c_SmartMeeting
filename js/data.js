@@ -43,7 +43,7 @@ $.ajax({
     contentType: false,
     processData: false,
     async:false,
-    url:"json/meetings.json",
+    url:"../Json/meetings.json",
     dataType:"json",
     success:function(resp){
         meetingJsonArray = resp;
@@ -55,7 +55,7 @@ $.ajax({
     contentType: false,
     processData: false,
     async:false,
-    url:"json/meetingRoom.json",
+    url:"../Json/meetingRoom.json",
     dataType:"json",
     success:function(resp){
         meetingRoomJsonArray = resp;
@@ -64,7 +64,7 @@ $.ajax({
 
 var meetJsonArray;
 $.ajax({
-    url:"json/meeting.json",
+    url:"../Json/meeting.json",
     dataType:"json",
     success:function(resp){
         meetJsonArray=resp;

@@ -50,10 +50,10 @@ function meetSearch(){
 	$('#myFrame').attr('src', "person/meetList.html");
 }
 
-function meetRer(){
+function meetRer(loginUserId){
 	checkMenu("meetRer");
 	//让id="myFrame"的链接指向到用户列表页面
-	$('#myFrame').attr('src', "person/meetRer.html");
+	$('#myFrame').attr('src', "person/meetRer.html?loginUserId="+loginUserId);
 }
 
 function meetNotice(){
