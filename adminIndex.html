@@ -4,7 +4,6 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" href="css/common.css" />
-		
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="js/bootstrap-3.4.1-dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="css/mainBody.css" />
@@ -16,7 +15,7 @@
 		<script type="text/javascript" src="js/data.js"></script>
 		<script type="text/javascript" src="js/room/findRoom.js" ></script>
 		<script type="text/javascript" src="js/room/reserve.js" ></script>
-		<!-- <script>
+		<script>
 			var loginUserId = getParam("loginUserId");
 			for (var i=0; i<employeeJsonArray.length; i++) {
 				if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
@@ -24,8 +23,7 @@
 					break;
 				}
 			}
-				// alert(loginUser);
-		</script> -->
+		</script>
 	</head>
 	<body>
 	<div id="main">
@@ -41,14 +39,14 @@
 			
 			<!--头部右侧区域-->
 			<div class="headerRight">
-				<span id="loginSpan">欢迎登录，用户1</span>
+				<span id="loginSpan">程序猿（调试界面）</span>
 				<img style="margin-left:20px;" src="img/StatBar_time.gif" />
 				<!--展现当前系统时间区域-->
 				<span id="nowTime"></span>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<a href="#">修改密码</a>
 				&nbsp;&nbsp;
-				<a href="#">退出登录</a>
+				<a href="#" onclick="logout()">退出登录</a>
 			</div>
 		</header>
 		

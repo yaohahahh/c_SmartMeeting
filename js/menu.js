@@ -44,13 +44,6 @@ function showMeetingRoom(){
 	$('#myFrame').attr('src', "MeetingRoom/meet/checkmeet.html");
 }
 
-//当点击部门管理时，触发的事件
-function deptSearch(){
-	checkMenu("deptSearch");
-	//让id="myFrame"的链接指向到用户列表页面
-	$('#myFrame').attr('src', "deptList.html");
-}
-
 function meetSearch(){
 	checkMenu("meetSearch");
 	//让id="myFrame"的链接指向到用户列表页面
@@ -69,6 +62,10 @@ function meetNotice(){
 	$('#myFrame').attr('src', "person/meetNotice.html");
 }
 
+function logout(){
+	loginUser = null;
+	window.location.href="login.html";
+}
 
 //改变选中菜单样式
 function checkMenu(menuA){

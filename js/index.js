@@ -4,8 +4,6 @@ $(function(){
     setInterval(function(){
     	$("#nowTime").html(getTime());
     },1000);
-
-    // $("#loginspan").html("欢迎登录,"+loginUser.name);
     
     /**********以下部分是菜单的一二级的相关动态样式**********/
     //活动下的一级菜单的高度是自动填充的
@@ -50,9 +48,11 @@ $(function(){
 		}
 	});
 	/**********以上部分是菜单的一二级的相关动态样式**********/
-	
+	syncUser();
 });
 
 
-
+function syncUser(){
+	$("#loginSpan").html("欢迎登录,"+loginUser.name);
+}
 

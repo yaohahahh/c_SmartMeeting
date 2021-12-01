@@ -45,7 +45,6 @@ function login(){
     var username = $("#username").val()
     var pwd = $("#pwd").val()
     var status = 0
-    alert(employeeJsonArray)
 
     for(var i=0;i<employeeJsonArray.length;i++){
         if (employeeJsonArray[i].phone==username &&
@@ -55,7 +54,7 @@ function login(){
             if(employeeJsonArray[i].status=="1"){
                 status+=1;
                 $("#errorspan").html("管理员登录成功")
-                window.location.href = "admin_index.html?loginUserId="+employeeJsonArray[i].id;
+                window.location.href = "adminIndex.html?loginUserId="+employeeJsonArray[i].id;
                 //跳转到管理员首页
             }else {
                 status+=1;
