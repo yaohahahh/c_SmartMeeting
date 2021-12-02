@@ -1,3 +1,4 @@
+var loginUser = window.parent.loginUser;
 $(function(){
 	
 	//每1秒刷新一次时间
@@ -57,6 +58,7 @@ function syncUser(){
 		for (var i=0; i<employeeJsonArray.length; i++) {
 			if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
 				loginUser = employeeJsonArray[i];
+				// alert('欢迎登陆：id'+loginUser.id);
 				break;
 			}
 		}
@@ -65,3 +67,68 @@ function syncUser(){
 }
 
 
+function changePassword(){
+	id = loginUser.id;
+
+	var oldPassword = $("#oldPassword").val();
+	var newPassword = $("#newPassword").val();
+	var confirmPassword = $("#confirmPassword").val();
+
+
+	if(oldPassword==""){
+		alert("请输入原密码");
+		return;
+	}
+	if(newPassword==""){
+		alert("请输入新密码");
+		return;
+	}
+	if(confirmPassword==""){
+		alert("请输入确认密码");
+		return;
+	}
+	if(loginUser.password!=oldPassword){
+		alert("原密码错误！");
+		return;
+	}
+	if(newPassword!=confirmPassword){
+		alert("两次输入的密码不一致");
+		return;
+	}
+	if(oldPassword==newPassword){
+		alert("新密码与原密码相同");
+		return;
+	}
+	alert("修改成功");
+	loginUser.password=newPassword;
+	window.parent.location.href="login.html";
+	alert('您的新密码是:'+loginUser.password)
+	
+	
+	// if(oldPassword==loginUser.password && newPassword==confirmPassword){
+	// 	// loginUser.password=newPassword;
+	// 	alert("修改成功");
+	// 	window.location.href="login.html";
+	// 	// $.ajax({
+	// 	// 	type:"post",
+	// 	// 	url:"/changePassword",
+	// 	// 	data:{
+	// 	// 		"id":id,
+	// 	// 		"password":newPassword
+	// 	// 	},
+	// 	// 	success:function(data){
+	// 	// 		if(data=="success"){
+	// 	// 			alert("修改成功");
+	// 	// 			window.location.href="login.html";
+	// 	// 		}else{
+	// 	// 			alert("修改失败");
+	// 	// 		}
+	// 	// 	}
+	// 	// });
+	// }
+}
+
+function cancelChange(){
+	window.parent.location.href="login.html";
+	
+}

@@ -67,6 +67,14 @@ function logout(){
 	window.location.href="login.html";
 }
 
+function changePwd(){
+	$('#myFrame').attr('src', "changePwd.html");
+}
+
+function Index(){
+	$('#myFrame').attr('src', "index.html");
+}
+
 //改变选中菜单样式
 function checkMenu(menuA){
 	//找到当前活跃的二级菜单

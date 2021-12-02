@@ -49,9 +49,9 @@ function login(){
     for(var i=0;i<employeeJsonArray.length;i++){
         if (employeeJsonArray[i].phone==username &&
             employeeJsonArray[i].password==pwd &&
-            employeeJsonArray[i].auditstatus=="1"){
+            employeeJsonArray[i].status=="1"){
 
-            if(employeeJsonArray[i].status=="1"){
+            if(employeeJsonArray[i].auditstatus=="1"){
                 status+=1;
                 $("#errorspan").html("管理员登录成功")
                 window.location.href = "adminIndex.html?loginUserId="+employeeJsonArray[i].id;
