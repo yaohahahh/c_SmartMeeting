@@ -41,7 +41,8 @@ function updatePeople(){
     var cbirthday = $("#birthday").val();
     var crace = $("#race").val();
     var cremark = $("#remark").val();
-    var cdep = $("#dep").val();
+    var cdep = $("#dep option:selected").text();
+    var cdepid = $("#dep").val();
     var clevelid = $("#levelid").val();
     var csalary = $("#salary").val();
 
@@ -62,6 +63,7 @@ function updatePeople(){
             employeeJsonArray[i].race = crace;
             employeeJsonArray[i].remark = cremark;
             employeeJsonArray[i].dep = cdep;
+            employeeJsonArray[i].depid = cdepid;
             employeeJsonArray[i].levelid = clevelid;
             employeeJsonArray[i].salary = csalary;
             employeeJsonArray[i].status = "1"

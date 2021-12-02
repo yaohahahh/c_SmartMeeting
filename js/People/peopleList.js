@@ -142,7 +142,8 @@ function addPeople(){
     var cbirthday = $("#birthday").val();
     var crace = $("#race").val();
     var cremark = $("#remark").val();
-    var cdep = $("#dep").val();
+    var cdep = $("#dep option:selected").text();
+    var cdepid = $("#dep").val();
     var clevelid = $("#levelid").val();
     var csalary = $("#salary").val();
 
@@ -165,7 +166,7 @@ function addPeople(){
         "birthday":cbirthday,
         "race":crace,
         "remark":cremark,
-        "depid":3,
+        "depid":cdepid,
         "dep":cdep,
         "levelid":clevelid,
         "salary":csalary,
