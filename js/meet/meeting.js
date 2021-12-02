@@ -10,7 +10,7 @@ $(function ()
             "<td>"+meet.name+"</td>"+
             "<td>"+meet.place+"</td>"+
             "<td>"+meet.large+"</td>"+
-            // "<td>"+meet.book+"</td>"+
+            "<td><img onclick='showEditMeet("+meet.id+")' src='../../img/update.gif' /></td>"+
             "</tr>";
         $("#meeting").append(trStr);
     }
@@ -22,6 +22,9 @@ function showSearchMeet(){
 
     var name = $("#name").val();
 
+    if(name ==null){
+        return
+    }
     for(var i=0;i<meetJsonArray.length;i++){
         var meet = meetJsonArray[i];
        if(meet!=undefined) {
@@ -40,7 +43,7 @@ function showSearchMeet(){
                    "<td>" + meet.name + "</td>" +
                    "<td>" + meet.place + "</td>" +
                    "<td>" + meet.large + "</td>" +
-                   "<td><img onclick='showEditMeet("+meet.id+")' src='../img/update.gif' /></td>" +
+                   "<td><img onclick='showEditMeet("+meet.id+")' src='../../img/update.gif' /></td>" +
                    "</tr>";
                $("#meeting").append(Str);
            }
@@ -51,6 +54,7 @@ function showSearchMeet(){
 
 //使用分页插件，进行分页展现
 function setPage(){
+    $('.pagination-container').html("")
     $('.table tbody').paginathing({
         perPage: 3,//每页展现条数
         insertAfter: '.table',
@@ -59,7 +63,7 @@ function setPage(){
 }
 
 function showAddMeet(){
-    window.location.href="../../MeetingRoom/meet/meeting.html";
+    window.location.href="../../MeetingRoom/meet/addMeet.html";
 }
 
 function showEditMeet(mid){
@@ -106,11 +110,11 @@ function delChecked(){
                 var delmid =$(thisChecke).val();
                 delJson(delmid);
             }
-            showSearchMeet();
         }
+        showSearchMeet(); }
         else
         {
             alert("请选择要删除的数据");
         }
-    }
+
 }
