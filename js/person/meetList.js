@@ -32,7 +32,7 @@ function showSearchList(){
                 "<td>"+meet.mend+"</td>"+
 				"<td>"+meet.mtime+"</td>"+
                 "<td>"+meet.mper+"</td>"+
-				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../image/update.gif' /></td>"+
+				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../img/update.gif' /></td>"+
 				"</tr>";
 			$("#meetList").append(trStr);
 		}
