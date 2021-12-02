@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="../../css/common.css"/>
-    <link rel="stylesheet" href="../../css/index.css"/>
     <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/demo.css" />
     <script type="text/javascript" src="../../js/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../js/data.js" ></script>
     <script type="text/javascript" src="../../js/meet/checkmeet.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/paginathing.js"></script>
 </head>
 <body>
+<!-- 导航菜单栏1.0版本 -->
+<ul class="nav nav-tabs">
+    <li class="active"><a href=" ">查看会议室</a></li>
+</ul>
+<!-- 面包屑导航1.0 -->
+<ul class="breadcrumb">
+    当前位置：
+    <li><a href="#">Home</a></li>
+    <li><a href="#">会议预定</a></li>
+    <li><a href="#">查看会议室</a></li>
+</ul>
 <div class="content">
     <form>
         <div>
@@ -28,33 +39,25 @@
             <th>会议室名称</th>
             <th>会议室地点</th>
             <th>会议室容量</th>
-            <th>会议室状态</th>
-            <th>预定人</th>
+<!--            <th>会议室状态</th>-->
+<!--            <th>预定人</th>-->
         </tr>
         </thead>
         <tbody id="checkmeet">
-<!--        <tr>-->
-<!--            <td><input type="checkbox" /></td>-->
-<!--            <td>会议室名称</td>-->
-<!--            <td>会议室地点</td>-->
-<!--            <td>会议室容量</td>-->
-<!--            <td>会议室状态</td>-->
-<!--            <td>预定人</td>-->
-<!--        </tr>-->
         </tbody>
     </table>
 </div>
 <div>
     <!--分页区域，采用bootstrap分页-->
-    <ul class="pagination" style="float: right;margin-right: 20px;">
-        <li><a href="#">&laquo;</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-    </ul>
+<!--    <ul class="pagination" style="float: right;margin-right: 20px;">-->
+<!--        <li><a href="#">&laquo;</a></li>-->
+<!--        <li class="active"><a href="#">1</a></li>-->
+<!--        <li><a href="#">2</a></li>-->
+<!--        <li><a href="#">3</a></li>-->
+<!--        <li><a href="#">4</a></li>-->
+<!--        <li><a href="#">5</a></li>-->
+<!--        <li><a href="#">&raquo;</a></li>-->
+<!--    </ul>-->
 
 </div>
 </body>

@@ -40,13 +40,13 @@ function showSearchMeet(){
                    "<td>" + meet.name + "</td>" +
                    "<td>" + meet.place + "</td>" +
                    "<td>" + meet.large + "</td>" +
-                   "<td><img onclick='showEditMeet("+meet.id+")' src='../img/update.gif' /></td>" +
+                   "<td><img onclick='showEditMeet("+meet.id+")' src='../../img/update.gif' /></td>" +
                    "</tr>";
                $("#meeting").append(Str);
            }
        }
     }
-    setPage();
+   setPage();
 }
 
 //使用分页插件，进行分页展现
@@ -59,7 +59,7 @@ function setPage(){
 }
 
 function showAddMeet(){
-    window.location.href="../../MeetingRoom/meet/meeting.html";
+    window.location.href="../../MeetingRoom/meet/addMeet.html";
 }
 
 function showEditMeet(mid){

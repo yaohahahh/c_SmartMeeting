@@ -5,8 +5,8 @@ saveMeet = function (){
     var name= $("#name").val();
     var place = $("#place").val();
     var large = $("#large").val();
-    var m_status = $("#m_status").val();
-    var book ="none";
+    var book ="无";
+    var m_status="空闲";
     var meet = {
         "mid":meetJsonArray.length+1,
         "name":name,
