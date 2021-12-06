@@ -1,4 +1,4 @@
-var meetJsonArray=window.parent.meetJsonArray;
+var meetJsonArray=window.parent.meetingJsonArray;
 
 var nowTime=new Date().getTime()
 
@@ -24,7 +24,7 @@ function showSearchList(){
 		var inShow = false;
 		
 		if(name!=""){
-			if(meet.mname.indexOf(name)!=-1){
+			if(meet.name.indexOf(name)!=-1){
 				inShow=true;
 			}
 		}else{
@@ -35,10 +35,10 @@ function showSearchList(){
 			if(meet.mper==loginUserName){
 			var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
-				"<td>"+meet.mname+"</td>"+
+				"<td>"+meet.name+"</td>"+
 				"<td>"+meet.mroom+"</td>"+
-                "<td>"+meet.mstart+"</td>"+
-                "<td>"+meet.mend+"</td>"+
+                "<td>"+meet.start_time+"</td>"+
+                "<td>"+meet.end_time+"</td>"+
 				"<td>"+meet.mtime+"</td>"+
 				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../img/update.gif' /></td>"+
 				"</tr>";
@@ -68,16 +68,16 @@ function showEditMeet(mid){
 }
 
 var mid = getParam("mid");
-var meetJsonArray=window.parent.meetJsonArray;
+var meetJsonArray=window.parent.meetingJsonArray;
 
 $(function(){
     for(var i=0;i<meetJsonArray.length;i++){
     var meet=meetJsonArray[i];
     if(meet.mid==mid){
-        $("#name").val(meet.mname);
+        $("#name").val(meet.name);
         $("#room").val(meet.mroom);
-        $("#start").val(meet.mstart);
-        $("#end").val(meet.mend);
+        $("#start").val(meet.start_time);
+        $("#end").val(meet.end_time);
         $("#time").val(meet.mtime);
         $("#per").val(meet.mper);
 
@@ -96,10 +96,10 @@ function updateDept(){
     for (var i=0;i<meetJsonArray.length;i++){
         var meet=meetJsonArray[i];
         if(meet.mid==mid){
-            meet.mname=mname;
+            meet.name=mname;
             meet.mroom=mroom;
-            meet.mstart=mstart;
-            meet.mend=mend;
+            meet.start_time=mstart;
+            meet.end_time=mend;
             meet.mtime=mtime;
             meet.mper=mper;
             alert("修改成功");
