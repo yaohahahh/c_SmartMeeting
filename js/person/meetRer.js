@@ -40,7 +40,7 @@ function showSearchList(){
                 "<td>"+meet.mstart+"</td>"+
                 "<td>"+meet.mend+"</td>"+
 				"<td>"+meet.mtime+"</td>"+
-				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../image/update.gif' /></td>"+
+				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../img/update.gif' /></td>"+
 				"</tr>";
 			$("#meetRer").append(trStr);
 			}
