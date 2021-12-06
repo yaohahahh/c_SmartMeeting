@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/demo.css" />
+	<link rel="stylesheet" href="../../js/bootstrap-3.4.1-dist/css/bootstrap-datetimepicker.min.css" media="screen" />
+    <script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+    <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/paginathing.js" ></script>
+	<script type="text/javascript" src="../../js/bootstrap-3.4.1-dist/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" src="../js/person/editMeet.js" ></script>
+	</head>
+	<body>
+		<!--添加部门的form表单-->
+		<form>
+			<div style="margin:50px;">
+				会议名称：<input type="text" id="name" value="" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				会议室：   &nbsp;&nbsp;<input type="text" id="room" value="" />
+				<br /><br /><br />
+                起始时间：<input type="text" id="start" value="" />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间：<input type="text" id="end" value="" />
+				<br /><br /><br />
+                预定时间：<input type="text" id="time" value="" />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                预定者：   &nbsp;&nbsp;<input type="text" id="per" value="" />
+				<br /><br /><br />
+				<input type="button" onclick="updateDept()" value="修改"/>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="reset" value="取消"  />
+			</div>
+		</form>
+	</body>
+</html>

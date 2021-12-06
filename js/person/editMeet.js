@@ -1,14 +1,14 @@
 var mid = getParam("mid");
-var meetJsonArray=window.parent.meetJsonArray;
+var meetJsonArray=window.parent.meetingJsonArray;
 
 $(function(){
     for(var i=0;i<meetJsonArray.length;i++){
     var meet=meetJsonArray[i];
     if(meet.mid==mid){
-        $("#name").val(meet.mname);
+        $("#name").val(meet.name);
         $("#room").val(meet.mroom);
-        $("#start").val(meet.mstart);
-        $("#end").val(meet.mend);
+        $("#start").val(meet.start_time);
+        $("#end").val(meet.end_time);
         $("#time").val(meet.mtime);
         $("#per").val(meet.mper);
 
@@ -27,10 +27,10 @@ function updateDept(){
     for (var i=0;i<meetJsonArray.length;i++){
         var meet=meetJsonArray[i];
         if(meet.mid==mid){
-            meet.mname=mname;
+            meet.name=mname;
             meet.mroom=mroom;
-            meet.mstart=mstart;
-            meet.mend=mend;
+            meet.start_time=mstart;
+            meet.end_time=mend;
             meet.mtime=mtime;
             meet.mper=mper;
             alert("修改成功");
