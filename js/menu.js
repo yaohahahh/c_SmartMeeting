@@ -75,6 +75,10 @@ function Index(){
 	$('#myFrame').attr('src', "index.html");
 }
 
+function test1(){
+	checkAMenu("test1");
+}
+
 //改变选中菜单样式
 function checkMenu(menuA){
 	//找到当前活跃的二级菜单
@@ -82,8 +86,58 @@ function checkMenu(menuA){
 	//如果现在点击的菜单不是当前活跃的菜单，证明需要改变样式
 	if(subactive.text()!=$("#"+menuA).text()){
 		$(subactive).parent().css("background","#FFFFFF");
+		$(subactive).css("color","#586575");
 		$(subactive).removeClass("subactive");
 		$("#"+menuA).attr("class","subactive");
+		$("#"+menuA).css("color","#1B6DE8");
 		$(menuA).parent().css("background","#FFFFFF");
+		$(menuA).parent().css("textcolor","#2885e2");
 	}
 }
+
+function checkAMenu(menuA){
+	var active = $(".menu>li>a.subactive");
+
+	if(active.text()!=$("#"+menuA).text()){
+		$(active).parent().css("background","#FFFFFF");
+		$(active).css("color","#586575");
+		$(active).removeClass("subactive");
+		$("#"+menuA).attr("class","subactive");
+		$("#"+menuA).css("color","#1B6DE8");
+		$(menuA).parent().css("background","#FFFFFF");
+		// $(menuA).parent().css("textcolor","#2885e2");
+	}
+}
+
+function mainList(){
+        // 事件切换 hover 就是鼠标经过和离开的复合写法
+	$(".menu>li").hover(function() {
+		$(this).children("ul").stop().slideDown(1000);
+	}, function() {
+		$(this).children("ul").stop().slideUp(1000);
+	});
+
+	// $(".menu>li").click(function() {
+	// 	// $(this).children("ul").slideToggle(1000);
+	// 	if($(this).hasClass("active")){
+	// 		$(this).removeClass("active");
+	// 		$(this).attr("class","subactive");
+	// 		$(this).children("ul").stop().slideUp(1000);
+	// 	}else{
+	// 		$(this).removeClass("subactive");
+	// 		$(this).attr("class","active");
+	// 		$(this).children("ul").stop().slideDown(1000);
+	// 	}
+		
+	// });
+
+}
+
+function fold(){
+	$(".menu>li").click(function() {
+		$(this).children("ul").stop().slideUp(1000);
+	});
+
+}
+
+
