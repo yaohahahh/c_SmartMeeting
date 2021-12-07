@@ -6,7 +6,7 @@ $(function ()
     {
         var meet = meetJsonArray[i];
         var trStr = "<tr>"+
-            "<td><input type='checkbox' /></td>"+
+            // "<td><input type='checkbox' /></td>"+
             "<td>"+meet.name+"</td>"+
             "<td>"+meet.place+"</td>"+
             "<td>"+meet.large+"</td>"+
@@ -39,7 +39,7 @@ function showSearchMeet2(){
 
             if (inShow) {
                 var trStr = "<tr>" +
-                    "<td><input type='checkbox' name='id' value='" + meet.mid + "' /></td>" +
+                    // "<td><input type='checkbox' name='id' value='" + meet.mid + "' /></td>" +
                     "<td>" + meet.name + "</td>" +
                     "<td>" + meet.place + "</td>" +
                     "<td>" + meet.large + "</td>" +
