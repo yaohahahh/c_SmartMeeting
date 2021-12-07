@@ -17,8 +17,8 @@ $(function(){
             $("#birthday").val(employeeJsonArray[i].birthday);
             $("#race").val(employeeJsonArray[i].race);
             $("#remark").val(employeeJsonArray[i].remark);
-            $("#dep").val(employeeJsonArray[i].dep);
-            $("#levelid").val(employeeJsonArray[i].levelid);
+            $("#dep").val(employeeJsonArray[i].depid);
+            $("#levelid").val(employeeJsonArray[i].level);
             $("#salary").val(employeeJsonArray[i].salary);
             
             break;
@@ -43,7 +43,8 @@ function updatePeople(){
     var cremark = $("#remark").val();
     var cdep = $("#dep option:selected").text();
     var cdepid = $("#dep").val();
-    var clevelid = $("#levelid").val();
+    var clevel = $("#levelid").val();
+    var clevelid = $("#levelid option:selected").text();
     var csalary = $("#salary").val();
 
     for(var i=0;i<employeeJsonArray.length;i++){
@@ -64,6 +65,7 @@ function updatePeople(){
             employeeJsonArray[i].remark = cremark;
             employeeJsonArray[i].dep = cdep;
             employeeJsonArray[i].depid = cdepid;
+            employeeJsonArray[i].level = clevel;
             employeeJsonArray[i].levelid = clevelid;
             employeeJsonArray[i].salary = csalary;
             employeeJsonArray[i].status = "1"

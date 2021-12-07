@@ -70,3 +70,12 @@ $.ajax({
         meetJsonArray=resp;
     }
 })
+
+var levelJsonArray;
+$.ajax({
+    url:"../Json/levels.json",
+    dataType:"json",
+    success:function(resp){
+        levelJsonArray=resp;
+    }
+})

@@ -22,6 +22,7 @@
         "depid":1,
         "dep":"开发部",
         "levelid":"5k-8k",
+        "level":"1",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -48,6 +49,7 @@
         "depid":1,
         "dep":"开发部",
         "levelid":"5k-8k",
+        "level":"2",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -74,6 +76,7 @@
         "depid":2,
         "dep":"测试部",
         "levelid":"5k-8k",
+        "level":"2",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -100,6 +103,7 @@
         "depid":2,
         "dep":"测试部",
         "levelid":"5k-8k",
+        "level":"2",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -126,6 +130,7 @@
         "depid":1,
         "dep":"开发部",
         "levelid":"5k-8k",
+        "level":"2",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -152,6 +157,7 @@
         "depid":3,
         "dep":"市场部",
         "levelid":"5k-8k",
+        "level":"2",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -178,6 +184,7 @@
         "depid":3,
         "dep":"市场部",
         "levelid":"5k-8k",
+        "level":"3",
         "salary":4500,
         "joindate":"2020-10-09"
     },
@@ -204,6 +211,7 @@
         "depid":4,
         "dep":"运维部",
         "levelid":"5k-8k",
+        "level":"2",
         "salary":4500,
         "joindate":"2020-10-09"
     }

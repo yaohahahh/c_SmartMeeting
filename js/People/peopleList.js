@@ -144,7 +144,8 @@ function addPeople(){
     var cremark = $("#remark").val();
     var cdep = $("#dep option:selected").text();
     var cdepid = $("#dep").val();
-    var clevelid = $("#levelid").val();
+    var clevel = $("#levelid").val();
+    var clevelid = $("#levelid option:selected").text();
     var csalary = $("#salary").val();
 
     var newPeople = {
@@ -168,6 +169,7 @@ function addPeople(){
         "remark":cremark,
         "depid":cdepid,
         "dep":cdep,
+        "level":clevel,
         "levelid":clevelid,
         "salary":csalary,
         "joindate":"2020-10-09"
