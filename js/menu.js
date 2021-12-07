@@ -111,10 +111,14 @@ function checkAMenu(menuA){
 
 function mainList(){
         // 事件切换 hover 就是鼠标经过和离开的复合写法
-	$(".menu>li").hover(function() {
-		$(this).children("ul").stop().slideDown(1000);
-	}, function() {
-		$(this).children("ul").stop().slideUp(1000);
+	// $(".menu>li").hover(function() {
+	// 	$(this).children("ul").stop().slideDown(1000);
+	// }, function() {
+	// 	$(this).children("ul").stop().slideUp(1000);
+	// });
+
+	$(".menu>li").click(function() {
+		$(this).children("ul").stop().slideToggle(1000);
 	});
 
 	// $(".menu>li").click(function() {

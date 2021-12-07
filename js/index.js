@@ -21,10 +21,12 @@ $(function(){
 		//如果当前点击的一级菜单下的二级菜单时隐藏的
 		if(display=="none"){
 			//则让二级菜单显示
-			$(this).siblings(".sub-menu").show();
+			// $(this).siblings(".sub-menu").show();
+			$(this).siblings(".sub-menu").slideDown(500);
 		}else{
 			//否则让二级菜单隐藏
-			$(this).siblings(".sub-menu").hide();
+			// $(this).siblings(".sub-menu").hide();
+			$(this).siblings(".sub-menu").slideUp(500);
 		}
 		//设置当前一级菜单的高度为自动适应
 		$(this).parent().css("height","auto");
@@ -51,6 +53,15 @@ $(function(){
 	/**********以上部分是菜单的一二级的相关动态样式**********/
 	syncUser();
 });
+
+function expandAll(){
+	var display = $(".sub-menu").css("display");
+	if(display=="none"){
+		$(".sub-menu").slideDown(500,"swing");
+	}else{
+		$(".sub-menu").slideUp(500);
+	}
+}
 
 var loginUserName;
 function syncUser(){
