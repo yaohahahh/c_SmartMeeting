@@ -1,5 +1,5 @@
 var meetJsonArray = window.parent.meetingRoomJsonArray;
-
+// var meetJason = window.parent.meetingJsonArray
 $(function ()
 {
     for(var i=0;i<meetJsonArray.length;i++)
@@ -11,7 +11,7 @@ $(function ()
             "<td>"+meet.place+"</td>"+
             "<td>"+meet.large+"</td>"+
             "<td>"+meet.m_status+"</td>"+
-            "<td>"+meet.book+"</td>"+
+            // "<td>"+meet.book+"</td>"+
             "</tr>";
         $("#checkmeet").append(trStr);
     }
@@ -25,7 +25,7 @@ function showSearchMeet2(){
 
     for(var i=0;i<meetJsonArray.length;i++){
         var meet = meetJsonArray[i];
-        if(meet!=undefined) {
+        if(meet!=undefined&&meet.name!='undefined') {
 
 
             var inShow = false;
@@ -44,7 +44,7 @@ function showSearchMeet2(){
                     "<td>" + meet.place + "</td>" +
                     "<td>" + meet.large + "</td>" +
                     "<td>" + meet.m_status + "</td>" +
-                    "<td>" + meet.book + "</td>" +
+                    // "<td>" + meet.book + "</td>" +
                     "</tr>";
                 $("#checkmeet").append(trStr);
             }
