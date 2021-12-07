@@ -1,7 +1,7 @@
 var deptJsonArray = window.parent.deptJsonArray;
 var meetingRoomJsonArray = window.parent.meetingRoomJsonArray;
 var employeeJsonArray = window.parent.employeeJsonArray;
-var meetingJsonArray = window.parent.meetingJsonArray;
+var meetingJsonArray = window.parent.meetingJsonArray
 
 function body_load(){//当页面加载时触发执行
     //首先生成部门下拉选项
@@ -83,6 +83,23 @@ function checkIsUsed(mid,start_time,end_time){
         }
     }
 }
+//格式化时间
+Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "H+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
 function reserveMeeting(){
     var mname = $("#title").val();
     var start_time = $("#starttime").val();
@@ -91,27 +108,40 @@ function reserveMeeting(){
     var mid = $("#mid").val();
     var participants = getParticipants();
     var remark = $("#remark").val();
+    var now_time = new Date().Format("yyyy-MM-dd HH:mm");
+    var loginUserId = getParam("loginUserId");
+    for (var i=0; i<employeeJsonArray.length; i++) {
+        if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
+            loginUser = employeeJsonArray[i];
+            break;
+        }
+    }
+    var per_name = loginUser.name
     if(checkIsUsed(mid,start_time,end_time)){
         var meeting = {
-            "id": meetingJsonArray.length+1,
+            "mid": meetingJsonArray.length+1,
             "name":mname,
             "num":num,
             "start_time": start_time,
             "end_time": end_time,
             "eid":"1",
-            "mid":mid,
+            "rid":mid,
             "participants":participants,
             "remark": remark,
-            "status":1
+            "status":1,
+            "mtime":now_time,
+            "mper":per_name,
+            "mroom":mid,
         }
         meetingJsonArray[meetingJsonArray.length] = meeting;
         alert("预定成功");
     }else{
-        alert("失败")
+        alert("预定失败")
     }
 }
 
 function chooseRoom(){
+    $("#mid").html("");
     for (var i=0; i<meetingRoomJsonArray.length; i++) {
         var meetingroom = meetingRoomJsonArray[i];
         var optionStr = "<option value='"+ meetingroom.id + "'>"+meetingroom.name + "</option>";
