@@ -27,7 +27,7 @@ function showSearchMeet(){
     }
     for(var i=0;i<meetJsonArray.length;i++){
         var meet = meetJsonArray[i];
-       if(meet!=undefined) {
+       if(meet!=undefined&&meet.name!='undefined') {
            var inShow = false;
            if (name != "") {
                if (meet.name.indexOf(name) != -1) {
@@ -38,6 +38,7 @@ function showSearchMeet(){
            }
 
            if (inShow) {
+
                var Str = "<tr>" +
                    "<td><input type='checkbox' name='id' value='" +meet.id+ "' /></td>" +
                    "<td>" + meet.name + "</td>" +
@@ -91,7 +92,8 @@ function delJson(delmid)
         var meet =meetJsonArray[i];
         if(meet.id==delmid)
         {
-            delete meetJsonArray[i];
+            // delete meetJsonArray[i];
+            meetJsonArray[i].name="undefined";
             return;
         }
     }

@@ -1,17 +1,17 @@
 var meetJsonArray = window.parent.meetingRoomJsonArray;
-
+// var meetJason = window.parent.meetingJsonArray
 $(function ()
 {
     for(var i=0;i<meetJsonArray.length;i++)
     {
         var meet = meetJsonArray[i];
         var trStr = "<tr>"+
-            "<td><input type='checkbox' /></td>"+
+            // "<td><input type='checkbox' /></td>"+
             "<td>"+meet.name+"</td>"+
             "<td>"+meet.place+"</td>"+
             "<td>"+meet.large+"</td>"+
             "<td>"+meet.m_status+"</td>"+
-            "<td>"+meet.book+"</td>"+
+            // "<td>"+meet.book+"</td>"+
             "</tr>";
         $("#checkmeet").append(trStr);
     }
@@ -25,7 +25,7 @@ function showSearchMeet2(){
 
     for(var i=0;i<meetJsonArray.length;i++){
         var meet = meetJsonArray[i];
-        if(meet!=undefined) {
+        if(meet!=undefined&&meet.name!='undefined') {
 
 
             var inShow = false;
@@ -39,12 +39,12 @@ function showSearchMeet2(){
 
             if (inShow) {
                 var trStr = "<tr>" +
-                    "<td><input type='checkbox' name='id' value='" + meet.mid + "' /></td>" +
+                    // "<td><input type='checkbox' name='id' value='" + meet.mid + "' /></td>" +
                     "<td>" + meet.name + "</td>" +
                     "<td>" + meet.place + "</td>" +
                     "<td>" + meet.large + "</td>" +
                     "<td>" + meet.m_status + "</td>" +
-                    "<td>" + meet.book + "</td>" +
+                    // "<td>" + meet.book + "</td>" +
                     "</tr>";
                 $("#checkmeet").append(trStr);
             }

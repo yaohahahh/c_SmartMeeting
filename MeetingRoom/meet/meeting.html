@@ -15,14 +15,14 @@
 <body>
 <!-- 导航菜单栏1.0版本 -->
 <ul class="nav nav-tabs">
-    <li class="active"><a href=" ">添加会议室</a></li>
+    <li class="active"><a href=" ">查看会议室</a></li>
 </ul>
 <!-- 面包屑导航1.0 -->
 <ul class="breadcrumb">
     当前位置：
     <li><a href="#">Home</a></li>
     <li><a href="#">会议预定</a></li>
-    <li><a href="#">添加会议室</a></li>
+    <li><a href="#">查看会议室</a></li>
 </ul>
 <div class="content">
     <form>
@@ -30,7 +30,7 @@
             会议室名称：<input type="text" id="name" />
             <input type="button" value="搜索" onclick="showSearchMeet()"/>
             <input type="button" value="删除" onclick="delChecked()"/>
-            <input style="float: right;" onclick="showAddMeet()" type="button" value="添加" />
+<!--            <input style="float: right;" onclick="showAddMeet()" type="button" value="添加" />-->
         </div>
     </form>
 </div>
@@ -39,9 +39,9 @@
         <thead>
         <tr>
             <th><input type="checkbox" id="checkAllmeet" onclick="checkAllmeet();"/></th>
-            <th>会议室名称</th>
+            <th>门牌号</th>
             <th>会议室地点</th>
-            <th>会议室容量</th>
+            <th>容纳人数</th>
             <th>操作</th>
         </tr>
         </thead>

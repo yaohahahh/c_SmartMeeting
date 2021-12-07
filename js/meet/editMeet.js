@@ -28,7 +28,7 @@ function updateMeet(){
             meet.large=large;
 
             alert("修改成功");
-            window.location.href="meeting.html"
+            window.location.href="checkmeet.html"
         }
     }
 }
