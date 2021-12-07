@@ -15,13 +15,13 @@
     "mroom":"第一会议室"
   },
   {
-    "id": 2,
+    "mid": 2,
     "name": "测试会议2",
     "num": 15,
     "start_time": "2021-11-29 17:30",
     "end_time": "2021-11-29 18:00",
     "eid": 2,
-    "mid": 2,
+    "rid": 2,
     "participants": "1,2,",
     "remark": "备注",
     "status": 1,
@@ -30,13 +30,13 @@
     "mroom":"第二会议室"
   },
   {
-    "id": 3,
+    "mid": 3,
     "name": "总结会议",
     "num": 15,
     "start_time": "2021-12-12 15:00",
     "end_time": "2021-12-12 17:00",
     "eid": 3,
-    "mid": 3,
+    "rid": 3,
     "participants": "2,3,",
     "remark": "备注",
     "status": 1,

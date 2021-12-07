@@ -1,4 +1,4 @@
-var meetingJsonArray = window.parent.meetingJsonArray;
+var meetingJsonArray = window.parent.meetingJsonArray
 var employeeJsonArray = window.parent.employeeJsonArray;
 $(function (){
     //页面被加载完成后，立即会被执行的操作
@@ -9,7 +9,7 @@ $(function (){
             "<td>"+ meeting.name+"</td>" +
             "<td>"+ meeting.start_time+ "</td>" +
             "<td>"+ meeting.end_time+"</td>" +
-            "<td>"+ meeting.num+ "</td>" +
+            "<td>"+ meeting.mper+ "</td>" +
             "<td>"+ meeting.remark+ "</td>" +
             "</tr>";
         $("#findRoom").append(trStr);
@@ -17,17 +17,28 @@ $(function (){
 })
 
 function searchMeeting(){
-    var name = $("#meetingName").val();
+    var meeting_name = $("#meetingName").val();
+    var per_name = $("#pername").val();
     $("#findRoom").html("");
 
     for (var i=0; i<meetingJsonArray.length; i++) {
         var meeting = meetingJsonArray[i];
         if(meeting != undefined) {
             var isShow = false;
-            if(name!="") {
+            if(meeting_name!="" || per_name !="") {
                 //判断当前会议是否满足过滤条件
-                if(meeting.name.indexOf(name)!=-1){
-                    isShow = true;
+                if(meeting_name!="" && per_name ==""){
+                    if(meeting.name.indexOf(meeting_name)!=-1){
+                        isShow = true;
+                    }
+                }else if(meeting_name=="" && per_name !=""){
+                    if(meeting.mper.indexOf(per_name)!=-1){
+                        isShow = true;
+                    }
+                }else{
+                    if(meeting.name.indexOf(meeting_name)!=-1 && meeting.mper.indexOf(per_name)!=-1){
+                        isShow = true;
+                    }
                 }
             }else{
                 isShow = true;
@@ -37,13 +48,11 @@ function searchMeeting(){
                     "<td>"+ meeting.name+"</td>" +
                     "<td>"+ meeting.start_time+ "</td>" +
                     "<td>"+ meeting.end_time+"</td>" +
-                    "<td>"+ meeting.num+ "</td>" +
+                    "<td>"+ meeting.mper+ "</td>" +
                     "<td>"+ meeting.remark+ "</td>" +
                     "</tr>";
                 $("#findRoom").append(trStr);
             }
         }
-
-
     }
 }
