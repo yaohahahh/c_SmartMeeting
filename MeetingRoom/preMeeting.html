@@ -5,6 +5,7 @@
 		<title></title>
 		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
 		<script type="text/javascript" src="../js/common.js" ></script>
+		<script language="javascript" type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
 		<!--选择参会人员区域的相关样式-->
 		<style type="text/css">
             #divfrom{
@@ -250,9 +251,9 @@
 				<br/><br/>
 				预计参加人数：<input type="text" id="num" />
 				<br/><br/>
-				预计开始时间：<input type="text" id="starttime" />
+				预计开始时间：<input class="text" cssclass="Wdate" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM-dd HH:mm'});"  id="starttime" placeholder="请输入开始时间">
 				<br/><br/>
-				预计结束时间：<input type="text" id="endtime" />
+				预计结束时间：<input class="text" cssclass="Wdate" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy-MM-dd HH:mm'});"  id="endtime" placeholder="请输入结束时间">
 				<br/><br/>
 				会议室：<select id="mid">
 					<option>第一会议室</option>

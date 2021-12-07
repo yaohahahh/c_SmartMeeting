@@ -37,7 +37,8 @@
 				<!--展现当前系统时间区域-->
 				<span id="nowTime"></span>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="#" onclick="changePwd()">修改密码</a>
+				<!-- <a href="changePwd.html" data-toggle="modal" data-target="#theModal">修改密码</a> -->
+				<a onclick="changePwd()">修改密码</a>
 				&nbsp;&nbsp;
 				<a href="#" onclick="logout()">退出登录</a>
 			</div>
@@ -93,6 +94,10 @@
 								   <img class="headPics" src="img/imgs1/recent_actors.png" />
 								   <a href="#" id="showPeople" onclick="showPeople()">搜索员工</a>
 								</li>
+								<li>
+									<img class="headPics" src="img/imgs1/recent_actors.png" />
+									<a href="#" id="showStatistics" onclick="showStatistics()">数据统计</a>
+								 </li>
 				            </ul>
 			            </li>
 			            <li class="active">
@@ -156,5 +161,17 @@
 		    </div>
 		</div>
 	</div>
+
+	<div id="theModal" class="modal fade" data-width="780" data-height="300">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-body">
+				
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
 	</body>
 </html>

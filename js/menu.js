@@ -62,13 +62,21 @@ function meetNotice(){
 	$('#myFrame').attr('src', "person/meetNotice.html");
 }
 
+function showStatistics(){
+	checkMenu("showStatistics")
+	// $('#myFrame').attr('src', "Statistics/employeeStatistics.html");
+	$('#myFrame').attr('src', "Statistics/navStatistics.html");
+}
+
 function logout(){
 	loginUser = null;
 	window.location.href="login.html";
 }
 
 function changePwd(){
-	$('#myFrame').attr('src', "changePwd.html");
+	// $('#passWindow').modal();
+	$('#myFrame').attr('src', "changePwd.html")
+	// $('#myFrame').attr('src', "index.html");
 }
 
 function Index(){
@@ -107,41 +115,6 @@ function checkAMenu(menuA){
 		$(menuA).parent().css("background","#FFFFFF");
 		// $(menuA).parent().css("textcolor","#2885e2");
 	}
-}
-
-function mainList(){
-        // 事件切换 hover 就是鼠标经过和离开的复合写法
-	// $(".menu>li").hover(function() {
-	// 	$(this).children("ul").stop().slideDown(1000);
-	// }, function() {
-	// 	$(this).children("ul").stop().slideUp(1000);
-	// });
-
-	$(".menu>li").click(function() {
-		$(this).children("ul").stop().slideToggle(1000);
-	});
-
-	// $(".menu>li").click(function() {
-	// 	// $(this).children("ul").slideToggle(1000);
-	// 	if($(this).hasClass("active")){
-	// 		$(this).removeClass("active");
-	// 		$(this).attr("class","subactive");
-	// 		$(this).children("ul").stop().slideUp(1000);
-	// 	}else{
-	// 		$(this).removeClass("subactive");
-	// 		$(this).attr("class","active");
-	// 		$(this).children("ul").stop().slideDown(1000);
-	// 	}
-		
-	// });
-
-}
-
-function fold(){
-	$(".menu>li").click(function() {
-		$(this).children("ul").stop().slideUp(1000);
-	});
-
 }
 
 
