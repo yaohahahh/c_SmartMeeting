@@ -79,7 +79,11 @@ function syncUser(){
 
 
 function changePassword(){
-	id = loginUser.id;
+	if(loginUser==undefined){
+		alert("当前为调试模式 无需修改密码");
+		return;
+	}
+	id = loginUser.id;	
 
 	var oldPassword = $("#oldPassword").val();
 	var newPassword = $("#newPassword").val();
@@ -112,7 +116,7 @@ function changePassword(){
 	}
 	alert("修改成功");
 	loginUser.password=newPassword;
-	window.parent.location.href="login.html";
+	// window.parent.location.href="login.html";
 	alert('您的新密码是:'+loginUser.password)
 	
 	

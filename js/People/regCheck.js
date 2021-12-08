@@ -75,8 +75,8 @@ function c_showDeptEmployeeList(){
 
     $("#check_employeeList").html("")
     
-    var name = $("#name").val()
-    if(name==null){
+    var dep = $("#dep").val()
+    if(dep==null){
         return
     }
      

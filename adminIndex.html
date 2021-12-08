@@ -37,8 +37,8 @@
 				<!--展现当前系统时间区域-->
 				<span id="nowTime"></span>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<!-- <a href="changePwd.html" data-toggle="modal" data-target="#theModal">修改密码</a> -->
-				<a onclick="changePwd()">修改密码</a>
+				<a data-toggle="modal" data-target="#updatePassword">修改密码</a>
+				<!-- <a onclick="changePwd()">修改密码</a> -->
 				&nbsp;&nbsp;
 				<a href="#" onclick="logout()">退出登录</a>
 			</div>
@@ -95,7 +95,7 @@
 								   <a href="#" id="showPeople" onclick="showPeople()">搜索员工</a>
 								</li>
 								<li>
-									<img class="headPics" src="img/imgs1/recent_actors.png" />
+									<img class="headPics" src="img/imgs1/pie-chart-fill.png" />
 									<a href="#" id="showStatistics" onclick="showStatistics()">数据统计</a>
 								 </li>
 				            </ul>
@@ -156,13 +156,15 @@
 		        
 		        <!--右侧主体区域，占位10列-->
 		        <div class="col-md-10 main" style="padding:0;">
-		            <iframe width="100%" height="750px" style="border: none;" id="myFrame" name="myFrame"></iframe>
+				
+		            <iframe width="100%" height="750px" style="border: none;" id="myFrame" name="myFrame" src="index.html">
+					</iframe>
 		        </div>
 		    </div>
 		</div>
 	</div>
 
-	<div id="theModal" class="modal fade" data-width="780" data-height="300">
+	<!-- <div id="theModal" class="modal fade" data-width="780" data-height="300">
 		<div class="modal-dialog">
 		  <div class="modal-content">
 			<div class="modal-body">
@@ -170,8 +172,42 @@
 			</div>
 		  </div>
 		</div>
-	  </div>
+	  </div> -->
 
+	  <!- - 模态框:修改密码 - ->
+<div class="modal fade" id="updatePassword" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="line-height:20px;margin-top:-15px;margin-right:-10px;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title position-absolute" id="exampleModalLabel" style="top:8px;left:12px;">修改密码</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="editForm">
+                        <div class="form-group">
+                            <label for="recipient-name">原密码：</label>
+                            <input type="password" id="oldPassword" class="form-control" name="oldpassword" required placeholder="原密码">
+                            <div style="display: inline" id="tip1"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text">新密码：</label>
+                            <input type='password' id="newPassword" name="password1" class="form-control" required placeholder="长度为: 6-18">
+                            <div style="display: inline" id="tip2"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text">确认密码：</label>
+                            <input type='password' id="confirmPassword" name="password2" class="form-control" required placeholder="请再次输入新密码">
+                            <div style="display: inline" id="tip3"></div>
+                        </div>
+                    </form>
+                </div>
+<div class="modal-footer">
+<button onclick="changePassword()" class="btn btn-primary" >确定</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                </div>
+            </div>
 
 	</body>
 </html>
