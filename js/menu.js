@@ -68,6 +68,20 @@ function showStatistics(){
 	$('#myFrame').attr('src', "Statistics/navStatistics.html");
 }
 
+function adjust(){
+	checkMenu("adjustment");
+	$('#myFrame').attr('src', "Settings/adjust.html");
+}
+
+function aboutus(){
+	checkMenu("aboutus");
+	$('#myFrame').attr('src', "Settings/aboutus.html");
+}
+
+function gohome(){
+	checkMenu("");
+	$('#myFrame').attr('src', "../index.html");
+}
 function logout(){
 	loginUser = null;
 	window.location.href="login.html";

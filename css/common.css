@@ -35,3 +35,15 @@ a:hover{
 .navbtn1{
 	margin: 50px;
 }
+
+.container{
+	padding-top: 5%;
+}
+
+.collapse{
+	border: 2px solid #ddd;
+}
+
+.con-inside{
+	padding: 10px;
+}

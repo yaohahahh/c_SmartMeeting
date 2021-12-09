@@ -91,6 +91,6 @@ function compareDate(date1,date2){
 }
 
 
-
-
-
+function GoHome(){
+    window.parent.gohome();
+}
