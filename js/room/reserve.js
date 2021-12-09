@@ -14,6 +14,12 @@ function body_load(){//当页面加载时触发执行
     fillEmployees();//根据选中的部门生成员工列表下拉框
 }
 
+function getParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r != null) return decodeURIComponent(r[2]);
+    return null;
+}
 
 //根据选中的部门生成员工列表下拉框
 function fillEmployees(){
