@@ -26,10 +26,10 @@ function meetingSearch(){
 	$('#myFrame').attr('src', "MeetingRoom/findRoom.html");
 }
 
-function reserveMeetingPage(){
+function reserveMeetingPage(loginUserId){
 	checkMenu("reserveMeetingPage");
 	//让id="myFrame"的链接指向到用户列表页面
-	$('#myFrame').attr('src', "MeetingRoom/reserve.html");
+	$('#myFrame').attr('src', "MeetingRoom/reserve.html?loginUserId="+loginUserId);
 }
 
 function addMeeting(){

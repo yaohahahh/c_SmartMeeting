@@ -14,8 +14,17 @@ $(function (){
             "</tr>";
         $("#findRoom").append(trStr);
     }
+    setPages()
 })
+function setPages(){
+    $('.pagination-container').html("")
 
+    $('.table tbody').paginathing({
+        perPage:6,
+        insertAfter:'.table',
+        pageNumbers:true
+    })
+}
 function searchMeeting(){
     var meeting_name = $("#meetingName").val();
     var per_name = $("#pername").val();
@@ -55,4 +64,5 @@ function searchMeeting(){
             }
         }
     }
+
 }
