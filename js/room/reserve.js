@@ -131,13 +131,12 @@ function reserveMeeting(){
             "start_time": start_time,
             "end_time": end_time,
             "eid":"1",
-            "rid":mid,
+            "rid":rid,
             "participants":participants,
             "remark": remark,
             "status":1,
             "mtime":now_time,
-            "mper":per_name,
-            "mroom":mid,
+            "mper":per_name
         }
         meetingJsonArray[meetingJsonArray.length] = meeting;
         alert("预定成功");

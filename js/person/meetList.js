@@ -1,5 +1,5 @@
 var meetJsonArray=window.parent.meetingJsonArray;
-
+var meetingRoomJsonArray=window.parent.meetingRoomJsonArray;
 
 $(function(){
     showSearchList();
@@ -24,17 +24,21 @@ function showSearchList(){
 		}
 		
 		if(inShow){
-			var trStr = "<tr>"+
+			for(var j=0;j<meetingRoomJsonArray.length;j++){
+				var Room=meetingRoomJsonArray[j];
+				if(Room.id==meet.rid){
+					var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.name+"</td>"+
-				"<td>"+meet.mroom+"</td>"+
+				"<td>"+Room.name+"</td>"+
                 "<td>"+meet.start_time+"</td>"+
                 "<td>"+meet.end_time+"</td>"+
 				"<td>"+meet.mtime+"</td>"+
                 "<td>"+meet.mper+"</td>"+
-				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../img/update.gif' /></td>"+
 				"</tr>";
 			$("#meetList").append(trStr);
+				}
+			}
 		}
 	}
 	}

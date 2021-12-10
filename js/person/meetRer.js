@@ -1,5 +1,5 @@
 var meetJsonArray=window.parent.meetingJsonArray;
-
+var meetingRoomJsonArray=window.parent.meetingRoomJsonArray;
 var nowTime=new Date().getTime()
 
 
@@ -11,13 +11,13 @@ function showSearchList(){
     $("#meetRer").html("");
     $(".pagination-container").html("");
     var name=$("#name").val();
-	var loginUserId = getParam("loginUserId");
-	for (var i=0; i<employeeJsonArray.length; i++) {
+	//var loginUserId = getParam("loginUserId");
+	/*for (var i=0; i<employeeJsonArray.length; i++) {
 		if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
 			loginUser = employeeJsonArray[i];
 			break;
 		}
-	}
+	}*/
     for(var i=0;i<meetJsonArray.length;i++){
 		var meet = meetJsonArray[i];
 		if(meet!=undefined){
@@ -33,16 +33,22 @@ function showSearchList(){
 		
 		if(inShow){
 			if(meet.mper==loginUserName){
+				for(var j=0;j<meetingRoomJsonArray.length;j++){
+					var Room=meetingRoomJsonArray[j];
+					if(Room.id==meet.rid){
 			var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.name+"</td>"+
-				"<td>"+meet.mroom+"</td>"+
+				"<td>"+Room.name+"</td>"+
                 "<td>"+meet.start_time+"</td>"+
                 "<td>"+meet.end_time+"</td>"+
 				"<td>"+meet.mtime+"</td>"+
 				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../img/update.gif' /></td>"+
 				"</tr>";
 			$("#meetRer").append(trStr);
+				}
+				}
+		
 			}
 		}
 	}
@@ -66,7 +72,7 @@ function setPage(){
 function showEditMeet(mid){
     window.location.href="editMeet.html?mid="+mid;
 }
-
+/*
 var mid = getParam("mid");
 var meetJsonArray=window.parent.meetingJsonArray;
 
@@ -107,7 +113,7 @@ function updateDept(){
         }
     }
 }
-
+*/
 function checkAll(){
 	var isChecked = $("#checkAll").prop("checked");
 	var checkboxes = $("input[name='id']");
