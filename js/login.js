@@ -59,7 +59,7 @@ function login(){
             }else {
                 status+=1;
                 $("#errorspan").html("普通用户登陆成功")
-                window.location.href = "index.html?loginUserId="+employeeJsonArray[i].id;
+                window.location.href = "userIndex.html?loginUserId="+employeeJsonArray[i].id;
                 //跳转到普通用户首页
             }
 
