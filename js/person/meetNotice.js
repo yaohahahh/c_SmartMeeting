@@ -1,5 +1,5 @@
 var meetJsonArray=window.parent.meetingJsonArray;
-
+var meetingRoomJsonArray=window.parent.meetingRoomJsonArray;
 var nowTime=new Date().getTime()
 
 $(function(){
@@ -26,22 +26,27 @@ function showSearchList(){
 		if(inShow){
             var strTime=new Date(Date.parse((meet.start_time).replace('/-/g','/'))).getTime();
 			if(strTime>nowTime){
-			var trStr = "<tr>"+
-				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
-				"<td>"+meet.name+"</td>"+
-				"<td>"+meet.mroom+"</td>"+
-                "<td>"+meet.start_time+"</td>"+
-                "<td>"+meet.end_time+"</td>"+
-				"<td>"+meet.mtime+"</td>"+
-                "<td>"+meet.mper+"</td>"+
-				"<td><img onclick='showEditMeet("+meet.mid+")' src='../../img/update.gif' /></td>"+
-				"</tr>";
-			$("#meetNotice").append(trStr);
+				for(var j=0;j<meetingRoomJsonArray.length;j++){
+					var Room=meetingRoomJsonArray[j];
+					if(Room.id==meet.rid){
+						alert("您有一个新会议:"+meet.name+"\n会议地点:"+Room.name+"\n时间:"+meet.start_time);
+						var trStr = "<tr>"+
+							"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
+							"<td>"+meet.name+"</td>"+
+							"<td>"+Room.name+"</td>"+
+                			"<td>"+meet.start_time+"</td>"+
+                			"<td>"+meet.end_time+"</td>"+
+							"<td>"+meet.mtime+"</td>"+
+                			"<td>"+meet.mper+"</td>"+
+							"</tr>";
+						$("#meetNotice").append(trStr);
+					}		
+				}
 			}
         
 		}
 	}
-	}
+}
 	setPage();
 }
 
@@ -58,10 +63,8 @@ function setPage(){
 }
 
 
-function showEditMeet(mid){
-    window.location.href="editMeet.html?mid="+mid;
-}
 
+/*
 var mid = getParam("mid");
 var meetJsonArray=window.parent.meetingJsonArray;
 
@@ -70,7 +73,7 @@ $(function(){
     var meet=meetJsonArray[i];
     if(meet.mid==mid){
         $("#name").val(meet.name);
-        $("#room").val(meet.mroom);
+        $("#room").val(Room.name);
         $("#start").val(meet.start_time);
         $("#end").val(meet.end_time);
         $("#time").val(meet.mtime);
@@ -79,8 +82,8 @@ $(function(){
         break;
         }
     }
-});
-
+});*/
+/*
 function updateDept(){
     var mname=$("#name").val();
     var mroom=$("#room").val();
@@ -92,7 +95,7 @@ function updateDept(){
         var meet=meetJsonArray[i];
         if(meet.mid==mid){
             meet.name=mname;
-            meet.mroom=mroom;
+            Room.name=mroom;
             meet.start_time=mstart;
             meet.end_time=mend;
             meet.mtime=mtime;
@@ -102,7 +105,7 @@ function updateDept(){
         }
     }
 }
-
+*/
 function checkAll(){
 	var isChecked = $("#checkAll").prop("checked");
 	var checkboxes = $("input[name='id']");

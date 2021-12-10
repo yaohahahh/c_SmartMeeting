@@ -7,12 +7,11 @@
     "end_time": "2021-11-29 18:00",
     "eid": 1,
     "rid": 1,
-    "participants": "",
+    "participants": "1,2,",
     "remark": "备注",
     "status": 1,
     "mtime":"2021-04-02 14:00",
-    "mper":"aaa",
-    "mroom":"第一会议室"
+    "mper":"aaa"
   },
   {
     "mid": 2,
@@ -26,8 +25,7 @@
     "remark": "备注",
     "status": 1,
     "mtime":"2021-04-02 14:00",
-    "mper":"bbb",
-    "mroom":"第二会议室"
+    "mper":"bbb"
   },
   {
     "mid": 3,
@@ -36,12 +34,11 @@
     "start_time": "2021-12-12 15:00",
     "end_time": "2021-12-12 17:00",
     "eid": 3,
-    "rid": 3,
+    "rid": 2,
     "participants": "2,3,",
     "remark": "备注",
     "status": 1,
     "mtime":"2021-04-02 14:00",
-    "mper":"ccc",
-    "mroom":"第一会议室"
+    "mper":"ccc"
   }
 ]
