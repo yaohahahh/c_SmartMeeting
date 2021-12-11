@@ -1,5 +1,6 @@
 var id  = getParam("id");
 var employeeJsonArray = window.parent.employeeJsonArray;
+var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
     for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].id==id){
@@ -76,4 +77,16 @@ function updatePeople(){
         }
     }
 
+}
+
+function onClickSelector(){
+    $("#dep").html("");
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined){
+            var optionStr = "<option value='"+ dept.did + "'>"+dept.dname + "</option>";
+        }
+        $("#dep").append(optionStr)
+    }
+    
 }

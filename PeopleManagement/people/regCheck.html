@@ -36,7 +36,7 @@
 					搜索：<input type="text" id="name" />
 	    			<input type="button" value="搜索" onclick="c_showEmployeeList()"/>
 				
-					部门：<select id="dep" onchange="c_showDeptEmployeeList()" value="">
+					部门：<select id="dep" onchange="c_showDeptEmployeeList()" value="" onclick="c_onClickShowSelector()">
 						<option value="">请选择-全部部门</option>
 						<option>开发部</option>
 						<option>测试部</option>

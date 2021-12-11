@@ -41,6 +41,10 @@
 					var dep = deptJsonArray[i];
 					var count=0;
 					var totalcount = 0;
+					if(dep.dname=='undefined'){
+						alert("存在已删除部门 请及时更新员工信息");
+						dep.dname = "已删除部门";
+					}
 					if (dep!=undefined){
 						for (var j=0;j<employeeJsonArray.length;j++){
 							var employee = employeeJsonArray[j];
@@ -56,6 +60,7 @@
 						st1[i] = depData;
 
 					}
+					dep.dname = "undefined";
 
 				}
 

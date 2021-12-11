@@ -1,4 +1,5 @@
 var employeeJsonArray = window.parent.employeeJsonArray;
+var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
     //获取得到员工信息列表
 
@@ -237,4 +238,17 @@ function checkAll(){
 			$(idCheckbox).prop("checked",isChecked);
 		}
 	}
+}
+
+function c_onClickShowSelector(){
+    $("#dep").html("");
+    var optionStr = "<option value=''>请选择</option>";
+    $("#dep").append(optionStr)
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined){
+            var optionStr = "<option>"+dept.dname + "</option>";
+        }
+        $("#dep").append(optionStr)
+    }
 }

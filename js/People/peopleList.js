@@ -1,4 +1,5 @@
 var employeeJsonArray = window.parent.employeeJsonArray;
+var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
     //获取得到员工信息列表
 
@@ -73,6 +74,13 @@ function showEmployeeList(){
             }
         }  
     }   
+
+    for(var i=0;i<deptJsonArray.length;i++){
+        if(deptJsonArray[i].dname=="undefined"){
+            alert("存在已删除部门！请及时更新人员数据！")
+        }
+
+    }
     setPages()
 }
 
@@ -237,4 +245,31 @@ function delPJson(delid){
             return;
         }
     }
+}
+
+function onClickSelector(){
+    $("#dep").html("");
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined && dept.dname != 'undefined'){
+            var optionStr = "<option value='"+ dept.did + "'>"+dept.dname + "</option>";
+            $("#dep").append(optionStr)
+        }
+    }
+
+}
+
+function onClickShowSelector(){
+    $("#dep").html("");
+    var optionStr = "<option value=''>请选择</option>";
+    $("#dep").append(optionStr)
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined && dept.dname != 'undefined'){
+            var optionStr = "<option>"+dept.dname + "</option>";
+            $("#dep").append(optionStr)
+        }
+        
+    }
+    
 }

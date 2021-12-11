@@ -4,6 +4,9 @@ $(function(){
     //获取得到部门信息列表
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
+        if(dept.dname=='undefined'){
+            continue;
+        }
         var trStr = "<tr>"+
         "<td><input type='checkbox' name='id' value='"+dept.did+"'/></td>"+
         "<td>"+dept.dname+"</td>"+
@@ -28,7 +31,7 @@ function showSearchList(){
      
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
-        if(dept!=undefined){
+        if(dept!=undefined && dept.dname!='undefined'){
             if(dept.dname.indexOf(name)!=-1){
                 var trStr = "<tr>"+
                 "<td><input type='checkbox' name='id' value='"+dept.did+"'/></td>"+
@@ -102,7 +105,8 @@ function delChecked(){
 function delJson(delDid){
 	for(var i=0;i<deptJsonArray.length;i++){
         if(deptJsonArray[i].did==delDid){
-            delete deptJsonArray[i];
+            // delete deptJsonArray[i];
+            deptJsonArray[i].dname = 'undefined';
             return;
         }
     }
