@@ -23,7 +23,7 @@ $(function(){
 //展现满足条件的部门列表数据
 function showSearchList(){
     $("#deptList").html("")
-    
+
     var name = $("#name").val()
     if(name==null){
         return
@@ -85,20 +85,46 @@ function showEditDept(did){
 function delChecked(){
 	var checkeds = $("input[name='id']:checked");
 	if(checkeds.length>0){
-		var flag = window.confirm("确定要删除吗？");
-		if(flag){
-			alert("用户点击了确定删除");
-			for(var i=0;i<checkeds.length;i++){
-				var thisChecked = checkeds[i];
-				var delDid = $(thisChecked).val();
-				delJson(delDid);
-			}
+		// var flag = window.confirm("确定要删除吗？");
+		// if(flag){
+		// 	// alert("用户点击了确定删除");
+        //     parent.swal("删除！", "所选部门已经被删除。", "success"); 
+        //     // parent.postMessage("openAlert", "*");
+            
+		// 	for(var i=0;i<checkeds.length;i++){
+		// 		var thisChecked = checkeds[i];
+		// 		var delDid = $(thisChecked).val();
+		// 		delJson(delDid);
+		// 	}
 			
-		}
-		showSearchList();
+		// }
+        parent.swal({
+            title: "你确定？",
+            text: "您将无法恢复这个部门以及部门内人员的信息！",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "是的，删除！",
+            cancelButtonText: "不，取消",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm) {
+            if (isConfirm) {
+                for(var i=0;i<checkeds.length;i++){
+                    var thisChecked = checkeds[i];
+                    var delDid = $(thisChecked).val();
+                    delJson(delDid);
+                    parent.swal("删除!", "您选择的部门已被删除！", "success")  
+                } 
+                showSearchList();                  
+            } else{
+                parent.swal("取消!", "您的部门保持原样！", "error")
+            }
+        })
 	}else{
-		alert("请选择要删除的数据");
+		parent.swal("删除！", "请选择要删除的数据", "error"); 
 	}
+    
 	
 }
 
