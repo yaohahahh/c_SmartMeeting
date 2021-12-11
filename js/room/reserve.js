@@ -12,6 +12,8 @@ $(function (){
     }
     fillEmployees();//根据选中的部门生成员工列表下拉框
     $("#mid").html("");
+    var init= "<option value=\"1\" selected disabled style=\"display: none;\">--请选择--</option>"
+    $("#mid").append(init)
     for (var i=0; i<meetingRoomJsonArray.length; i++) {
         var meetingroom = meetingRoomJsonArray[i];
         if(meetingroom != undefined){
@@ -153,7 +155,6 @@ function reserveMeeting(){
     var now_time = new Date().Format("yyyy-MM-dd HH:mm");
     var loginUserId = getParam("loginUserId");
     var r_name;
-    var deptid = $("#selDepartments").val();
     for (var i=0; i<employeeJsonArray.length; i++) {
         if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
             loginUser = employeeJsonArray[i];
@@ -182,6 +183,8 @@ function reserveMeeting(){
         alert("请您输入会议说明")
     }else if(loginUserId == undefined){
         alert("请您先登录")
+    }else if(start_time <now_time || end_time <end_time){
+        alert("预定会议时间不能早于现在")
     }else{
         if(checkIsUsed(mid,start_time,end_time)){
             var meeting = {
