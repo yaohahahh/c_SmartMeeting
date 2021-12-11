@@ -124,7 +124,7 @@ function delChecked(){
             text: "您将无法恢复这个会议室及会议信息！",
             type: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
+            confirmButtonColor: "#fff2ef",
             confirmButtonText: "是的，删除！",
             cancelButtonText: "不，取消",
             closeOnConfirm: false,
