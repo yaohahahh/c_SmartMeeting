@@ -3,8 +3,7 @@ var meetingRoomJsonArray = window.parent.meetingRoomJsonArray;
 var employeeJsonArray = window.parent.employeeJsonArray;
 var meetingJsonArray = window.parent.meetingJsonArray
 
-function body_load(){//当页面加载时触发执行
-    //首先生成部门下拉选项
+$(function (){
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
         if(dept!=undefined){
@@ -12,9 +11,15 @@ function body_load(){//当页面加载时触发执行
         }
     }
     fillEmployees();//根据选中的部门生成员工列表下拉框
-
-}
-
+    $("#mid").html("");
+    for (var i=0; i<meetingRoomJsonArray.length; i++) {
+        var meetingroom = meetingRoomJsonArray[i];
+        if(meetingroom != undefined){
+            var optionStr = "<option value='"+ meetingroom.id + "'>"+meetingroom.name + "</option>";
+        }
+        $("#mid").append(optionStr)
+    }
+})
 function getParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
@@ -25,7 +30,6 @@ function getParam(name) {
 //根据选中的部门生成员工列表下拉框
 function fillEmployees(){
     $("#selEmployees").html("");//先清空该下拉框
-    //获取选中的部门下拉框
     var deptid = $("#selDepartments").val();
     for(i=0;i<employeeJsonArray.length;i++){
         var employee = employeeJsonArray[i];
@@ -210,18 +214,6 @@ function reserveMeeting(){
         }
     }
 
-}
-
-function chooseRoom(){
-    $("#mid").html("");
-    for (var i=0; i<meetingRoomJsonArray.length; i++) {
-        var meetingroom = meetingRoomJsonArray[i];
-        if(meetingroom != undefined){
-            var optionStr = "<option value='"+ meetingroom.id + "'>"+meetingroom.name + "</option>";
-        }
-        $("#mid").append(optionStr)
-    }
-    // $("#selDepartments").append("<option value='"+dept.did+"'>"+dept.dname+"</option>");
 }
 
 function getParticipants(){
