@@ -16,10 +16,10 @@ $(function (){
     $("#mid").append(init)
     for (var i=0; i<meetingRoomJsonArray.length; i++) {
         var meetingroom = meetingRoomJsonArray[i];
-        if(meetingroom != undefined){
+        if(meetingroom != undefined && meetingroom.name != "undefined"){
             var optionStr = "<option value='"+ meetingroom.id + "'>"+meetingroom.name + "</option>";
+            $("#mid").append(optionStr)
         }
-        $("#mid").append(optionStr)
     }
 })
 function getParam(name) {
@@ -196,6 +196,8 @@ function reserveMeeting(){
     }else if(start_time <now_time || end_time <end_time){
         // alert("预定会议时间不能早于现在")
         parent.swal("警告!", "预定会议时间不能早于现在", "warning")
+    }else if(start_time >= end_time){
+        parent.swal("警告!", "会议结束时间不能早于开始时间", "warning")
     }else{
         if(checkIsUsed(mid,start_time,end_time)){
             var meeting = {
@@ -221,11 +223,11 @@ function reserveMeeting(){
             var mark;
             mark = checkUsedTime(mid,start_time,end_time)
             parent.swal("警告!", "预定失败！\n\n"+
-            r_name+" 在 "+
-            meetingJsonArray[mark].start_time+" 到 "+
-            meetingJsonArray[mark].end_time + " 已经被 " +
-            meetingJsonArray[mark].mper + " 预定 "+
-            "\n\n请您调整会议时间", "error")
+                r_name+" 在 "+
+                meetingJsonArray[mark].start_time+" 到 "+
+                meetingJsonArray[mark].end_time + " 已经被 " +
+                meetingJsonArray[mark].mper + " 预定 "+
+                "\n\n请您调整会议时间", "error")
             // alert("预定失败！\n\n"+
             //     r_name+" 在 "+
             //     meetingJsonArray[mark].start_time+" 到 "+
@@ -234,7 +236,6 @@ function reserveMeeting(){
             //     "\n\n请您调整会议时间")
         }
     }
-
 }
 
 function getParticipants(){

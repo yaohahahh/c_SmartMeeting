@@ -1,44 +1,44 @@
 [
   {
     "mid": 1,
-    "name": "测试会议",
+    "name": "研发部例会",
     "num": 10,
     "start_time": "2021-11-29 17:00",
     "end_time": "2021-11-29 18:00",
     "eid": 1,
     "rid": 1,
     "participants": "1,2,",
-    "remark": "备注",
+    "remark": "汇报研发进度",
     "status": 1,
     "mtime":"2021-04-02 14:00",
-    "mper":"aaa"
+    "mper":"Rick"
   },
   {
     "mid": 2,
-    "name": "测试会议2",
+    "name": "产品销售季度会",
     "num": 15,
     "start_time": "2021-11-29 17:30",
     "end_time": "2021-11-29 18:00",
     "eid": 2,
     "rid": 2,
     "participants": "1,2,",
-    "remark": "备注",
+    "remark": "市场部总结季度销售成果",
     "status": 1,
     "mtime":"2021-04-02 14:00",
-    "mper":"bbb"
+    "mper":"Morty"
   },
   {
     "mid": 3,
-    "name": "总结会议",
+    "name": "年终总结会",
     "num": 15,
     "start_time": "2021-12-12 15:00",
     "end_time": "2021-12-12 17:00",
     "eid": 3,
     "rid": 2,
     "participants": "2,3,",
-    "remark": "备注",
+    "remark": "发年终奖啦！",
     "status": 1,
     "mtime":"2021-04-02 14:00",
-    "mper":"ccc"
+    "mper":"Jerry"
   }
 ]

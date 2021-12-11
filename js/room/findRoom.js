@@ -1,18 +1,27 @@
 var meetingJsonArray = window.parent.meetingJsonArray
 var employeeJsonArray = window.parent.employeeJsonArray;
+var meetingRoomJsonArray = window.parent.meetingRoomJsonArray;
+
 $(function (){
     //页面被加载完成后，立即会被执行的操作
     //获取会议信息列表，每一个部门对象生成遗憾tr存放在会议表格
     for(var i=0; i<meetingJsonArray.length; i++) {
         var meeting = meetingJsonArray[i];
-        var trStr = "<tr>" +
-            "<td>"+ meeting.name+"</td>" +
-            "<td>"+ meeting.start_time+ "</td>" +
-            "<td>"+ meeting.end_time+"</td>" +
-            "<td>"+ meeting.mper+ "</td>" +
-            "<td>"+ meeting.remark+ "</td>" +
-            "</tr>";
-        $("#findRoom").append(trStr);
+        for(var j=0;j<meetingRoomJsonArray.length;j++) {
+            var Room = meetingRoomJsonArray[j];
+            if(Room.id==meeting.rid){
+                var trStr = "<tr>" +
+                    "<td>"+ meeting.name+"</td>" +
+                    "<td>"+ Room.name+ "</td>" +
+                    "<td>"+ meeting.start_time+ "</td>" +
+                    "<td>"+ meeting.end_time+"</td>" +
+                    "<td>"+ meeting.remark+ "</td>" +
+                    "<td>"+ meeting.mper+ "</td>" +
+                    "</tr>";
+                $("#findRoom").append(trStr);
+            }
+        }
+
     }
     setPages()
 })
