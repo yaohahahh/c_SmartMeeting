@@ -55,6 +55,7 @@ function login(){
                 status+=1;
                 $("#errorspan").html("管理员登录成功")
                 window.location.href = "adminIndex.html?loginUserId="+employeeJsonArray[i].id;
+
                 //跳转到管理员首页
             }else {
                 status+=1;
@@ -67,4 +68,20 @@ function login(){
     }
     if(status==0){$("#errorspan").html("登录失败")}
 
+}
+
+function resetPwd(){
+    var username = $("#R-username").val()
+    var cardid = $("#R-cardid").val()
+    if(username==""){
+        parent.swal("提示!", "请输入用户名", "warning")  
+        return false;
+    }
+    if(cardid==""){
+        parent.swal("提示!", "请输入身份证号", "warning")  
+        return false;
+    }
+    parent.swal("密码重置成功!", "您的初始密码为：123123", "success");
+    
+    // parent.swal("提示!", "请登录后尽快修改密码", "warning")  
 }

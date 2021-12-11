@@ -1,5 +1,7 @@
 var loginUser = window.parent.loginUser;
 $(function(){
+
+	
 	
 	//每1秒刷新一次时间
     setInterval(function(){
@@ -52,6 +54,18 @@ $(function(){
 	});
 	/**********以上部分是菜单的一二级的相关动态样式**********/
 	syncUser();
+	if(loginUser.status=="0"){
+		swal("您的账号未被启用!", "请联系管理员","error")
+	}
+
+
+	if(loginUser.auditstatus=="1"){
+		swal("管理员登录成功!", "欢迎您："+loginUser.name, "success")
+	}else{
+		swal("普通用户登录成功!", "欢迎您："+loginUser.name, "success")
+	}
+
+
 });
 
 function expandAll(){

@@ -1,6 +1,10 @@
 body{
-    background-color: black;
+    background:black
 }
+
+/* html{
+    background-color: black;
+} */
 .loginDiv{
     width: 390px;
     height: 250px;
@@ -19,7 +23,7 @@ body{
 .inputTable{
     align-items:center;
     margin: auto;
-    color: white;
+    color: black;
 }
 .h1-1{
     font-size: 24px;

@@ -15,7 +15,7 @@ $.ajax({
         // alert(XMLHttpRequest.status);
         // alert(XMLHttpRequest.readyState);
         // alert(textStatus);
-        alert("error");
+        // alert("error");
     }
 })
 
@@ -31,7 +31,7 @@ $.ajax({
         // alert(XMLHttpRequest.status);
         // alert(XMLHttpRequest.readyState);
         // alert(textStatus);
-        alert("error");
+        // alert("error");
     }
 })
 

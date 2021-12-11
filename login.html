@@ -7,6 +7,10 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
+    <link rel="stylesheet" href="js/bootstrap-3.4.1-dist/css/bootstrap.css" />
+    <script type="text/javascript" src="js/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="js/alert/sweetalert.min.css" />
+    <script type="text/javascript" src="js/alert/sweetalert.min.js" ></script>
     <!-- <script type="text/javascript" src="Json/employee.js"></script> -->
 </head>
     <body>
@@ -46,7 +50,7 @@
                     <tr style="text-align: center">
                         <td colspan="2">
                             <input class="loginButtons" type="submit" value="登录">
-                            <input class="loginButtons" type="reset" value="重置">
+                            <input class="loginButtons" type="reset" data-toggle="modal" data-target="#updatePassword" value="重置">
                             <br/>
                             <span id="errorspan" style="color: red"></span>
                         </td>
@@ -55,6 +59,38 @@
 
             </form>
         </div>
+
+
+        <!- - 模态框:修改密码 - ->
+        <div class="modal fade" id="updatePassword" tabindex="-1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="line-height:20px;margin-top:-15px;margin-right:-10px;">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title position-absolute" id="exampleModalLabel" style="top:8px;left:12px;">重置密码</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form name="editForm">
+                                <div class="form-group">
+                                    <label for="recipient-name">用户名</label>
+                                    <input type="text" id="R-username" class="form-control" name="oldpassword" required placeholder="原密码">
+                                    <div style="display: inline" id="tip1"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text">身份证号：</label>
+                                    <input type='text' id="R-cardid" name="password1" class="form-control" required placeholder="长度为: 6-18">
+                                    <div style="display: inline" id="tip2"></div>
+                                </div>
+                            </form>
+                        </div>
+        <div class="modal-footer">
+        <button onclick="resetPwd()" class="btn btn-primary" >确定</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        </div>
+                    </div>
+
 
     </body>
 </html>

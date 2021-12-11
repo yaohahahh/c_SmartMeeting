@@ -66,13 +66,24 @@ function saveDept(){
     var dname = $('#name').val()
     var desc = $('#remark').val()
 
+    if(dname==null || dname==''){
+        parent.swal("添加部门", "部门名称不能为空！", "error")
+        return
+    }
+
+    if(desc==null || desc==''){
+        parent.swal("添加部门", "部门描述不能为空！", "error")
+        return
+    }
+
     var dept = {
         "did":deptJsonArray.length+1,
         "dname":dname,
         "desc":desc
     }
     deptJsonArray[deptJsonArray.length] = dept
-    alert("添加成功");
+    // alert("添加成功");
+    parent.swal("添加部门", "添加成功!", "success")
     window.location.href = "../dept/deptList.html"
         
 }

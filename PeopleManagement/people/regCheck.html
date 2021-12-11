@@ -37,11 +37,11 @@
 	    			<input type="button" value="搜索" onclick="c_showEmployeeList()"/>
 				
 					部门：<select id="dep" onchange="c_showDeptEmployeeList()" value="" onclick="c_onClickShowSelector()">
-						<option value="">请选择-全部部门</option>
-						<option>开发部</option>
-						<option>测试部</option>
-						<option>运维部</option>
-						<option>市场部</option>
+						<option value="0">请选择-全部部门</option>
+						<option value="1">开发部</option>
+						<option value="2">测试部</option>
+						<option value="3">运维部</option>
+						<option value="4">市场部</option>
 						
                     <input class="top-menu-bar" type="button" value="取消" onclick="c_cancelSearch()"/>
 	    			<input class="top-menu-bar" type="button" value="删除" onclick="c_delChecked()"/>

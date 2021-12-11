@@ -48,7 +48,8 @@ function updateDept(){
             meet.end_time=mend;
             meet.mtime=mtime;
             meet.mper=mper;
-            alert("修改成功");
+            parent.swal("成功!", "您选择的会议修改成功！", "success")  
+            // alert("修改成功");
             window.location.href="meetRer.html";
         }}
         }

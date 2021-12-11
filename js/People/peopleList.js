@@ -77,7 +77,8 @@ function showEmployeeList(){
 
     for(var i=0;i<deptJsonArray.length;i++){
         if(deptJsonArray[i].dname=="undefined"){
-            alert("存在已删除部门！请及时更新人员数据！")
+            // alert("存在已删除部门！请及时更新人员数据！")
+            parent.swal("警告", "存在已删除部门! 请及时更新人员数据！", "warning")
         }
 
     }
@@ -156,6 +157,93 @@ function addPeople(){
     var clevelid = $("#levelid option:selected").text();
     var csalary = $("#salary").val();
 
+    if(cname==null || cname==""){
+        // alert("请输入姓名！")
+        parent.swal("警告", "请输入姓名！", "warning")
+        return
+    }
+    if(ccardid==null || ccardid==""){
+        // alert("请输入身份证号！")
+        parent.swal("警告", "请输入身份证号！", "warning")
+        return
+    }
+    if(csex==null || csex==""){
+        // alert("请输入性别！")
+        parent.swal("警告", "请输入性别！", "warning")
+        return
+    }
+    if(cemail==null || cemail==""){
+        // alert("请输入邮箱！")
+        parent.swal("警告", "请输入邮箱！", "warning")
+        return
+    }
+    if(ceducation==null || ceducation==""){
+        // alert("请输入学历！")
+        parent.swal("警告", "请输入学历！", "warning")
+        return
+    }
+    if(cspeciality==null || cspeciality==""){
+        // alert("请输入专业！")
+        parent.swal("警告", "请输入专业！", "warning")
+        return
+    }
+    if(cparty==null || cparty==""){
+        // alert("请输入政治面貌！")
+        parent.swal("警告", "请输入政治面貌！", "warning")
+        return 
+    }
+    if(cphone==null || cphone==""){
+        // alert("请输入电话！")
+        parent.swal("警告", "请输入电话！", "warning")
+        return
+    }
+    if(cwechat==null || cwechat==""){
+        // alert("请输入微信！")
+        parent.swal("警告", "请输入微信！", "warning")
+        return
+    }
+    if(caddress==null || caddress==""){
+        // alert("请输入地址！")
+        parent.swal("警告", "请输入地址！", "warning")
+        return
+    }
+    if(cpostcode==null || cpostcode==""){
+        // alert("请输入邮编！")
+        parent.swal("警告", "请输入邮编！", "warning")
+        return
+    }
+    if(cbirthday==null || cbirthday==""){
+        // alert("请输入出生日期！")
+        parent.swal("警告", "请输入出生日期！", "warning")
+        return
+    }
+    if(crace==null || crace==""){
+        // alert("请输入民族！")
+        parent.swal("警告", "请输入民族！", "warning")
+        return
+    }
+    if(cremark==null || cremark==""){
+        // alert("请输入备注！")
+        parent.swal("警告", "请输入备注！", "warning")
+        return
+    }
+    if(cdep==null || cdep==""){
+        // alert("请选择部门！")
+        parent.swal("警告", "请选择部门！", "warning")
+        return
+    }
+    if(clevel==null || clevel==""){
+        // alert("请选择职级！")
+        parent.swal("警告", "请选择职级！", "warning")
+        return
+    }
+    if(csalary==null || csalary==""){
+        // alert("请输入薪资！")
+        parent.swal("警告", "请输入薪资！", "warning")
+        return
+    }
+    
+
     var newPeople = {
         "id":employeeJsonArray.length+1,
         "name":cname,
@@ -184,14 +272,14 @@ function addPeople(){
     }
 
     employeeJsonArray[employeeJsonArray.length] = newPeople;
-    alert("添加成功");
+    parent.swal("提示", "添加成功！", "success")
+    // alert("添加成功");
     checkMenu("showPeople");
-	$('#myFrame').attr('src', "PeopleManagement/people/peopleList.html");
 }
 
 function cancelAdd(){
-    window.location.href = "adminIndex.html";
-    // showPeople();
+    // window.location.href = "adminIndex.html";
+    parent.gohome();
 }
 
 
@@ -219,21 +307,50 @@ function showEditEmployee(id){
 
 function delChecked(){
     var checkeds = $("input[name='id']:checked");
-	if(checkeds.length>0){
-		var flag = window.confirm("确定要删除吗？");
-		if(flag){
-			alert("用户点击了确定删除");
-			for(var i=0;i<checkeds.length;i++){
-				var thisChecked = checkeds[i];
-				var delDid = $(thisChecked).val();
-				delPJson(delDid);
-			}
+	// if(checkeds.length>0){
+	// 	var flag = window.confirm("确定要删除吗？");
+	// 	if(flag){
+	// 		alert("用户点击了确定删除");
+	// 		for(var i=0;i<checkeds.length;i++){
+	// 			var thisChecked = checkeds[i];
+	// 			var delDid = $(thisChecked).val();
+	// 			delPJson(delDid);
+	// 		}
 			
-		}
-		showEmployeeList();
+	// 	}
+	// 	showEmployeeList();
+	// }else{
+	// 	alert("请选择要删除的数据");
+	// }
+    if(checkeds.length>0){
+        parent.swal({
+            title: "你确定？",
+            text: "您将无法恢复这个员工的信息！",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "是的，删除！",
+            cancelButtonText: "不，取消",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm) {
+            if (isConfirm) {
+                for(var i=0;i<checkeds.length;i++){
+                    var thisChecked = checkeds[i];
+                    var delDid = $(thisChecked).val();
+                    delPJson(delDid);
+                    parent.swal("删除!", "您选择的员工已被删除！", "success")  
+                    showEmployeeList();
+                }
+                                
+            } else{
+                parent.swal("取消!", "取消删除员工！", "error")
+            }
+        })
 	}else{
-		alert("请选择要删除的数据");
+		parent.swal("删除！", "请选择要删除的数据", "error"); 
 	}
+     
 	
 }
 

@@ -166,25 +166,36 @@ function reserveMeeting(){
             r_name = meetingRoomJsonArray[i].name;
         }
     }
+    if(loginUser==undefined){
+        parent.swal("登录","您还没有登录，请先登录！","warning");
+    }
     var per_name = loginUser.name
     if(mname == ""){
-        alert("请您输入会议名称")
+        // alert("请您输入会议名称")
+        parent.swal("警告!", "请您输入会议名称", "warning")
     }else if(start_time == ""){
-        alert("请您输入会议开始时间")
+        // alert("请您输入会议开始时间")
+        parent.swal("警告!", "请您输入会议开始时间", "warning")
     }else if(end_time == ""){
-        alert("请您输入会议结束时间")
+        // alert("请您输入会议结束时间")
+        parent.swal("警告!", "请您输入会议结束时间", "warning")
     }else if(num == ""){
-        alert("请您输入会议人数")
+        // alert("请您输入会议人数")
+        parent.swal("警告!", "请您输入会议人数", "warning")
     }else if(mid == undefined){
         alert("请您选择会议室")
     }else if(participants == ""){
-        alert("请您选择参会人员")
+        // alert("请您选择参会人员")
+        parent.swal("警告!", "请您选择参会人员", "warning")
     }else if(remark == ""){
-        alert("请您输入会议说明")
+        // alert("请您输入会议说明")
+        parent.swal("警告!", "请您输入会议说明", "warning")
     }else if(loginUserId == undefined){
-        alert("请您先登录")
+        // alert("请您先登录")
+        parent.swal("警告!", "请您先登录", "warning")
     }else if(start_time <now_time || end_time <end_time){
-        alert("预定会议时间不能早于现在")
+        // alert("预定会议时间不能早于现在")
+        parent.swal("警告!", "预定会议时间不能早于现在", "warning")
     }else{
         if(checkIsUsed(mid,start_time,end_time)){
             var meeting = {
@@ -203,17 +214,24 @@ function reserveMeeting(){
                 "mroom":r_name,
             }
             meetingJsonArray[meetingJsonArray.length] = meeting;
-            alert("预定成功");
+            parent.swal("成功", "会议预定成功!", "success")
+            // alert("预定成功");
             $('#myFrame').attr('src', "MeetingRoom/reserve.html?loginUserId="+loginUserId);
         }else{
             var mark;
             mark = checkUsedTime(mid,start_time,end_time)
-            alert("预定失败！\n\n"+
-                r_name+" 在 "+
-                meetingJsonArray[mark].start_time+" 到 "+
-                meetingJsonArray[mark].end_time + " 已经被 " +
-                meetingJsonArray[mark].mper + " 预定 "+
-                "\n\n请您调整会议时间")
+            parent.swal("警告!", "预定失败！\n\n"+
+            r_name+" 在 "+
+            meetingJsonArray[mark].start_time+" 到 "+
+            meetingJsonArray[mark].end_time + " 已经被 " +
+            meetingJsonArray[mark].mper + " 预定 "+
+            "\n\n请您调整会议时间", "error")
+            // alert("预定失败！\n\n"+
+            //     r_name+" 在 "+
+            //     meetingJsonArray[mark].start_time+" 到 "+
+            //     meetingJsonArray[mark].end_time + " 已经被 " +
+            //     meetingJsonArray[mark].mper + " 预定 "+
+            //     "\n\n请您调整会议时间")
         }
     }
 

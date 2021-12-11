@@ -12,7 +12,7 @@ function showSearchList(){
     var name=$("#name").val();
     for(var i=0;i<meetJsonArray.length;i++){
 		var meet = meetJsonArray[i];
-		if(meet!=undefined){
+		if(meet!='undefined'){
 		var inShow = false;
 		
 		if(name!=""){
@@ -29,7 +29,8 @@ function showSearchList(){
 				for(var j=0;j<meetingRoomJsonArray.length;j++){
 					var Room=meetingRoomJsonArray[j];
 					if(Room.id==meet.rid){
-						alert("您有一个新会议:"+meet.name+"\n会议地点:"+Room.name+"\n时间:"+meet.start_time);
+						parent.swal("最新通知", "您有一个新会议:"+meet.name+"\n会议地点:"+Room.name+"\n时间:"+meet.start_time, "info"); 
+						// alert("您有一个新会议:"+meet.name+"\n会议地点:"+Room.name+"\n时间:"+meet.start_time);
 						var trStr = "<tr>"+
 							"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 							"<td>"+meet.name+"</td>"+
@@ -119,21 +120,61 @@ function checkAll(){
 
 function delChecked(){
 	var checkeds = $("input[name='id']:checked");
-	if(checkeds.length>0){
-		var flag = window.confirm("确定要删除吗？");
+	// if(checkeds.length>0){
+	// 	var flag = window.confirm("确定要删除吗？");
 		
-		if(flag){
-			//alert("用户点击了确定删除");
-			//选中的部门一个个删掉
-			for(var i=0; i<checkeds.length;i++){
-				var thisChecked=checkeds[i];
-				var delMid=$(thisChecked).val();
-				delJson(delMid);
-			}
-			showSearchList();
-		}
+	// 	if(flag){
+	// 		//alert("用户点击了确定删除");
+	// 		//选中的部门一个个删掉
+	// 		for(var i=0; i<checkeds.length;i++){
+	// 			var thisChecked=checkeds[i];
+	// 			var delMid=$(thisChecked).val();
+	// 			delJson(delMid);
+	// 		}
+	// 		showSearchList();
+	// 	}
+	// }else{
+	// 	alert("请选择要删除的数据");
+	// }
+	if(checkeds.length>0){
+		// var flag = window.confirm("确定要删除吗？");
+		// if(flag){
+		// 	// alert("用户点击了确定删除");
+        //     parent.swal("删除！", "所选部门已经被删除。", "success"); 
+        //     // parent.postMessage("openAlert", "*");
+            
+		// 	for(var i=0;i<checkeds.length;i++){
+		// 		var thisChecked = checkeds[i];
+		// 		var delDid = $(thisChecked).val();
+		// 		delJson(delDid);
+		// 	}
+			
+		// }
+        parent.swal({
+            title: "你确定？",
+            text: "您将无法恢复这个会议信息！",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "是的，删除！",
+            cancelButtonText: "不，取消",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm) {
+            if (isConfirm) {
+				for(var i=0; i<checkeds.length;i++){
+					var thisChecked=checkeds[i];
+					var delMid=$(thisChecked).val();
+					delJson(delMid);
+					parent.swal("删除!", "您选择的会议已被删除！", "success")  
+				}
+                showSearchList();                  
+            } else{
+                parent.swal("取消!", "您的数据保持原样！", "error")
+            }
+        })
 	}else{
-		alert("请选择要删除的数据");
+		parent.swal("删除！", "请选择要删除的数据", "error"); 
 	}
 	
 }
@@ -144,7 +185,8 @@ function delJson(delMid){
 		var meet=meetJsonArray[i];
 		if(meet!=undefined){
 			if(meet.mid==delMid){
-				delete meetJsonArray[i];
+				meetJsonArray[i] = 'undefined';
+				// delete meetJsonArray[i];
 				return;
 			}
 		}

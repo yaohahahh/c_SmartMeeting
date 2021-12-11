@@ -101,22 +101,49 @@ function delJson(delmid)
 
 function delChecked(){
     var checked=$("input[name='id']:checked")
-    if(checked.length>0)
-    {
-        var flag =window.confirm("确定要删除么");
-        if(flag)
-        {
-            for(var i=0;i<checked.length;i++)
-            {
+    // if(checked.length>0)
+    // {
+    //     var flag =window.confirm("确定要删除么");
+    //     if(flag)
+    //     {
+    //         for(var i=0;i<checked.length;i++)
+    //         {
+    //             var thisChecke =checked[i];
+    //             var delmid =$(thisChecke).val();
+    //             delJson(delmid);
+    //         }
+    //     }
+    //     showSearchMeet(); }
+    //     else
+    //     {
+    //         alert("请选择要删除的数据");
+    //     }
+    if(checked.length>0){
+        parent.swal({
+            title: "你确定？",
+            text: "您将无法恢复这个会议室及会议信息！",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "是的，删除！",
+            cancelButtonText: "不，取消",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm) {
+            if (isConfirm) {
+            for(var i=0;i<checked.length;i++){
                 var thisChecke =checked[i];
                 var delmid =$(thisChecke).val();
                 delJson(delmid);
+                parent.swal("删除!", "您选择的会议室已被删除！", "success")  
             }
-        }
-        showSearchMeet(); }
-        else
-        {
-            alert("请选择要删除的数据");
-        }
+            showSearchMeet();
+        }else{
+                parent.swal("取消!", "您的会议室将保持原样！", "error")
+            }
+        })
+	}else{
+		parent.swal("删除！", "请选择要删除的会议室", "error"); 
+	}
 
 }
