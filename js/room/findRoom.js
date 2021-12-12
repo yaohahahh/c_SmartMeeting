@@ -12,7 +12,7 @@ $(function () {
                 Room = meetingRoomJsonArray[j];
             }
         }
-        if(Room.name !="undefined"){
+        if(Room.name !="undefined" && meeting.name != "undefined"){
             for (var j = 0; j < meetingRoomJsonArray.length; j++) {
                 var Room = meetingRoomJsonArray[j];
                 if (Room.id == meeting.rid) {
@@ -77,7 +77,7 @@ function searchMeeting() {
         }
         if (meeting != undefined) {
             var isShow = false;
-            if (Room.name == "undefined") {
+            if (Room.name == "undefined"|| meeting.name == "undefined") {
                 isShow = false
             } else {
                 if (meeting_name != "" || per_name != "" || room != "") {
