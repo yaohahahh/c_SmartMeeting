@@ -35,7 +35,7 @@ function showSearchList(){
 			if(meet.mper==loginUserName){
 				for(var j=0;j<meetingRoomJsonArray.length;j++){
 					var Room=meetingRoomJsonArray[j];
-					if(Room.id==meet.rid){
+					if(Room.id==meet.rid&&Room.name!="undefined"){
 			var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.name+"</td>"+
@@ -72,48 +72,7 @@ function setPage(){
 function showEditMeet(mid){
     window.location.href="editMeet.html?mid="+mid;
 }
-/*
-var mid = getParam("mid");
-var meetJsonArray=window.parent.meetingJsonArray;
 
-$(function(){
-    for(var i=0;i<meetJsonArray.length;i++){
-    var meet=meetJsonArray[i];
-    if(meet.mid==mid){
-        $("#name").val(meet.name);
-        $("#room").val(meet.mroom);
-        $("#start").val(meet.start_time);
-        $("#end").val(meet.end_time);
-        $("#time").val(meet.mtime);
-        $("#per").val(meet.mper);
-
-        break;
-        }
-    }
-});
-
-function updateDept(){
-    var mname=$("#name").val();
-    var mroom=$("#room").val();
-    var mstart=$("#start").val();
-    var mend=$("#end").val();
-    var mtime=$("#time").val();
-    var mper=$("#per").val();
-    for (var i=0;i<meetJsonArray.length;i++){
-        var meet=meetJsonArray[i];
-        if(meet.mid==mid){
-            meet.name=mname;
-            meet.mroom=mroom;
-            meet.start_time=mstart;
-            meet.end_time=mend;
-            meet.mtime=mtime;
-            meet.mper=mper;
-            alert("修改成功");
-            window.location.href="meetRer.html";
-        }
-    }
-}
-*/
 function checkAll(){
 	var isChecked = $("#checkAll").prop("checked");
 	var checkboxes = $("input[name='id']");
@@ -127,22 +86,6 @@ function checkAll(){
 
 function delChecked(){
 	var checkeds = $("input[name='id']:checked");
-	// if(checkeds.length>0){
-	// 	var flag = window.confirm("确定要删除吗？");
-		
-	// 	if(flag){
-	// 		//alert("用户点击了确定删除");
-	// 		//选中的部门一个个删掉
-	// 		for(var i=0; i<checkeds.length;i++){
-	// 			var thisChecked=checkeds[i];
-	// 			var delMid=$(thisChecked).val();
-	// 			delJson(delMid);
-	// 		}
-	// 		showSearchList();
-	// 	}
-	// }else{
-	// 	alert("请选择要删除的数据");
-	// }
 
 	if(checkeds.length>0){
         parent.swal({
