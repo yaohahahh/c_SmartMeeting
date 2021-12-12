@@ -28,9 +28,8 @@ function showSearchList(){
 			if(strTime>nowTime){
 				for(var j=0;j<meetingRoomJsonArray.length;j++){
 					var Room=meetingRoomJsonArray[j];
-					if(Room.id==meet.rid){
+					if(Room.id==meet.rid&&Room.name!="undefined"){
 						parent.swal("最新通知", "您有一个新会议:"+meet.name+"\n会议地点:"+Room.name+"\n时间:"+meet.start_time, "info"); 
-						// alert("您有一个新会议:"+meet.name+"\n会议地点:"+Room.name+"\n时间:"+meet.start_time);
 						var trStr = "<tr>"+
 							"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 							"<td>"+meet.name+"</td>"+
@@ -137,19 +136,6 @@ function delChecked(){
 	// 	alert("请选择要删除的数据");
 	// }
 	if(checkeds.length>0){
-		// var flag = window.confirm("确定要删除吗？");
-		// if(flag){
-		// 	// alert("用户点击了确定删除");
-        //     parent.swal("删除！", "所选部门已经被删除。", "success"); 
-        //     // parent.postMessage("openAlert", "*");
-            
-		// 	for(var i=0;i<checkeds.length;i++){
-		// 		var thisChecked = checkeds[i];
-		// 		var delDid = $(thisChecked).val();
-		// 		delJson(delDid);
-		// 	}
-			
-		// }
         parent.swal({
             title: "你确定？",
             text: "您将无法恢复这个会议信息！",

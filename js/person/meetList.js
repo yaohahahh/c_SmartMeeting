@@ -16,7 +16,7 @@ function showSearchList(){
 		var inShow = false;
 		
 		if(name!=""){
-			if(meet.mname.indexOf(name)!=-1){
+			if(meet.name.indexOf(name)!=-1){
 				inShow=true;
 			}
 		}else{
@@ -26,7 +26,7 @@ function showSearchList(){
 		if(inShow){
 			for(var j=0;j<meetingRoomJsonArray.length;j++){
 				var Room=meetingRoomJsonArray[j];
-				if(Room.id==meet.rid){
+				if(Room.id==meet.rid&&Room.name!="undefined"){
 					var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.name+"</td>"+
@@ -44,8 +44,6 @@ function showSearchList(){
 	}
 	setPage();
 }
-
-
 
 
 //使用分页插件，进行分页展现
@@ -75,22 +73,6 @@ function checkAll(){
 
 function delChecked(){
 	var checkeds = $("input[name='id']:checked");
-	// if(checkeds.length>0){
-	// 	var flag = window.confirm("确定要删除吗？");
-		
-	// 	if(flag){
-	// 		//alert("用户点击了确定删除");
-	// 		//选中的部门一个个删掉
-	// 		for(var i=0; i<checkeds.length;i++){
-	// 			var thisChecked=checkeds[i];
-	// 			var delMid=$(thisChecked).val();
-	// 			delJson(delMid);
-	// 		}
-	// 		showSearchList();
-	// 	}
-	// }else{
-	// 	alert("请选择要删除的数据");
-	// }
 	if(checkeds.length>0){
         parent.swal({
             title: "你确定？",
