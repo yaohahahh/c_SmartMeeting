@@ -12,7 +12,7 @@ function showSearchList(){
     var name=$("#name").val();
     for(var i=0;i<meetJsonArray.length;i++){
 		var meet = meetJsonArray[i];
-		if(meet!='undefined'){
+		if(meet!=undefined){
 		var inShow = false;
 		
 		if(name!=""){
@@ -92,19 +92,6 @@ function delChecked(){
 	// 	alert("请选择要删除的数据");
 	// }
 	if(checkeds.length>0){
-		// var flag = window.confirm("确定要删除吗？");
-		// if(flag){
-		// 	// alert("用户点击了确定删除");
-        //     parent.swal("删除！", "所选部门已经被删除。", "success"); 
-        //     // parent.postMessage("openAlert", "*");
-            
-		// 	for(var i=0;i<checkeds.length;i++){
-		// 		var thisChecked = checkeds[i];
-		// 		var delDid = $(thisChecked).val();
-		// 		delJson(delDid);
-		// 	}
-			
-		// }
         parent.swal({
             title: "你确定？",
             text: "您将无法恢复这个会议的信息！",
@@ -140,8 +127,8 @@ function delJson(delMid){
 		var meet=meetJsonArray[i];
 		if(meet!=undefined){
 			if(meet.mid==delMid){
-				meetJsonArray[i] = 'undefined';
-				// delete meetJsonArray[i];
+				// meetJsonArray[i] = 'undefined';
+				delete meetJsonArray[i];
 				return;
 			}
 		}

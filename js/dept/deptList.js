@@ -52,7 +52,7 @@ function setPages(){
     $('.pagination-container').html("")
     
     $('.table tbody').paginathing({
-        perPage:3,
+        perPage:5,
         insertAfter:'.table',
         pageNumbers:true
     })

@@ -1,7 +1,5 @@
 var loginUser = window.parent.loginUser;
 $(function(){
-
-	
 	
 	//每1秒刷新一次时间
     setInterval(function(){
@@ -53,18 +51,21 @@ $(function(){
 		}
 	});
 	/**********以上部分是菜单的一二级的相关动态样式**********/
+	
 	syncUser();
+	
 	if(loginUser.status=="0"){
-		swal("您的账号未被启用!", "请联系管理员","error")
+		parent.swal("您的账号未被启用!", "请联系管理员","error")
 	}
 
 
 	if(loginUser.auditstatus=="1"){
-		swal("管理员登录成功!", "欢迎您："+loginUser.name, "success")
+		parent.swal("管理员登录成功!", "欢迎您："+loginUser.name, "success")
 	}else{
-		swal("普通用户登录成功!", "欢迎您："+loginUser.name, "success")
+		parent.swal("普通用户登录成功!", "欢迎您："+loginUser.name, "success")
 	}
 
+	
 
 });
 
@@ -87,8 +88,13 @@ function syncUser(){
 				break;
 			}
 		}
-	$("#loginSpan").html("欢迎登录,"+loginUser.name);
-	loginUserName=loginUser.name;
+	
+	if(loginUser!=undefined){
+		$("#loginSpan").html("欢迎登录,"+loginUser.name);
+		loginUserName=loginUser.name;
+	}
+	
+	
 }
 
 
@@ -105,33 +111,40 @@ function changePassword(){
 
 
 	if(oldPassword==""){
-		alert("请输入原密码");
+		parent.swal("警告!", "请输入原密码","error")
+		// alert("请输入原密码");
 		return;
 	}
 	if(newPassword==""){
-		alert("请输入新密码");
+		parent.swal("警告!", "请输入新密码","error")
+		// alert("请输入新密码");
 		return;
 	}
 	if(confirmPassword==""){
-		alert("请输入确认密码");
+		parent.swal("警告!", "请输入确认密码","error")
+		// alert("请输入确认密码");
 		return;
 	}
 	if(loginUser.password!=oldPassword){
-		alert("原密码错误！");
+		parent.swal("警告!", "原密码错误","error")
+		// alert("原密码错误！");
 		return;
 	}
 	if(newPassword!=confirmPassword){
-		alert("两次输入的密码不一致");
+		parent.swal("您的账号未被启用!", "请联系管理员","error")
+		// alert("两次输入的密码不一致");
 		return;
 	}
 	if(oldPassword==newPassword){
-		alert("新密码与原密码相同");
+		parent.swal("您的账号未被启用!", "请联系管理员","error")
+		// alert("新密码与原密码相同");
 		return;
 	}
-	alert("修改成功");
+	parent.swal("修改成功!", '您的新密码是:'+newPassword,"success")
+	// alert("修改成功");
 	loginUser.password=newPassword;
 	// window.parent.location.href="login.html";
-	alert('您的新密码是:'+loginUser.password)
+	// alert('您的新密码是:'+loginUser.password)
 	
 	
 	// if(oldPassword==loginUser.password && newPassword==confirmPassword){
