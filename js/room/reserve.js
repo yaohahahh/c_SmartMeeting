@@ -35,7 +35,7 @@ function fillEmployees(){
     var deptid = $("#selDepartments").val();
     for(i=0;i<employeeJsonArray.length;i++){
         var employee = employeeJsonArray[i];
-        if(employee!=undefined && employee.depid==deptid){
+        if(employee!=undefined && employee.depid==deptid && employee.status=="1"){
             $("#selEmployees").append("<option value='"+employee.id+"'>"+employee.name+"</option>");
         }
     }
