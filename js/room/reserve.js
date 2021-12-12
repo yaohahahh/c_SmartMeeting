@@ -6,7 +6,7 @@ var meetingJsonArray = window.parent.meetingJsonArray
 $(function (){
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
-        if(dept!=undefined){
+        if(dept!=undefined && dept.dname != "undefined"){
             $("#selDepartments").append("<option value='"+dept.did+"'>"+dept.dname+"</option>");
         }
     }
@@ -155,6 +155,8 @@ function reserveMeeting(){
     var now_time = new Date().Format("yyyy-MM-dd HH:mm");
     var loginUserId = getParam("loginUserId");
     var r_name;
+    var room;
+    var selSelectedEmployees = $("#selSelectedEmployees option");
     for (var i=0; i<employeeJsonArray.length; i++) {
         if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
             loginUser = employeeJsonArray[i];
@@ -163,6 +165,7 @@ function reserveMeeting(){
     }
     for (var i=0; i<meetingRoomJsonArray.length; i++) {
         if(mid == meetingRoomJsonArray[i].id){
+            room = meetingRoomJsonArray[i]
             r_name = meetingRoomJsonArray[i].name;
         }
     }
@@ -183,7 +186,8 @@ function reserveMeeting(){
         // alert("请您输入会议人数")
         parent.swal("警告!", "请您输入会议人数", "warning")
     }else if(mid == undefined){
-        alert("请您选择会议室")
+        // alert("请您选择会议室")
+        parent.swal("警告!", "请您选择会议室", "warning")
     }else if(participants == ""){
         // alert("请您选择参会人员")
         parent.swal("警告!", "请您选择参会人员", "warning")
@@ -198,6 +202,10 @@ function reserveMeeting(){
         parent.swal("警告!", "预定会议时间不能早于现在", "warning")
     }else if(start_time >= end_time){
         parent.swal("警告!", "会议结束时间不能早于开始时间", "warning")
+    }else if(room.large < num) {
+        parent.swal("警告!", "会议人数大于会议室容量", "warning")
+    }else if(num < selSelectedEmployees.length){
+        parent.swal("警告!", "与会人员数量大于预计参会人数", "warning")
     }else{
         if(checkIsUsed(mid,start_time,end_time)){
             var meeting = {
@@ -245,6 +253,7 @@ function getParticipants(){
     for(var i=0;i<selSelectedEmployees.length; i++){
         var selSelectedEmp = selSelectedEmployees[i];
         participants += $(selSelectedEmp).val()+",";
+
     }
     return participants;
 }
