@@ -43,7 +43,7 @@ function updateDept(){
                 if(Room.id==meet.rid){
             meet.name=mname;
             meet.rid=mroom;
-            Room.id=mroom;
+            // Room.id=mroom;
             meet.start_time=mstart;
             meet.end_time=mend;
             meet.mtime=mtime;

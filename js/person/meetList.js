@@ -26,7 +26,7 @@ function showSearchList(){
 		if(inShow){
 			for(var j=0;j<meetingRoomJsonArray.length;j++){
 				var Room=meetingRoomJsonArray[j];
-				if(Room.id==meet.rid&&Room.name!="undefined"){
+				if(Room.id==meet.rid&&Room.name!="undefined" && meet.name!="undefined"){
 					var trStr = "<tr>"+
 				"<td><input type='checkbox' name='id' value='"+meet.mid+"' /></td>"+
 				"<td>"+meet.name+"</td>"+
@@ -109,8 +109,8 @@ function delJson(delMid){
 		var meet=meetJsonArray[i];
 		if(meet!=undefined){
 			if(meet.mid==delMid){
-				// meetJsonArray[i] = 'undefined';
-				delete meetJsonArray[i];
+				meetJsonArray[i].name = 'undefined';
+				// delete meetJsonArray[i];
 				return;
 			}
 		}
