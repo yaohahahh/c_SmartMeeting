@@ -3,6 +3,9 @@ var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
     //获取得到员工信息列表
 
+    onClickSelector();
+    onClickShowSelector();
+
     var name = $("#name").val()
     if(name==null){
         return

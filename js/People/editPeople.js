@@ -4,6 +4,7 @@ var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
 
     onClickSelector();
+    onClickShowSelector();
     
     for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].id==id){
