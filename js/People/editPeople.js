@@ -2,6 +2,9 @@ var id  = getParam("id");
 var employeeJsonArray = window.parent.employeeJsonArray;
 var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
+
+    onClickSelector();
+    
     for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].id==id){
             $("#name").val(employeeJsonArray[i].name);
@@ -25,6 +28,8 @@ $(function(){
             break;
         }
     }
+
+    
 });
 
 function updatePeople(){
