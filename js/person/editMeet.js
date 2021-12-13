@@ -2,6 +2,13 @@ var mid = getParam("mid");
 var meetJsonArray=window.parent.meetingJsonArray;
 var meetingRoomJsonArray=window.parent.meetingRoomJsonArray;
 $(function(){
+    $("#room").html("");
+    for (var i=0; i<meetingRoomJsonArray.length; i++) {
+        var meetingroom = meetingRoomJsonArray[i];
+        var optionStr = "<option value='"+ meetingroom.id + "'>"+meetingroom.name + "</option>";
+        $("#room").append(optionStr)
+    }
+    
     for(var i=0;i<meetJsonArray.length;i++){
     var meet=meetJsonArray[i];
     if(meet.mid==mid){
