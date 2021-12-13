@@ -3,8 +3,16 @@ var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
     //获取得到员工信息列表
 
-    c_onClickSelector();
-    c_onClickShowSelector();
+    // c_onClickSelector();
+    // c_onClickShowSelector();
+    $("#dep").html("");
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined && dept.dname != "undefined"){
+            var optionStr = "<option value='"+ dept.did + "'>"+dept.dname + "</option>";
+        }
+        $("#dep").append(optionStr)
+    }
 
     var name = $("#name").val()
     if(name==null){

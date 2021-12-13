@@ -3,8 +3,18 @@ var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
     //获取得到员工信息列表
 
-    onClickSelector();
-    onClickShowSelector();
+    // onClickSelector();
+    // onClickShowSelector();
+    $("#dep").html("");
+    var optionStr = "<option value='0'>请选择</option>";
+    $("#dep").append(optionStr)
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined && dept.dname != 'undefined'){
+            var optionStr = "<option value='"+ dept.did + "'>"+dept.dname + "</option>";
+            $("#dep").append(optionStr)
+        }
+    }
 
     var name = $("#name").val()
     if(name==null){
@@ -369,7 +379,7 @@ function delPJson(delid){
 
 function onClickSelector(){
     $("#dep").html("");
-    var optionStr = "<option value=''>请选择</option>";
+    var optionStr = "<option value='0'>请选择</option>";
     $("#dep").append(optionStr)
     for (var i=0; i<deptJsonArray.length; i++) {
         var dept = deptJsonArray[i];
@@ -383,7 +393,7 @@ function onClickSelector(){
 
 function onClickShowSelector(){
     $("#dep").html("");
-    var optionStr = "<option value=''>请选择</option>";
+    var optionStr = "<option value='0'>请选择</option>";
     $("#dep").append(optionStr)
     for (var i=0; i<deptJsonArray.length; i++) {
         var dept = deptJsonArray[i];

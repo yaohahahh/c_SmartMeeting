@@ -3,8 +3,19 @@ var employeeJsonArray = window.parent.employeeJsonArray;
 var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
 
-    onClickSelector();
-    onClickShowSelector();
+    // $("#dep").html("");
+    // onClickSelector();
+    $("#dep").html("");
+    var optionStr = "<option value=''>请选择</option>";
+    $("#dep").append(optionStr)
+    for (var i=0; i<deptJsonArray.length; i++) {
+        var dept = deptJsonArray[i];
+        if(dept != undefined && dept.dname != "undefined"){
+            $("#dep").append("<option value='"+ dept.did + "'>"+dept.dname + "</option>");
+        }
+        
+    }
+    // onClickShowSelector();
     
     for(var i=0;i<employeeJsonArray.length;i++){
         if(employeeJsonArray[i].id==id){
@@ -174,12 +185,14 @@ function updatePeople(){
 
 function onClickSelector(){
     $("#dep").html("");
+    var optionStr = "<option value=''>请选择</option>";
+    $("#dep").append(optionStr)
     for (var i=0; i<deptJsonArray.length; i++) {
         var dept = deptJsonArray[i];
         if(dept != undefined && dept.dname != "undefined"){
-            var optionStr = "<option value='"+ dept.did + "'>"+dept.dname + "</option>";
+            $("#dep").append("<option value='"+ dept.did + "'>"+dept.dname + "</option>");
         }
-        $("#dep").append(optionStr)
+        
     }
     
 }

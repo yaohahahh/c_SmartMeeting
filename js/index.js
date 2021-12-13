@@ -54,9 +54,6 @@ $(function(){
 	
 	syncUser();
 	
-	if(loginUser.status=="0"){
-		parent.swal("您的账号未被启用!", "请联系管理员","error")
-	}
 
 
 	if(loginUser.auditstatus=="1"){
@@ -131,12 +128,12 @@ function changePassword(){
 		return;
 	}
 	if(newPassword!=confirmPassword){
-		parent.swal("您的账号未被启用!", "请联系管理员","error")
+		parent.swal("警告！", "两次输入的密码不一致","error")
 		// alert("两次输入的密码不一致");
 		return;
 	}
 	if(oldPassword==newPassword){
-		parent.swal("您的账号未被启用!", "请联系管理员","error")
+		parent.swal("警告！", "新密码与原密码相同","error")
 		// alert("新密码与原密码相同");
 		return;
 	}
