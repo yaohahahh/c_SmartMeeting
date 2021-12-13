@@ -45,20 +45,19 @@ function updateDept(){
     for (var i=0;i<meetJsonArray.length;i++){
         var meet=meetJsonArray[i];
         if(meet.mid==mid){
-            for(var j=0;j<meetingRoomJsonArray.length;j++){
-                var Room=meetingRoomJsonArray[j];
-                if(Room.id==meet.rid){
-            meet.name=mname;
-            meet.rid=mroom;
-            // Room.id=mroom;
-            meet.start_time=mstart;
-            meet.end_time=mend;
-            meet.mtime=mtime;
-            meet.mper=mper;
-            parent.swal("成功!", "您选择的会议修改成功！", "success")  
+        for(var j=0;j<meetingRoomJsonArray.length;j++){
+            var Room=meetingRoomJsonArray[j];
+            if(Room.name==mroom){
+                meet.rid=Room.id;
+            }
+        meet.name=mname;
+        meet.start_time=mstart;
+        meet.end_time=mend;
+        meet.mtime=mtime;
+        meet.mper=mper;
+        parent.swal("成功!", "您选择的会议修改成功！", "success")  
             // alert("修改成功");
-            window.location.href="meetRer.html";
-        }}
+            window.location.href="meetRer.html";}
         }
     }
 }
