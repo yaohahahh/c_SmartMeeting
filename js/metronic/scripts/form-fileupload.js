@@ -2,21 +2,21 @@ var FormFileUpload = function () {
 
 
     return {
-        //main function to initiate the module
+
         init: function () {
 
-            // Initialize the jQuery File Upload widget:
+
             $('#fileupload').fileupload({
-                // Uncomment the following to send cross-domain cookies:
-                //xhrFields: {withCredentials: true},
+
+
                 url: 'resource/metronic/plugins/jquery-file-upload/server/php/'
             });
 
-            // Load existing files:
-            // Demo settings:
+
+
             $.ajax({
-                // Uncomment the following to send cross-domain cookies:
-                //xhrFields: {withCredentials: true},
+
+
                 url: $('#fileupload').fileupload('option', 'url'),
                 dataType: 'json',
                 context: $('#fileupload')[0],
@@ -25,7 +25,7 @@ var FormFileUpload = function () {
                 process: [{
                         action: 'load',
                         fileTypes: /^image\/(gif|jpeg|png)$/,
-                        maxFileSize: 20000000 // 20MB
+                        maxFileSize: 20000000
                     }, {
                         action: 'resize',
                         maxWidth: 1440,
@@ -41,7 +41,7 @@ var FormFileUpload = function () {
                 });
             });
 
-            // Upload server status check for browsers with CORS support:
+
             if ($.support.cors) {
                 $.ajax({
                     url: 'resource/metronic/plugins/jquery-file-upload/server/php/',
@@ -54,7 +54,7 @@ var FormFileUpload = function () {
                 });
             }
 
-            // initialize uniform checkboxes  
+
             App.initUniform('.fileupload-toggle-checkbox');
         }
 

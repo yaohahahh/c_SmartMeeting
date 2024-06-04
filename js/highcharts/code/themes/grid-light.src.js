@@ -1,36 +1,7 @@
-/**
- * @license Highcharts JS v6.1.4 (2018-09-25)
- *
- * (c) 2009-2017 Torstein Honsi
- *
- * License: www.highcharts.com/license
- */
-'use strict';
-(function (factory) {
-	if (typeof module === 'object' && module.exports) {
-		module.exports = factory;
-	} else if (typeof define === 'function' && define.amd) {
-		define(function () {
-			return factory;
-		});
-	} else {
-		factory(Highcharts);
-	}
-}(function (Highcharts) {
-	(function (Highcharts) {
-		/**
-		 * (c) 2010-2017 Torstein Honsi
-		 *
-		 * License: www.highcharts.com/license
-		 *
-		 * Grid-light theme for Highcharts JS
-		 * @author Torstein Honsi
-		 */
 
-		/* global document */
-		// Load the fonts
+
 		Highcharts.createElement('link', {
-		    href: 'https://fonts.googleapis.com/css?family=Dosis:400,600',
+		    href: 'https:
 		    rel: 'stylesheet',
 		    type: 'text/css'
 		}, null, document.getElementsByTagName('head')[0]);
@@ -90,12 +61,12 @@
 		    },
 
 
-		    // General
+
 		    background2: '#F0F0EA'
 
 		};
 
-		// Apply the theme
+
 		Highcharts.setOptions(Highcharts.theme);
 
 	}(Highcharts));

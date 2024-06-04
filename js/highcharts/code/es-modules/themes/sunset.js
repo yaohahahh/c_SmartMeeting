@@ -1,12 +1,4 @@
-/**
- * (c) 2010-2017 Highsoft AS
- *
- * License: www.highcharts.com/license
- *
- * Accessible high-contrast theme for Highcharts. Considers colorblindness and
- * monochrome rendering.
- * @author Øystein Moseng
- */
+
 
 'use strict';
 import Highcharts from '../parts/Globals.js';
@@ -32,5 +24,5 @@ Highcharts.theme = {
     }
 };
 
-// Apply the theme
+
 Highcharts.setOptions(Highcharts.theme);

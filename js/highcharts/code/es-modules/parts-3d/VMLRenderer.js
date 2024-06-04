@@ -1,22 +1,4 @@
-/**
- * (c) 2010-2017 Torstein Honsi
- *
- * License: www.highcharts.com/license
- */
-'use strict';
-import H from '../parts/Globals.js';
-import '../parts/Utilities.js';
-import '../parts/Axis.js';
-import '../parts/SvgRenderer.js';
 
-var addEvent = H.addEvent,
-    Axis = H.Axis,
-    SVGRenderer = H.SVGRenderer,
-    VMLRenderer = H.VMLRenderer;
-
-/**
- *    Extension to the VML Renderer
- */
 if (VMLRenderer) {
 
     H.setOptions({ animate: false });
@@ -42,7 +24,7 @@ if (VMLRenderer) {
 
     addEvent(Axis, 'render', function () {
 
-        // VML doesn't support a negative z-index
+
         if (this.sideFrame) {
             this.sideFrame.css({ zIndex: 0 });
             this.sideFrame.front.attr({ fill: this.sideFrame.color });

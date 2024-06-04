@@ -2,13 +2,7 @@ var isFn = function (x) {
     return typeof x === 'function';
 };
 
-/**
- * draw - Handles the drawing of a point.
- * TODO: add type checking.
- *
- * @param  {object} params Parameters.
- * @return {undefined} Returns undefined.
- */
+
 var draw = function draw(params) {
     var point = this,
         graphic = point.graphic,

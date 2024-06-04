@@ -51,7 +51,7 @@ var UIJQueryUI = function () {
 
     var handleDialogs = function () {
 
-    	// basic dialog1
+
     	$( "#dialog_basic1" ).dialog({
 		      autoOpen: false,
 		      dialogClass: 'ui-dialog-yellow',
@@ -67,10 +67,10 @@ var UIJQueryUI = function () {
 	 
 	    $( "#basic_opener1").click(function() {
 	      $( "#dialog_basic1" ).dialog( "open" );	
-	      $('.ui-dialog button').blur();// avoid button autofocus     
+	      $('.ui-dialog button').blur();
 	    });
 
-	    // basic dialog2
+
     	$( "#dialog_basic2" ).dialog({
 		      autoOpen: false,
 		      dialogClass: 'ui-dialog-purple',
@@ -86,10 +86,10 @@ var UIJQueryUI = function () {
 	 
 	    $( "#basic_opener2").click(function() {
 	      $( "#dialog_basic2" ).dialog( "open" );	
-	      $('.ui-dialog button').blur();// avoid button autofocus     
+	      $('.ui-dialog button').blur();
 	    });
 
-	    // basic dialog3
+
     	$( "#dialog_basic3" ).dialog({
 		      autoOpen: false,
 		      dialogClass: 'ui-dialog-grey',
@@ -105,10 +105,10 @@ var UIJQueryUI = function () {
 	 
 	    $( "#basic_opener3").click(function() {
 	      $( "#dialog_basic3" ).dialog( "open" );	
-	      $('.ui-dialog button').blur();// avoid button autofocus     
+	      $('.ui-dialog button').blur();
 	    });
 
-	    // basic dialog4
+
     	$( "#dialog_basic4" ).dialog({
 		      autoOpen: false,
 		      dialogClass: 'ui-dialog-red',
@@ -124,10 +124,10 @@ var UIJQueryUI = function () {
 	 
 	    $( "#basic_opener4").click(function() {
 	      $( "#dialog_basic4" ).dialog( "open" );	
-	      $('.ui-dialog button').blur();// avoid button autofocus     
+	      $('.ui-dialog button').blur();
 	    });
 
-	    // info dialog
+
 	    $("#dialog_info").dialog({
 	      dialogClass: 'ui-dialog-blue',
 	      autoOpen: false,
@@ -147,10 +147,10 @@ var UIJQueryUI = function () {
 
 	    $( "#info_opener").click(function() {
 	      $( "#dialog_info" ).dialog( "open" );
-	       $('.ui-dialog button').blur();// avoid button autofocus
+	       $('.ui-dialog button').blur();
 	    });
 
-	    //confirm dialog
+
 	    $("#dialog_confirm" ).dialog({
 	      dialogClass: 'ui-dialog-green',
 	      autoOpen: false,
@@ -177,13 +177,13 @@ var UIJQueryUI = function () {
 
 	    $( "#confirm_opener").click(function() {
 	      $( "#dialog_confirm" ).dialog( "open" );
-	       $('.ui-dialog button').blur();// avoid button autofocus
+	       $('.ui-dialog button').blur();
 	    });
 
     }
 
     return {
-        //main function to initiate the module
+
         init: function () {
             handleDatePickers();
             handleDialogs();

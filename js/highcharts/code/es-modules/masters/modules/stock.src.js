@@ -1,11 +1,4 @@
-/**
- * @license @product.name@ JS v@product.version@ (@product.date@)
- * Highstock as a plugin for Highcharts
- *
- * (c) 2017 Torstein Honsi
- *
- * License: www.highcharts.com/license
- */
+
 'use strict';
 import '../../parts/OrdinalAxis.js';
 import './broken-axis.src.js';

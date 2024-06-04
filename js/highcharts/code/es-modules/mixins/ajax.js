@@ -1,28 +1,4 @@
-/**
- * (c) 2010-2017 Christer Vasseng, Torstein Honsi
- *
- * License: www.highcharts.com/license
- */
-'use strict';
-import H from '../parts/Globals.js';
-/**
- * @typedef {Object} AjaxSettings
- * @property {String} url - The URL to call
- * @property {('get'|'post'|'update'|'delete')} type - The verb to use
- * @property {('json'|'xml'|'text'|'octet')} dataType - The data type expected
- * @property {Function} success - Function to call on success
- * @property {Function} error - Function to call on error
- * @property {Object} data - The payload to send
- * @property {Object} headers - The headers; keyed on header name
- */
 
-/**
- * Perform an Ajax call.
- *
- * @memberof Highcharts
- * @param {AjaxSettings} - The Ajax settings to use
- *
- */
 H.ajax = function (attr) {
     var options = H.merge(true, {
             url: false,
@@ -45,7 +21,7 @@ H.ajax = function (attr) {
         if (options.error) {
             options.error(xhr, err);
         } else {
-            // Maybe emit a highcharts error event here
+
         }
     }
 

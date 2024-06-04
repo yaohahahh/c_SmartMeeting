@@ -24,7 +24,7 @@ var FormComponents = function () {
         });
         $('.danger-toggle-button').toggleButtons({
             style: {
-                // Accepted values ["primary", "danger", "info", "success", "warning"] or nothing
+
                 enabled: "danger",
                 disabled: "info"
             }
@@ -65,7 +65,7 @@ var FormComponents = function () {
         $('#tags_1').tagsInput({
             width: 'auto',
             'onAddTag': function () {
-                //alert(1);
+
             },
         });
         $('#tags_2').tagsInput({
@@ -255,7 +255,7 @@ var FormComponents = function () {
         });
 
         function format(state) {
-            if (!state.id) return state.text; // optgroup
+            if (!state.id) return state.text;
             return "<img class='flag' src='resource/metronic/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
         }
         $("#select2_sample4").select2({
@@ -294,30 +294,30 @@ var FormComponents = function () {
         $("#select2_sample6").select2({
             placeholder: "Search for a movie",
             minimumInputLength: 1,
-            ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+            ajax: {
+                url: "http:
                 dataType: 'jsonp',
                 data: function (term, page) {
                     return {
-                        q: term, // search term
+                        q: term,
                         page_limit: 10,
-                        apikey: "ju6z9mjyajq2djue3gbvv26t" // please do not use so this example keeps working
+                        apikey: "ju6z9mjyajq2djue3gbvv26t"
                     };
                 },
-                results: function (data, page) { // parse the results into the format expected by Select2.
-                    // since we are using custom formatting functions we do not need to alter remote JSON data
+                results: function (data, page) {
+
                     return {
                         results: data.movies
                     };
                 }
             },
             initSelection: function (element, callback) {
-                // the input tag has a value attribute preloaded that points to a preselected movie's id
-                // this function resolves that id attribute to an object that select2 can render
-                // using its formatResult renderer - that way the movie name is shown preselected
+
+
+
                 var id = $(element).val();
                 if (id !== "") {
-                    $.ajax("http://api.rottentomatoes.com/api/public/v1.0/movies/" + id + ".json", {
+                    $.ajax("http:
                         data: {
                             apikey: "ju6z9mjyajq2djue3gbvv26t"
                         },
@@ -327,12 +327,12 @@ var FormComponents = function () {
                     });
                 }
             },
-            formatResult: movieFormatResult, // omitted for brevity, see the source of this page
-            formatSelection: movieFormatSelection, // omitted for brevity, see the source of this page
-            dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
+            formatResult: movieFormatResult,
+            formatSelection: movieFormatSelection,
+            dropdownCssClass: "bigdrop",
             escapeMarkup: function (m) {
                 return m;
-            } // we do not want to escape markup since we are displaying html in results
+            }
         });
     }
 
@@ -341,16 +341,16 @@ var FormComponents = function () {
             'autounmask': true
         });
 
-        $("#mask_date").inputmask("d/m/y", {autoUnmask: true});  //direct mask        
-        $("#mask_date1").inputmask("d/m/y",{ "placeholder": "*"}); //change the placeholder
-        $("#mask_date2").inputmask("d/m/y",{ "placeholder": "dd/mm/yyyy" }); //multi-char placeholder
-        $("#mask_phone").inputmask("mask", {"mask": "(999) 999-9999"}); //specifying fn & options
-        $("#mask_tin").inputmask({"mask": "99-9999999"}); //specifying options only
-        $("#mask_number").inputmask({ "mask": "9", "repeat": 10, "greedy": false });  // ~ mask "9" or mask "99" or ... mask "9999999999"
-        $("#mask_decimal").inputmask('decimal', { rightAlignNumerics: false }); //disables the right alignment of the decimal input
-        $("#mask_currency").inputmask('999.999.999,99', { numericInput: true });  //123456  =>  1.234,56
-        $("#mask_currency2").inputmask('999,999,999.99', { numericInput: true, rightAlignNumerics: false  }); //123456  =>  1.234,56
-        $("#mask_ssn").inputmask("999-99-9999", {placeholder:" ", clearMaskOnLostFocus: true }); //default
+        $("#mask_date").inputmask("d/m/y", {autoUnmask: true});
+        $("#mask_date1").inputmask("d/m/y",{ "placeholder": "*"});
+        $("#mask_date2").inputmask("d/m/y",{ "placeholder": "dd/mm/yyyy" });
+        $("#mask_phone").inputmask("mask", {"mask": "(999) 999-9999"});
+        $("#mask_tin").inputmask({"mask": "99-9999999"});
+        $("#mask_number").inputmask({ "mask": "9", "repeat": 10, "greedy": false });
+        $("#mask_decimal").inputmask('decimal', { rightAlignNumerics: false });
+        $("#mask_currency").inputmask('999.999.999,99', { numericInput: true });
+        $("#mask_currency2").inputmask('999,999,999.99', { numericInput: true, rightAlignNumerics: false  });
+        $("#mask_ssn").inputmask("999-99-9999", {placeholder:" ", clearMaskOnLostFocus: true });
     }
 
     var handleIPAddressInput = function () {
@@ -359,7 +359,7 @@ var FormComponents = function () {
     }
 
     return {
-        //main function to initiate the module
+
         init: function () {
             handleWysihtml5();
             handleToggleButtons();

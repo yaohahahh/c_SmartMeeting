@@ -7,7 +7,7 @@ require([
   var INDEX_DATA = {}
   var usePushState = (typeof window.history.pushState !== 'undefined')
 
-  // DOM Elements
+
   var $body = $('body')
   var $bookSearchResults
   var $searchList
@@ -15,7 +15,7 @@ require([
   var $searchResultsCount
   var $searchQuery
 
-  // Throttle search
+
   function throttle (fn, wait) {
     var timeout
 
@@ -43,14 +43,14 @@ require([
     var noResults = res.count == 0
     $bookSearchResults.toggleClass('no-results', noResults)
 
-    // Clear old results
+
     $searchList.empty()
 
-    // Display title for research
+
     $searchResultsCount.text(res.count)
     $searchQuery.text(res.query)
 
-    // Create an <li> element for each result
+
     res.results.forEach(function (item) {
       var $li = $('<li>', {
         'class': 'search-results-item'
@@ -83,7 +83,7 @@ require([
   }
 
   function escapeRegExp (keyword) {
-    // escape regexp prevserve word
+
     return String(keyword).replace(/([-.*+?^${}()|[\]\/\\])/g, '\\$1')
   }
 
@@ -102,7 +102,7 @@ require([
           url: page,
           title: store.title,
           body: store.body.substr(Math.max(0, index - 50), MAX_DESCRIPTION_SIZE)
-                    .replace(/^[^\s,.]+./, '').replace(/(..*)[\s,.].*/, '$1') // prevent break word
+                    .replace(/^[^\s,.]+./, '').replace(/(..*)[\s,.].*/, '$1')
                     .replace(new RegExp('(' + escapeRegExp(keyword) + ')', 'gi'), '<span class="search-highlight-keyword">$1</span>')
         })
       }
@@ -115,7 +115,7 @@ require([
   }
 
   function launchSearch (keyword) {
-    // Add class for loading
+
     $body.addClass('with-search')
     $body.addClass('search-loading')
 
@@ -133,10 +133,10 @@ require([
   }
 
   function bindSearch () {
-    // Bind DOM
+
     var $body = $('body')
 
-    // Launch query based on input content
+
     function handleUpdate () {
       var $searchInput = $('#book-search-input input')
       var keyword = $searchInput.val()
@@ -160,9 +160,9 @@ require([
       handleUpdate()
     })
 
-    // Push to history on blur
+
     $body.on('blur', '#book-search-input input', function (e) {
-      // Update history state
+
       if (usePushState) {
         var uri = updateQueryString('q', $(this).val())
         window.history.pushState({
@@ -181,7 +181,7 @@ require([
     })
   })
 
-  // highlight
+
   var highLightPageInner = function (keyword) {
     $('.page-inner').mark(keyword, {
       'ignoreJoiners': true,

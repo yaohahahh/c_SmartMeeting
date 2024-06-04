@@ -1,9 +1,9 @@
 ﻿
 (function ($) {
     var defaults = {
-        allDataCount: 0,//一共有多少条数据
-        everyPageDataCount:0,//每一页显示多少条数据
-        nowPageCataCount:0,//当前是第几页
+        allDataCount: 0,
+        everyPageDataCount:0,
+        nowPageCataCount:0,
         success: function (nowPageCataCount/*当前是第几页*/) {
 
         },

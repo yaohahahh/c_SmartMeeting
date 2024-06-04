@@ -7,7 +7,7 @@ function navSal(){
 }
 
 function showStatistics(){
-	// $('#myFrame').attr('src', "Statistics/employeeStatistics.html");
+
 	window.history.go(-1);
 
 }

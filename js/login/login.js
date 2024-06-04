@@ -2,7 +2,7 @@ $(function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
-    // Main
+
     initHeader();
     initAnimation();
     addListeners();
@@ -15,14 +15,14 @@ $(function() {
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('demo-canvas');
-//        largeHeader.style.height = height+'px';
+
 
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
 
-        // create points
+
         points = [];
         for(var x = 0; x < width; x = x + width/20) {
             for(var y = 0; y < height; y = y + height/20) {
@@ -33,7 +33,7 @@ $(function() {
             }
         }
 
-        // for each point find the 5 closest points
+
         for(var i = 0; i < points.length; i++) {
             var closest = [];
             var p1 = points[i];
@@ -63,19 +63,19 @@ $(function() {
             p1.closest = closest;
         }
 
-        // assign a circle to each point
+
         for(var i in points) {
             var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
             points[i].circle = c;
         }
     }
 
-    // Event handling
+
     function addListeners() {
         if(!('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
         }
-//        randomRefresh();
+
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
     }
@@ -119,7 +119,7 @@ $(function() {
         canvas.height = height;
     }
 
-    // animation
+
     function initAnimation() {
         animate();
         for(var i in points) {
@@ -131,7 +131,7 @@ $(function() {
         if(animateHeader) {
             ctx.clearRect(0,0,width,height);
             for(var i in points) {
-                // detect points in range
+
                 if(Math.abs(getDistance(target, points[i])) < 4000) {
                     points[i].active = 0.3;
                     points[i].circle.active = 0.6;
@@ -162,7 +162,7 @@ $(function() {
             }});
     }
 
-    // Canvas manipulation
+
     function drawLines(p) {
         if(!p.active) return;
         for(var i in p.closest) {
@@ -177,7 +177,7 @@ $(function() {
     function Circle(pos,rad,color) {
         var _this = this;
 
-        // constructor
+
         (function() {
             _this.pos = pos || null;
             _this.radius = rad || null;
@@ -193,7 +193,7 @@ $(function() {
         };
     }
 
-    // Util
+
     function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
@@ -201,21 +201,21 @@ $(function() {
 });
 
 function checkLogin(){
-    // var username = document.getElementById("username").value;
-    // var pwd = document.getElementById("pwd").value;
+
+
     var username = $("#username").val();
     var pwd = $("#pwd").val();
 
     if(username==""){
-        // document.getElementById("errorspan").innerHTML = "请输入用户名"
+
         $("#errorspan").html("请输入用户名")
-        //alert("请输入用户名");
+
         return false;
     }
     if(pwd==""){
-        // document.getElementById("errorspan").innerHTML = "请输入密码"
+
         $("#errorspan").html("请输入密码")
-        // alert("请输入用户名");
+
         return false;
     }
 
@@ -228,18 +228,18 @@ function focusLogin(){
 function blurUsername(){
     var username = $("#username").val();
     if(username==""){
-        // document.getElementById("errorspan").innerHTML = "请输入用户名"
+
         $("#errorspan").html("请输入用户名")
-        //alert("请输入用户名");
+
     }
 }
 
 function blurpwd(){
     var pwd = $("#pwd").val();
     if(pwd==""){
-        // document.getElementById("errorspan").innerHTML = "请输入密码"
+
         $("#errorspan").html("请输入密码")
-        // alert("请输入用户名");
+
     }
 }
 
@@ -258,12 +258,12 @@ function login(){
                 $("#errorspan").html("管理员登录成功")
                 window.location.href = "adminIndex.html?loginUserId="+employeeJsonArray[i].id;
 
-                //跳转到管理员首页
+
             }else {
                 status+=1;
                 $("#errorspan").html("普通用户登陆成功")
                 window.location.href = "userIndex.html?loginUserId="+employeeJsonArray[i].id;
-                //跳转到普通用户首页
+
             }
 
         }
@@ -285,5 +285,5 @@ function resetPwd(){
     }
     parent.swal("密码重置成功!", "您的初始密码为：123123", "success");
     
-    // parent.swal("提示!", "请登录后尽快修改密码", "warning")  
+
 }

@@ -2,15 +2,15 @@
 
 
 
-使用协议：https://www.highcharts.com.cn/license
+使用协议：https:
 
-更新日志：https://www.hcharts.cn/docs/changelog/highcharts
-在线实例：https://www.hcharts.cn/demos/highcharts
+更新日志：https:
+在线实例：https:
 
-使用教程： https://www.hcharts.cn/docs
+使用教程： https:
 
-API 文档： https://api.hcharts.cn/highcharts
+API 文档： https:
 
-Copyright @ 2018 Highsoft AS (http://highsoft.com)
+Copyright @ 2018 Highsoft AS (http:
 
-中国地区由杭州简数科技有限公司提供服务（https://jianshukeji.com）
+中国地区由杭州简数科技有限公司提供服务（https:

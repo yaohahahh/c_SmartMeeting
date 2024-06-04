@@ -9,7 +9,7 @@ layui.define(["jquery"],function(exports){
 	var closeOther="removeOther";
 	var closeAll="removeAll";
 	var normalTab=null;
-//	layui.link(layui.context+"/static/comp/tabs/tabs.css");
+
 	var f = function(){};
 	/**
 	 * config:

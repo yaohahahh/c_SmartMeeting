@@ -1,12 +1,4 @@
-/*!
- * jQuery Cookie Plugin v1.3
- * https://github.com/carhartl/jquery-cookie
- *
- * Copyright 2011, Klaus Hartl
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.opensource.org/licenses/GPL-2.0
- */
+
 (function ($, document, undefined) {
 
     var pluses = /\+/g;
@@ -21,7 +13,7 @@
 
     var config = $.cookie = function (key, value, options) {
 
-        // write
+
         if (value !== undefined) {
             options = $.extend({}, config.defaults, options);
 
@@ -38,14 +30,14 @@
 
             return (document.cookie = [
                 encodeURIComponent(key), '=', config.raw ? value : encodeURIComponent(value),
-                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                options.expires ? '; expires=' + options.expires.toUTCString() : '',
                 options.path    ? '; path=' + options.path : '',
                 options.domain  ? '; domain=' + options.domain : '',
                 options.secure  ? '; secure' : ''
             ].join(''));
         }
 
-        // read
+
         var decode = config.raw ? raw : decoded;
         var cookies = document.cookie.split('; ');
         for (var i = 0, l = cookies.length; i < l; i++) {

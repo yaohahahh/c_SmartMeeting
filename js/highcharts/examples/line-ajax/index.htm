@@ -10,7 +10,7 @@
 		</style>
 	</head>
 	<body>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https:
 <script src="../../code/highcharts.js"></script>
 <script src="../../code/modules/data.js"></script>
 <script src="../../code/modules/series-label.js"></script>
@@ -18,9 +18,9 @@
 <script src="../../code/modules/export-data.js"></script>
 
 <!-- Additional files for the Highslide popup effect -->
-<script src="https://www.highcharts.com/media/com_demo/js/highslide-full.min.js"></script>
-<script src="https://www.highcharts.com/media/com_demo/js/highslide.config.js" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/media/com_demo/css/highslide.css" />
+<script src="https:
+<script src="https:
+<link rel="stylesheet" type="text/css" href="https:
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
@@ -37,7 +37,7 @@ Highcharts.chart('container', {
     },
 
     data: {
-        csvURL: 'https://cdn.rawgit.com/highcharts/highcharts/' +
+        csvURL: 'https:
             '057b672172ccc6c08fe7dbb27fc17ebca3f5b770/samples/data/analytics.csv',
         beforeParse: function (csv) {
             return csv.replace(/\n\n/g, '\n');
@@ -53,7 +53,7 @@ Highcharts.chart('container', {
     },
 
     xAxis: {
-        tickInterval: 7 * 24 * 3600 * 1000, // one week
+        tickInterval: 7 * 24 * 3600 * 1000,
         tickWidth: 0,
         gridLineWidth: 1,
         labels: {
@@ -63,7 +63,7 @@ Highcharts.chart('container', {
         }
     },
 
-    yAxis: [{ // left y axis
+    yAxis: [{
         title: {
             text: null
         },
@@ -74,7 +74,7 @@ Highcharts.chart('container', {
             format: '{value:.,0f}'
         },
         showFirstLabel: false
-    }, { // right y axis
+    }, {
         linkedTo: 0,
         gridLineWidth: 0,
         opposite: true,

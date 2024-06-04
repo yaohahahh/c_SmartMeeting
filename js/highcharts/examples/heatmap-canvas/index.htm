@@ -20,7 +20,7 @@
 
 <div id="container" style="height: 300px; min-width: 310px; max-width: 1000px; margin: 0 auto"></div>
 
-<!-- Source: http://vikjavev.no/ver/highcharts-demos/heatmap.csv.php?year=2013 -->
+<!-- Source: http:
 <pre id="csv" style="display: none">Date,Time,Temperature
 2017-01-01,0,2.7
 2017-01-01,1,2.5
@@ -8819,7 +8819,7 @@ Highcharts.chart('container', {
             align: 'left',
             x: 5,
             y: 14,
-            format: '{value:%B}' // long month
+            format: '{value:%B}'
         },
         showLastLabel: false,
         tickLength: 16
@@ -8863,12 +8863,12 @@ Highcharts.chart('container', {
         boostThreshold: 100,
         borderWidth: 0,
         nullColor: '#EFEFEF',
-        colsize: 24 * 36e5, // one day
+        colsize: 24 * 36e5,
         tooltip: {
             headerFormat: 'Temperature<br/>',
             pointFormat: '{point.x:%e %b, %Y} {point.y}:00: <b>{point.value} ℃</b>'
         },
-        turboThreshold: Number.MAX_VALUE // #3404, remove after 4.0.5 release
+        turboThreshold: Number.MAX_VALUE
     }]
 
 });

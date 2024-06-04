@@ -1,7 +1,7 @@
-//初始化数据
+
 var loginUser;
 
-//初始化员工列表
+
 var employeeJsonArray;
 $.ajax({
     url:"../Json/employee.json",
@@ -12,9 +12,9 @@ $.ajax({
         console.log(res);
         employeeJsonArray = res;
     },error: function(XMLHttpRequest, textStatus, errorThrown) {
-        // alert(XMLHttpRequest.status);
-        // alert(XMLHttpRequest.readyState);
-        // alert(textStatus);
+
+
+
         alert("error");
     }
 })
@@ -28,9 +28,9 @@ $.ajax({
         console.log(res);
         deptJsonArray = res;
     },error: function(XMLHttpRequest, textStatus, errorThrown) {
-        // alert(XMLHttpRequest.status);
-        // alert(XMLHttpRequest.readyState);
-        // alert(textStatus);
+
+
+
         alert("error");
     }
 })

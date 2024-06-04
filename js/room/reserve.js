@@ -10,7 +10,7 @@ $(function () {
             $("#selDepartments").append("<option value='" + dept.did + "'>" + dept.dname + "</option>");
         }
     }
-    fillEmployees();//根据选中的部门生成员工列表下拉框
+    fillEmployees();
     $("#mid").html("");
     var init = "<option value=\"1\" selected disabled style=\"display: none;\">--请选择--</option>"
     $("#mid").append(init)
@@ -30,9 +30,9 @@ function getParam(name) {
     return null;
 }
 
-//根据选中的部门生成员工列表下拉框
+
 function fillEmployees() {
-    $("#selEmployees").html("");//先清空该下拉框
+    $("#selEmployees").html("");
     var deptid = $("#selDepartments").val();
     for (i = 0; i < employeeJsonArray.length; i++) {
         var employee = employeeJsonArray[i];
@@ -42,14 +42,14 @@ function fillEmployees() {
     }
 }
 
-//点击选择该员工进行参会的按钮触发的事件
+
 function selectEmployees() {
-    //获取得到所有的选中的员工列表
+
     var selectedEmps = $("#selEmployees>option:selected");
-    for (var i = 0; i < selectedEmps.length; i++) {//将选中的员工追加到右侧的员工列表区域
+    for (var i = 0; i < selectedEmps.length; i++) {
         var selectedEmp = selectedEmps[i];
-        //首先判断该员工原来是否有出现在右侧区域中
-        //初始化定义并未出现过
+
+
         var flag = true;
         var selSelectedEmployees = $("#selSelectedEmployees option");
         for (var j = 0; j < selSelectedEmployees.length; j++) {
@@ -65,9 +65,9 @@ function selectEmployees() {
     }
 }
 
-//点击取消选择该员工进行参会的按钮触发的事件
+
 function deSelectEmployees() {
-    //获取得到所有的选中的想要取消参加会议的员工列表
+
     var selSelectedEmployees = $("#selSelectedEmployees>option:selected");
     for (var i = 0; i < selSelectedEmployees.length; i++) {
         $(selSelectedEmployees[i]).remove();
@@ -130,16 +130,16 @@ function checkUsedTime(mid, start_time, end_time) {
     return mark
 }
 
-//格式化时间
+
 Date.prototype.Format = function (fmt) {
     var o = {
-        "M+": this.getMonth() + 1, //月份
-        "d+": this.getDate(), //日
-        "H+": this.getHours(), //小时
-        "m+": this.getMinutes(), //分
-        "s+": this.getSeconds(), //秒
-        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
-        "S": this.getMilliseconds() //毫秒
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "H+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S": this.getMilliseconds()
     };
     if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
     for (var k in o)
@@ -160,7 +160,7 @@ function reserveMeeting() {
     var r_name;
     var room;
     var selSelectedEmployees = $("#selSelectedEmployees option");
-    var r = /^\+?[1-9][0-9]*$/;　　//正整数
+    var r = /^\+?[1-9][0-9]*$/;　　
     var flag = r.test(num);
     for (var i = 0; i < employeeJsonArray.length; i++) {
         if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i] != undefined) {
@@ -179,31 +179,31 @@ function reserveMeeting() {
     }
     var per_name = loginUser.name
     if (mname == "") {
-        // alert("请您输入会议名称")
+
         parent.swal("警告!", "请您输入会议名称", "warning")
     } else if (start_time == "") {
-        // alert("请您输入会议开始时间")
+
         parent.swal("警告!", "请您输入会议开始时间", "warning")
     } else if (end_time == "") {
-        // alert("请您输入会议结束时间")
+
         parent.swal("警告!", "请您输入会议结束时间", "warning")
     } else if (num == "") {
-        // alert("请您输入会议人数")
+
         parent.swal("警告!", "请您输入会议人数", "warning")
     } else if (mid == undefined) {
-        // alert("请您选择会议室")
+
         parent.swal("警告!", "请您选择会议室", "warning")
     } else if (participants == "") {
-        // alert("请您选择参会人员")
+
         parent.swal("警告!", "请您选择参会人员", "warning")
     } else if (remark == "") {
-        // alert("请您输入会议说明")
+
         parent.swal("警告!", "请您输入会议说明", "warning")
     } else if (loginUserId == undefined) {
-        // alert("请您先登录")
+
         parent.swal("警告!", "请您先登录", "warning")
     } else if (start_time < now_time || end_time < end_time) {
-        // alert("预定会议时间不能早于现在")
+
         parent.swal("警告!", "预定会议时间不能早于现在", "warning")
     } else if (start_time >= end_time) {
         parent.swal("警告!", "会议结束时间不能早于开始时间", "warning")
@@ -232,7 +232,7 @@ function reserveMeeting() {
             }
             meetingJsonArray[meetingJsonArray.length] = meeting;
             parent.swal("成功", "会议预定成功!", "success")
-            // alert("预定成功");
+
             $('#myFrame').attr('src', "MeetingRoom/reserve.html?loginUserId=" + loginUserId);
         } else {
             var mark;
@@ -243,19 +243,19 @@ function reserveMeeting() {
                 meetingJsonArray[mark].end_time + " 已经被 " +
                 meetingJsonArray[mark].mper + " 预定 " +
                 "\n\n请您调整会议时间", "error")
-            // alert("预定失败！\n\n"+
-            //     r_name+" 在 "+
-            //     meetingJsonArray[mark].start_time+" 到 "+
-            //     meetingJsonArray[mark].end_time + " 已经被 " +
-            //     meetingJsonArray[mark].mper + " 预定 "+
-            //     "\n\n请您调整会议时间")
+
+
+
+
+
+
         }
     }
 }
 
 function getParticipants() {
     var participants = "";
-    //获取已经选择的员工
+
     var selSelectedEmployees = $("#selSelectedEmployees option");
     for (var i = 0; i < selSelectedEmployees.length; i++) {
         var selSelectedEmp = selSelectedEmployees[i];

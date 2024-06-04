@@ -52,7 +52,7 @@
                   "<h3>" + locale.link.insert + "</h3>" +
                 "</div>" +
                 "<div class='modal-body'>" +
-                  "<input value='http://' class='bootstrap-wysihtml5-insert-link-url m-wrap large' type='text'>" +
+                  "<input value='http:
                 "</div>" +
                 "<div class='modal-footer'>" +
                   "<a href='#' class='btn' data-dismiss='modal'>" + locale.link.cancel + "</a>" +
@@ -72,7 +72,7 @@
                   "<h3>" + locale.image.insert + "</h3>" +
                 "</div>" +
                 "<div class='modal-body'>" +
-                  "<input value='http://' class='bootstrap-wysihtml5-insert-image-url m-wrap large' type='text'>" +
+                  "<input value='http:
                 "</div>" +
                 "<div class='modal-footer'>" +
                   "<a href='#' class='btn' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
@@ -322,7 +322,7 @@
         }
     };
 
-    // these define our public api
+
     var methods = {
         resetDefaults: function() {
             $.fn.wysihtml5.defaultOptions = $.extend(true, {}, $.fn.wysihtml5.defaultOptionsCache);
@@ -372,7 +372,7 @@
         events: {},
         parserRules: {
             classes: {
-                // (path_to_project/lib/css/wysiwyg-color.css)
+
                 "wysiwyg-color-silver" : 1,
                 "wysiwyg-color-gray" : 1,
                 "wysiwyg-color-white" : 1,
@@ -416,14 +416,14 @@
                         rel:    "nofollow"
                     },
                     check_attributes: {
-                        href:   "url" // important to avoid XSS
+                        href:   "url"
                     }
                 },
                 "span": 1,
                 "div": 1
             }
         },
-        stylesheets: ["./assets/plugins/bootstrap-wysihtml5/wysiwyg-color.css"], // (path_to_project/lib/css/wysiwyg-color.css)
+        stylesheets: ["./assets/plugins/bootstrap-wysihtml5/wysiwyg-color.css"],
         locale: "en"
     };
 

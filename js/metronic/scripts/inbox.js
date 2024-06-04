@@ -64,13 +64,13 @@ var Inbox = function () {
     var initFileupload = function () {
 
         $('#fileupload').fileupload({
-            // Uncomment the following to send cross-domain cookies:
-            //xhrFields: {withCredentials: true},
+
+
             url: 'resource/metronic/plugins/jquery-file-upload/server/php/',
             autoUpload: true
         });
 
-        // Upload server status check for browsers with CORS support:
+
         if ($.support.cors) {
             $.ajax({
                 url: 'resource/metronic/plugins/jquery-file-upload/server/php/',
@@ -90,7 +90,7 @@ var Inbox = function () {
         loading.show();
         content.html('');
 
-        // load the form via ajax
+
         $.post(url, {}, function (res) {
             $('.inbox-nav > li.active').removeClass('active');
             $('.inbox-header > h1').text('Compose');
@@ -114,7 +114,7 @@ var Inbox = function () {
         loading.show();
         content.html('');
 
-        // load the form via ajax
+
         $.post(url, {}, function (res) {
             $('.inbox-nav > li.active').removeClass('active');
             $('.inbox-header > h1').text('Reply');
@@ -123,8 +123,8 @@ var Inbox = function () {
             content.html(res);
             $('[name="message"]').val($('#reply_email_content_body').html());
 
-            initTags($('[name="to"]')); // init "TO" input field
-            handleCCInput(); // init "CC" input field
+            initTags($('[name="to"]'));
+            handleCCInput();
 
             initFileupload();
             initWysihtml5();
@@ -176,55 +176,55 @@ var Inbox = function () {
     }
 
     return {
-        //main function to initiate the module
+
         init: function () {
 
-            // handle compose btn click
+
             $('.inbox .compose-btn a').live('click', function () {
                 loadCompose();
             });
 
-            // handle reply and forward button click
+
             $('.inbox .reply-btn').live('click', function () {
                 loadReply();
             });
 
-            // handle view message
+
             $('.inbox-content .view-message').live('click', function () {
                 loadMessage();
             });
 
-            // handle inbox listing
+
             $('.inbox-nav > li.inbox > a').click(function () {
                 loadInbox('inbox');
             });
 
-            // handle sent listing
+
             $('.inbox-nav > li.sent > a').click(function () {
                 loadInbox('sent');
             });
 
-            // handle draft listing
+
             $('.inbox-nav > li.draft > a').click(function () {
                 loadInbox('draft');
             });
 
-            // handle trash listing
+
             $('.inbox-nav > li.trash > a').click(function () {
                 loadInbox('trash');
             });
 
-            //handle compose/reply cc input toggle
+
             $('.inbox-compose .mail-to .inbox-cc').live('click', function () {
                 handleCCInput();
             });
 
-            //handle compose/reply bcc input toggle
+
             $('.inbox-compose .mail-to .inbox-bcc').live('click', function () {
                 handleBCCInput();
             });
 
-            //handle loading content based on URL parameter
+
             if (App.getURLParameter("a") === "view") {
                 loadMessage();
             } else if (App.getURLParameter("a") === "compose") {

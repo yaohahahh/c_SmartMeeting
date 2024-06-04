@@ -826,7 +826,7 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+        <a href="https:
             Published with GitBook
         </a>
     </li>
@@ -867,21 +867,21 @@
 
                                 <h1 id="chart-prototype-methods">Chart Prototype Methods</h1>
 <p>For each chart, there are a set of global prototype methods on the shared <code>ChartType</code> which you may find useful. These are available on all charts created with Chart.js, but for the examples, let&apos;s use a line chart we&apos;ve made.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// For example:</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
 <span class="hljs-keyword">var</span> myLineChart = <span class="hljs-keyword">new</span> Chart(ctx, config);
 </code></pre>
 <h2 id="destroy">.destroy()</h2>
 <p>Use this to destroy any chart instances that are created. This will clean up any references stored to the chart object within Chart.js, along with any associated event listeners attached by Chart.js.
 This must be called before the canvas is reused for a new chart.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Destroys a specific chart instance</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
 myLineChart.destroy();
 </code></pre>
 <h2 id="updateconfig">.update(config)</h2>
 <p>Triggers an update of the chart. This can be safely called after updating the data object. This will update all scales, legends, and then re-render the chart.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// duration is the time for the animation of the redraw in milliseconds</span>
-<span class="hljs-comment">// lazy is a boolean. if true, the animation can be interrupted by other animations</span>
-myLineChart.data.datasets[<span class="hljs-number">0</span>].data[<span class="hljs-number">2</span>] = <span class="hljs-number">50</span>; <span class="hljs-comment">// Would update the first dataset&apos;s value of &apos;March&apos; to be 50</span>
-myLineChart.update(); <span class="hljs-comment">// Calling update now animates the position of March from 90 to 50.</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
+<span class="hljs-comment">
+myLineChart.data.datasets[<span class="hljs-number">0</span>].data[<span class="hljs-number">2</span>] = <span class="hljs-number">50</span>; <span class="hljs-comment">
+myLineChart.update(); <span class="hljs-comment">
 </code></pre>
 <blockquote>
 <p><strong>Note:</strong> replacing the data reference (e.g. <code>myLineChart.data = {datasets: [...]}</code> only works starting <strong>version 2.6</strong>. Prior that, replacing the entire data object could be achieved with the following workaround: <code>myLineChart.config.data = {datasets: [...]}</code>.</p>
@@ -907,8 +907,8 @@ myLineChart.update(); <span class="hljs-comment">// Calling update now animates 
 <h2 id="renderconfig">.render(config)</h2>
 <p>Triggers a redraw of all chart elements. Note, this does not update elements for new data. Use <code>.update()</code> in that case.</p>
 <p>See <code>.update(config)</code> for more details on the config object.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// duration is the time for the animation of the redraw in milliseconds</span>
-<span class="hljs-comment">// lazy is a boolean. if true, the animation can be interrupted by other animations</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
+<span class="hljs-comment">
 myLineChart.render({
     duration: <span class="hljs-number">800</span>,
     lazy: <span class="hljs-literal">false</span>,
@@ -917,36 +917,36 @@ myLineChart.render({
 </code></pre>
 <h2 id="stop">.stop()</h2>
 <p>Use this to stop any current animation loop. This will pause the chart during any current animation frame. Call <code>.render()</code> to re-animate.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Stops the charts animation loop at its current frame</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
 myLineChart.stop();
-<span class="hljs-comment">// =&gt; returns &apos;this&apos; for chainability</span>
+<span class="hljs-comment">
 </code></pre>
 <h2 id="resize">.resize()</h2>
 <p>Use this to manually resize the canvas element. This is run each time the canvas container is resized, but you can call this method manually if you change the size of the canvas nodes container element.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Resizes &amp; redraws to fill its container element</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
 myLineChart.resize();
-<span class="hljs-comment">// =&gt; returns &apos;this&apos; for chainability</span>
+<span class="hljs-comment">
 </code></pre>
 <h2 id="clear">.clear()</h2>
 <p>Will clear the chart canvas. Used extensively internally between animation frames, but you might find it useful.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Will clear the canvas that myLineChart is drawn on</span>
+<pre><code class="lang-javascript"><span class="hljs-comment">
 myLineChart.clear();
-<span class="hljs-comment">// =&gt; returns &apos;this&apos; for chainability</span>
+<span class="hljs-comment">
 </code></pre>
 <h2 id="tobase64image">.toBase64Image()</h2>
 <p>This returns a base 64 encoded string of the chart in it&apos;s current state.</p>
 <pre><code class="lang-javascript">myLineChart.toBase64Image();
-<span class="hljs-comment">// =&gt; returns png data url of the image on the canvas</span>
+<span class="hljs-comment">
 </code></pre>
 <h2 id="generatelegend">.generateLegend()</h2>
 <p>Returns an HTML string of a legend for that chart. The legend is generated from the <code>legendCallback</code> in the options.</p>
 <pre><code class="lang-javascript">myLineChart.generateLegend();
-<span class="hljs-comment">// =&gt; returns HTML string of a legend for this chart</span>
+<span class="hljs-comment">
 </code></pre>
 <h2 id="getelementatevente">.getElementAtEvent(e)</h2>
 <p>Calling <code>getElementAtEvent(event)</code> on your Chart instance passing an argument of an event, or jQuery event, will return the single element at the event position. If there are multiple items within range, only the first is returned. The value returned from this method is an array with a single parameter. An array is used to keep a consistent API between the <code>get*AtEvent</code> methods.</p>
 <pre><code class="lang-javascript">myLineChart.getElementAtEvent(e);
-<span class="hljs-comment">// =&gt; returns the first element at the event point.</span>
+<span class="hljs-comment">
 </code></pre>
 <p>To get an item that was clicked on, <code>getElementAtEvent</code> can be used.</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickHandler</span>(<span class="hljs-params">evt</span>) </span>{
@@ -963,19 +963,19 @@ myLineChart.clear();
 <p>Calling <code>getElementsAtEvent(event)</code> on your Chart instance passing an argument of an event, or jQuery event, will return the point elements that are at that the same position of that event.</p>
 <pre><code class="lang-javascript">canvas.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>)</span>{
     <span class="hljs-keyword">var</span> activePoints = myLineChart.getElementsAtEvent(evt);
-    <span class="hljs-comment">// =&gt; activePoints is an array of points on the canvas that are at the same position as the click event.</span>
+    <span class="hljs-comment">
 };
 </code></pre>
 <p>This functionality may be useful for implementing DOM based tooltips, or triggering custom behaviour in your application.</p>
 <h2 id="getdatasetatevente">.getDatasetAtEvent(e)</h2>
 <p>Looks for the element under the event point, then returns all elements from that dataset. This is used internally for &apos;dataset&apos; mode highlighting</p>
 <pre><code class="lang-javascript">myLineChart.getDatasetAtEvent(e);
-<span class="hljs-comment">// =&gt; returns an array of elements</span>
+<span class="hljs-comment">
 </code></pre>
 <h2 id="getdatasetmetaindex">.getDatasetMeta(index)</h2>
 <p>Looks for the dataset that matches the current index and returns that metadata. This returned data has all of the metadata that is used to construct the chart.</p>
 <p>The <code>data</code> property of the metadata will contain information about each point, rectangle, etc. depending on the chart type.</p>
-<p>Extensive examples of usage are available in the <a href="https://github.com/chartjs/Chart.js/tree/master/test" target="_blank">Chart.js tests</a>.</p>
+<p>Extensive examples of usage are available in the <a href="https:
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> meta = myChart.getDatasetMeta(<span class="hljs-number">0</span>);
 <span class="hljs-keyword">var</span> x = meta.data[<span class="hljs-number">0</span>]._model.x
 </code></pre>
@@ -1040,7 +1040,7 @@ myLineChart.clear();
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        <script src="https:
 
 
 

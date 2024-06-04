@@ -46,10 +46,10 @@ function showSearchList(){
 }
 
 
-//使用分页插件，进行分页展现
+
 function setPage(){
 	$('.table tbody').paginathing({
-	  perPage: 3,//每页展现条数
+	  perPage: 3,
 	  insertAfter: '.table',
 	  pageNumbers: true
 	});
@@ -103,14 +103,14 @@ function delChecked(){
 	
 }
 
-//从Json数组中删除指定部门编号的部门信息
+
 function delJson(delMid){
 	for(var i=0;i<meetJsonArray.length;i++){
 		var meet=meetJsonArray[i];
 		if(meet!=undefined){
 			if(meet.mid==delMid){
 				meetJsonArray[i].name = 'undefined';
-				// delete meetJsonArray[i];
+
 				return;
 			}
 		}

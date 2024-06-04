@@ -53,12 +53,12 @@ var gaugeOptions = {
         enabled: false
     },
 
-    // the value axis
+
     yAxis: {
         stops: [
-            [0.1, '#55BF3B'], // green
-            [0.5, '#DDDF0D'], // yellow
-            [0.9, '#DF5353'] // red
+            [0.1, '#55BF3B'],
+            [0.5, '#DDDF0D'],
+            [0.9, '#DF5353']
         ],
         lineWidth: 0,
         minorTickInterval: null,
@@ -82,7 +82,7 @@ var gaugeOptions = {
     }
 };
 
-// The speed gauge
+
 var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
     yAxis: {
         min: 0,
@@ -111,7 +111,7 @@ var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptio
 
 }));
 
-// The RPM gauge
+
 var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, {
     yAxis: {
         min: 0,
@@ -136,9 +136,9 @@ var chartRpm = Highcharts.chart('container-rpm', Highcharts.merge(gaugeOptions, 
 
 }));
 
-// Bring life to the dials
+
 setInterval(function () {
-    // Speed
+
     var point,
         newVal,
         inc;
@@ -155,7 +155,7 @@ setInterval(function () {
         point.update(newVal);
     }
 
-    // RPM
+
     if (chartRpm) {
         point = chartRpm.series[0].points[0];
         inc = Math.random() - 0.5;

@@ -13,8 +13,8 @@ var each = H.each,
     merge = H.merge,
     pick = H.pick,
     reduce = H.reduce;
-// TODO Combine buildTree and buildNode with setTreeValues
-// TODO Remove logic from Treemap and make it utilize this mixin.
+
+
 var setTreeValues = function setTreeValues(tree, options) {
     var before = options.before,
         idRoot = options.idRoot,
@@ -42,7 +42,7 @@ var setTreeValues = function setTreeValues(tree, options) {
     if (isFn(before)) {
         tree = before(tree, options);
     }
-    // First give the children some values
+
     each(tree.children, function (child, i) {
         var newOptions = extend({}, options);
         extend(newOptions, {
@@ -57,7 +57,7 @@ var setTreeValues = function setTreeValues(tree, options) {
         }
     });
     tree.visible = childrenTotal > 0 || tree.visible;
-    // Set the values
+
     value = pick(optionsPoint.value, childrenTotal);
     extend(tree, {
         children: children,
@@ -111,7 +111,7 @@ var getColor = function getColor(node, options) {
         }
 
         
-        // Select either point color, level color or inherited color.
+
         color = pick(
             point && point.options.color,
             level && level.color,

@@ -24,7 +24,7 @@
 
 
 		<script type="text/javascript">
-// Give the points a 3D feel by adding a radial gradient
+
 Highcharts.setOptions({
     colors: $.map(Highcharts.getOptions().colors, function (color) {
         return {
@@ -41,7 +41,7 @@ Highcharts.setOptions({
     })
 });
 
-// Set up the chart
+
 var chart = new Highcharts.Chart({
     chart: {
         renderTo: 'container',
@@ -118,7 +118,7 @@ var chart = new Highcharts.Chart({
 });
 
 
-// Add mouse and touch events for rotation
+
 (function (H) {
     function dragStart(eStart) {
         eStart = chart.pointer.normalize(eStart);
@@ -127,10 +127,10 @@ var chart = new Highcharts.Chart({
             posY = eStart.chartY,
             alpha = chart.options.chart.options3d.alpha,
             beta = chart.options.chart.options3d.beta,
-            sensitivity = 5; // lower is more sensitive
+            sensitivity = 5;
 
         function drag(e) {
-            // Get e.chartX and e.chartY
+
             e = chart.pointer.normalize(e);
 
             chart.update({

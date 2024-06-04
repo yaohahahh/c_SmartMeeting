@@ -10,7 +10,7 @@ saveMeet = function (){
 
     if(name==""||place==""||large==""){
         parent.swal("警告!", "请输入完整会议室信息！", "error")
-        // alert("请输入完整信息");
+
         return;
     }
 
@@ -20,13 +20,13 @@ saveMeet = function (){
             if(name==meet.name)
             {
                 parent.swal("警告!", "会议室门牌号重复", "error")
-                // alert("门牌号重复");
+
                 return;
             }
             if(place==meet.place)
             {
                 parent.swal("警告!", "会议室地点重复", "error")
-                // alert("会议室地点重复");
+
                 return;
             }
         }
@@ -41,6 +41,6 @@ saveMeet = function (){
     };
     meetJsonArray[meetJsonArray.length] = meet;
     parent.swal("成功!", "新会议室："+name+" 已添加成功", "success")  
-    // alert("添加成功");
+
     window.location.href="../../MeetingRoom/meet/checkmeet.html";
 }

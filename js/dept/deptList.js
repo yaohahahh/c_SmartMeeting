@@ -1,7 +1,7 @@
 var deptJsonArray = window.parent.deptJsonArray;
 $(function(){
-    //当页面被加载完成后，立即会被执行的操作
-    //获取得到部门信息列表
+
+
     for(var i=0;i<deptJsonArray.length;i++){
         var dept = deptJsonArray[i];
         if(dept.dname=='undefined'){
@@ -20,7 +20,7 @@ $(function(){
     
 })
 
-//展现满足条件的部门列表数据
+
 function showSearchList(){
     $("#deptList").html("")
 
@@ -82,7 +82,7 @@ function saveDept(){
         "desc":desc
     }
     deptJsonArray[deptJsonArray.length] = dept
-    // alert("添加成功");
+
     parent.swal("添加部门", "添加成功!", "success")
     window.location.href = "../dept/deptList.html"
         
@@ -92,23 +92,23 @@ function showEditDept(did){
     window.location.href = "editDept.html?did="+did;
 }
 
-//删除选中
+
 function delChecked(){
 	var checkeds = $("input[name='id']:checked");
 	if(checkeds.length>0){
-		// var flag = window.confirm("确定要删除吗？");
-		// if(flag){
-		// 	// alert("用户点击了确定删除");
-        //     parent.swal("删除！", "所选部门已经被删除。", "success"); 
-        //     // parent.postMessage("openAlert", "*");
+
+
+
+
+
             
-		// 	for(var i=0;i<checkeds.length;i++){
-		// 		var thisChecked = checkeds[i];
-		// 		var delDid = $(thisChecked).val();
-		// 		delJson(delDid);
-		// 	}
+
+
+
+
+
 			
-		// }
+
         parent.swal({
             title: "你确定？",
             text: "您将无法恢复这个部门以及部门内人员的信息！",
@@ -142,7 +142,7 @@ function delChecked(){
 function delJson(delDid){
 	for(var i=0;i<deptJsonArray.length;i++){
         if(deptJsonArray[i].did==delDid){
-            // delete deptJsonArray[i];
+
             deptJsonArray[i].dname = 'undefined';
             return;
         }

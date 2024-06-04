@@ -2,7 +2,7 @@
     $.MsgBox = {
         Alert: function(title, msg) {
             GenerateHtml("alert", title, msg);
-            btnOk(); //alert只是弹出消息，因此没必要用到回调函数callback
+            btnOk();
             btnNo();
         },
         Confirm: function(title, msg, callback) {
@@ -11,7 +11,7 @@
             btnNo();
         }
     }
-    //生成Html
+
     var GenerateHtml = function(type, title, msg) {
         var _html = "";
         _html += '<div id="mb_box"></div><div id="mb_con"><span id="mb_tit">' + title + '</span>';
@@ -24,13 +24,13 @@
             _html += '<input id="mb_btn_no" type="button" value="取消" />';
         }
         _html += '</div></div>';
-        //必须先将_html添加到body，再设置Css样式
+
         $("body").append(_html);
-        //生成Css
+
         GenerateCss();
     }
 
-    //生成Css
+
     var GenerateCss = function() {
         $("#mb_box").css({
             width: '100%',
@@ -97,7 +97,7 @@
             backgroundColor: 'gray',
             marginLeft: '20px'
         });
-        //右上角关闭按钮hover样式
+
         $("#mb_ico").hover(function() {
             $(this).css({
                 backgroundColor: 'Red',
@@ -109,17 +109,17 @@
                 color: 'black'
             });
         });
-        var _widht = document.documentElement.clientWidth; //屏幕宽
-        var _height = document.documentElement.clientHeight; //屏幕高
+        var _widht = document.documentElement.clientWidth;
+        var _height = document.documentElement.clientHeight;
         var boxWidth = $("#mb_con").width();
         var boxHeight = $("#mb_con").height();
-        //让提示框居中
+
         $("#mb_con").css({
             top: (_height - boxHeight) / 2 + "px",
             left: (_widht - boxWidth) / 2 + "px"
         });
     }
-    //确定按钮事件
+
     var btnOk = function(callback) {
         $("#mb_btn_ok").click(function() {
             $("#mb_box,#mb_con").remove();
@@ -128,18 +128,17 @@
             }
         });
     }
-    //取消按钮事件
+
     var btnNo = function() {
         $("#mb_btn_no,#mb_ico").click(function() {
             $("#mb_box,#mb_con").remove();
         });
     }
 })();
-//
-//function test() {
-//    alert("你点击了确定,重新进行认证");
-//}
-////也可以传方法名 test
-//$("#update").bind("click", function() {
-//    $.MsgBox.Confirm("温馨提示", "确定要进行修改吗？", test);
-//});
+
+
+
+
+
+
+

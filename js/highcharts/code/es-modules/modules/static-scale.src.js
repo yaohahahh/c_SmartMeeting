@@ -1,8 +1,4 @@
-/**
- * (c) 2017 Torstein Honsi, Lars Cabrera
- *
- * License: www.highcharts.com/license
- */
+
 'use strict';
 import H from '../parts/Globals.js';
 import '../parts/Utilities.js';
@@ -28,7 +24,7 @@ Chart.prototype.adjustHeight = function () {
                 axis.max + axis.tickInterval - axis.min
             ) * staticScale;
 
-            // Minimum height is 1 x staticScale.
+
             height = Math.max(height, staticScale);
 
             diff = height - chart.plotHeight;

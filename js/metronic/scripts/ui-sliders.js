@@ -1,12 +1,12 @@
 var UISliders = function () {
 
     return {
-        //main function to initiate the module
-        initSliders: function () {
-            // basic
-            $(".slider-basic").slider(); // basic sliders
 
-            // snap inc
+        initSliders: function () {
+
+            $(".slider-basic").slider();
+
+
             $("#slider-snap-inc").slider({
                 value: 100,
                 min: 0,
@@ -19,7 +19,7 @@ var UISliders = function () {
 
             $("#slider-snap-inc-amount").text("$" + $("#slider-snap-inc").slider("value"));
 
-            // range slider
+
             $("#slider-range").slider({
                 range: true,
                 min: 0,
@@ -32,7 +32,7 @@ var UISliders = function () {
 
             $("#slider-range-amount").text("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
 
-            //range max
+
 
             $("#slider-range-max").slider({
                 range: "max",
@@ -46,7 +46,7 @@ var UISliders = function () {
 
             $("#slider-range-max-amount").text($("#slider-range-max").slider("value"));
 
-            // range min
+
             $("#slider-range-min").slider({
                 range: "min",
                 value: 37,
@@ -59,10 +59,10 @@ var UISliders = function () {
 
             $("#slider-range-min-amount").text("$" + $("#slider-range-min").slider("value"));
 
-            // 
-            // setup graphic EQ
+
+
             $("#slider-eq > span").each(function () {
-                // read initial values from markup and remove that
+
                 var value = parseInt($(this).text(), 10);
                 $(this).empty().slider({
                     value: value,
@@ -72,7 +72,7 @@ var UISliders = function () {
                 });
             });
 
-            // vertical slider
+
             $("#slider-vertical").slider({
                 orientation: "vertical",
                 range: "min",
@@ -85,7 +85,7 @@ var UISliders = function () {
             });
             $("#slider-vertical-amount").text($("#slider-vertical").slider("value"));
 
-            // vertical range sliders
+
             $("#slider-range-vertical").slider({
                 orientation: "vertical",
                 range: true,
@@ -100,7 +100,7 @@ var UISliders = function () {
         },
 
         initKnowElements: function () {
-            //knob does not support ie8 so skip it
+
             if (!jQuery().knob || App.isIE8()) {
                 return;
             }
@@ -123,18 +123,18 @@ var UISliders = function () {
                     'tickColorizeValues': true,
                     'skin': 'tron',
                     draw: function () {
-                        // "tron" case
+
                         if (this.$.data('skin') == 'tron') {
 
-                            var a = this.angle(this.cv) // Angle
+                            var a = this.angle(this.cv)
                                 ,
-                                sa = this.startAngle // Previous start angle
+                                sa = this.startAngle
                                 ,
-                                sat = this.startAngle // Start angle
+                                sat = this.startAngle
                                 ,
-                                ea // Previous end angle
+                                ea
                                 ,
-                                eat = sat + a // End angle
+                                eat = sat + a
                                 ,
                                 r = 1;
 

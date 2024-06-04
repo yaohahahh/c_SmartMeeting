@@ -3,7 +3,7 @@ var Index = function () {
 
     return {
 
-        //main function to initiate the module
+
         init: function () {
 
             App.addResponsiveHandler(function () {
@@ -129,8 +129,8 @@ var Index = function () {
                 }               
             }
 
-            $('#calendar').fullCalendar('destroy'); // destroy the calendar
-            $('#calendar').fullCalendar({ //re-initialize the calendar
+            $('#calendar').fullCalendar('destroy');
+            $('#calendar').fullCalendar({
                 disableDragging: false,
                 header: h,
                 editable: true,
@@ -174,7 +174,7 @@ var Index = function () {
                         start: new Date(y, m, 28),
                         end: new Date(y, m, 29),
                         backgroundColor: App.getLayoutColorCode('yellow'),
-                        url: 'http://google.com/',
+                        url: 'http:
                     }
                 ]
             });
@@ -188,11 +188,11 @@ var Index = function () {
             var data = [];
             var totalPoints = 250;
 
-            // random data generator for plot charts
+
 
             function getRandomData() {
                 if (data.length > 0) data = data.slice(1);
-                // do a random walk
+
                 while (data.length < totalPoints) {
                     var prev = data.length > 0 ? data[data.length - 1] : 50;
                     var y = prev + Math.random() * 10 - 5;
@@ -200,7 +200,7 @@ var Index = function () {
                     if (y > 100) y = 100;
                     data.push(y);
                 }
-                // zip the generated y values with the x values
+
                 var res = [];
                 for (var i = 0; i < data.length; ++i) res.push([i, data[i]])
                 return res;
@@ -360,7 +360,7 @@ var Index = function () {
             }               
 
             if ($('#load_statistics').size() != 0) {
-                 //server load
+
                 $('#load_statistics_loading').hide();
                 $('#load_statistics_content').show();
         
@@ -414,7 +414,7 @@ var Index = function () {
             }
 
             if ($('#site_activities').size() != 0) {
-                //site activities
+
                 var previousPoint2 = null;
                 $('#site_activities_loading').hide();
                 $('#site_activities_content').show();
@@ -635,7 +635,7 @@ var Index = function () {
             input.keypress(function (e) {
                 if (e.which == 13) {
                     handleClick();
-                    return false; //<---- Add this line
+                    return false;
                 }
             });
         },
@@ -711,21 +711,21 @@ var Index = function () {
 
             setTimeout(function () {
                 var unique_id = $.gritter.add({
-                    // (string | mandatory) the heading of the notification
+
                     title: 'Meet Metronic!',
-                    // (string | mandatory) the text inside the notification
+
                     text: 'Metronic is a brand new Responsive Admin Dashboard Template you have always been looking for!',
-                    // (string | optional) the image to display on the left
+
                     image: 'resource/metronic/img/avatar1.jpg',
-                    // (bool | optional) if you want it to fade out on its own or just sit there
+
                     sticky: true,
-                    // (int | optional) the time you want it to be alive for before fading out
+
                     time: '',
-                    // (string | optional) the class name you want to apply to that specific message
+
                     class_name: 'my-sticky-class'
                 });
 
-                // You can have it return a unique id, this can be used to manually remove it later using
+
                 setTimeout(function () {
                     $.gritter.remove(unique_id, {
                         fade: true,
@@ -736,21 +736,21 @@ var Index = function () {
 
             setTimeout(function () {
                 var unique_id = $.gritter.add({
-                    // (string | mandatory) the heading of the notification
+
                     title: 'Buy Metronic!',
-                    // (string | mandatory) the text inside the notification
+
                     text: 'Metronic comes with a huge collection of reusable and easy customizable UI components and plugins. Buy Metronic today!',
-                    // (string | optional) the image to display on the left
+
                     image: 'resource/metronic/img/avatar1.jpg',
-                    // (bool | optional) if you want it to fade out on its own or just sit there
+
                     sticky: true,
-                    // (int | optional) the time you want it to be alive for before fading out
+
                     time: '',
-                    // (string | optional) the class name you want to apply to that specific message
+
                     class_name: 'my-sticky-class'
                 });
 
-                // You can have it return a unique id, this can be used to manually remove it later using
+
                 setTimeout(function () {
                     $.gritter.remove(unique_id, {
                         fade: true,
@@ -772,17 +772,17 @@ var Index = function () {
 
                 var unique_id = $.gritter.add({
                     position: 'top-left',
-                    // (string | mandatory) the heading of the notification
+
                     title: 'Customize Metronic!',
-                    // (string | mandatory) the text inside the notification
+
                     text: 'Metronic allows you to easily customize the theme colors and layout settings.',
-                    // (string | optional) the image to display on the left
+
                     image1: 'resource/metronic/img/avatar1.png',
-                    // (bool | optional) if you want it to fade out on its own or just sit there
+
                     sticky: true,
-                    // (int | optional) the time you want it to be alive for before fading out
+
                     time: '',
-                    // (string | optional) the class name you want to apply to that specific message
+
                     class_name: 'my-sticky-class'
                 });
 
@@ -790,7 +790,7 @@ var Index = function () {
                     position: 'top-right'
                 });
 
-                // You can have it return a unique id, this can be used to manually remove it later using
+
                 setTimeout(function () {
                     $.gritter.remove(unique_id, {
                         fade: true,
@@ -807,17 +807,17 @@ var Index = function () {
                 });
 
                 var unique_id = $.gritter.add({
-                    // (string | mandatory) the heading of the notification
+
                     title: 'Notification',
-                    // (string | mandatory) the text inside the notification
+
                     text: 'You have 3 new notifications.',
-                    // (string | optional) the image to display on the left
+
                     image1: 'resource/metronic/img/image1.jpg',
-                    // (bool | optional) if you want it to fade out on its own or just sit there
+
                     sticky: true,
-                    // (int | optional) the time you want it to be alive for before fading out
+
                     time: '',
-                    // (string | optional) the class name you want to apply to that specific message
+
                     class_name: 'my-sticky-class'
                 });
 
@@ -850,17 +850,17 @@ var Index = function () {
                 });
 
                 var unique_id = $.gritter.add({
-                    // (string | mandatory) the heading of the notification
+
                     title: 'Inbox',
-                    // (string | mandatory) the text inside the notification
+
                     text: 'You have 2 new messages in your inbox.',
-                    // (string | optional) the image to display on the left
+
                     image1: 'resource/metronic/img/avatar1.jpg',
-                    // (bool | optional) if you want it to fade out on its own or just sit there
+
                     sticky: true,
-                    // (int | optional) the time you want it to be alive for before fading out
+
                     time: '',
-                    // (string | optional) the class name you want to apply to that specific message
+
                     class_name: 'my-sticky-class'
                 });
 

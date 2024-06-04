@@ -1,10 +1,4 @@
-/**
- * @Time:2018-03-16
- * @Author:guanying.xu
- * @Function:自动给元素设置高度.
- * @Parameter:num为缓冲参数，即需要减去的高度.className为自定义的类名
- * @
- */
+
 
 var boxBody = {
 		

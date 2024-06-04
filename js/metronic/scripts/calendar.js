@@ -2,7 +2,7 @@ var Calendar = function () {
 
 
     return {
-        //main function to initiate the module
+
         init: function () {
 
             App.addResponsiveHandler(function () {
@@ -44,18 +44,18 @@ var Calendar = function () {
             }
 
             var initDrag = function (el) {
-                // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-                // it doesn't need to have a start or end
+
+
                 var eventObject = {
-                    title: $.trim(el.text()) // use the element's text as the event title
+                    title: $.trim(el.text())
                 };
-                // store the Event Object in the DOM element so we can get to it later
+
                 el.data('eventObject', eventObject);
-                // make the event draggable using jQuery UI
+
                 el.draggable({
                     zIndex: 999,
-                    revert: true, // will cause the event to go back to its
-                    revertDuration: 0 //  original position after the drag
+                    revert: true,
+                    revertDuration: 0
                 });
             }
 
@@ -75,7 +75,7 @@ var Calendar = function () {
                 addEvent(title);
             });
 
-            //predefined events
+
             $('#event_box').html("");
             addEvent("My Event 1");
             addEvent("My Event 2");
@@ -84,31 +84,31 @@ var Calendar = function () {
             addEvent("My Event 5");
             addEvent("My Event 6");
 
-            $('#calendar').fullCalendar('destroy'); // destroy the calendar
-            $('#calendar').fullCalendar({ //re-initialize the calendar
+            $('#calendar').fullCalendar('destroy');
+            $('#calendar').fullCalendar({
                 header: h,
                 slotMinutes: 15,
                 editable: true,
-                droppable: true, // this allows things to be dropped onto the calendar !!!
-                drop: function (date, allDay) { // this function is called when something is dropped
+                droppable: true,
+                drop: function (date, allDay) {
 
-                    // retrieve the dropped element's stored Event Object
+
                     var originalEventObject = $(this).data('eventObject');
-                    // we need to copy it, so that multiple events don't have a reference to the same object
+
                     var copiedEventObject = $.extend({}, originalEventObject);
 
-                    // assign it the date that was reported
+
                     copiedEventObject.start = date;
                     copiedEventObject.allDay = allDay;
                     copiedEventObject.className = $(this).attr("data-class");
 
-                    // render the event on the calendar
-                    // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+
+
                     $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
 
-                    // is the "remove after drop" checkbox checked?
+
                     if ($('#drop-remove').is(':checked')) {
-                        // if so, remove the element from the "Draggable Events" list
+
                         $(this).remove();
                     }
                 },
@@ -152,7 +152,7 @@ var Calendar = function () {
                         start: new Date(y, m, 28),
                         end: new Date(y, m, 29),
                         backgroundColor: App.getLayoutColorCode('yellow'),
-                        url: 'http://google.com/',
+                        url: 'http:
                     }
                 ]
             });

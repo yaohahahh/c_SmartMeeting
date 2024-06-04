@@ -20,7 +20,7 @@
 
 
 		<script type="text/javascript">
-// Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
+
 
 Highcharts.chart('container', {
     chart: {
@@ -49,7 +49,7 @@ Highcharts.chart('container', {
         minorGridLineWidth: 0,
         gridLineWidth: 0,
         alternateGridColor: null,
-        plotBands: [{ // Light air
+        plotBands: [{
             from: 0.3,
             to: 1.5,
             color: 'rgba(68, 170, 213, 0.1)',
@@ -59,7 +59,7 @@ Highcharts.chart('container', {
                     color: '#606060'
                 }
             }
-        }, { // Light breeze
+        }, {
             from: 1.5,
             to: 3.3,
             color: 'rgba(0, 0, 0, 0)',
@@ -69,7 +69,7 @@ Highcharts.chart('container', {
                     color: '#606060'
                 }
             }
-        }, { // Gentle breeze
+        }, {
             from: 3.3,
             to: 5.5,
             color: 'rgba(68, 170, 213, 0.1)',
@@ -79,7 +79,7 @@ Highcharts.chart('container', {
                     color: '#606060'
                 }
             }
-        }, { // Moderate breeze
+        }, {
             from: 5.5,
             to: 8,
             color: 'rgba(0, 0, 0, 0)',
@@ -89,7 +89,7 @@ Highcharts.chart('container', {
                     color: '#606060'
                 }
             }
-        }, { // Fresh breeze
+        }, {
             from: 8,
             to: 11,
             color: 'rgba(68, 170, 213, 0.1)',
@@ -99,7 +99,7 @@ Highcharts.chart('container', {
                     color: '#606060'
                 }
             }
-        }, { // Strong breeze
+        }, {
             from: 11,
             to: 14,
             color: 'rgba(0, 0, 0, 0)',
@@ -109,7 +109,7 @@ Highcharts.chart('container', {
                     color: '#606060'
                 }
             }
-        }, { // High wind
+        }, {
             from: 14,
             to: 15,
             color: 'rgba(68, 170, 213, 0.1)',
@@ -135,7 +135,7 @@ Highcharts.chart('container', {
             marker: {
                 enabled: false
             },
-            pointInterval: 3600000, // one hour
+            pointInterval: 3600000,
             pointStart: Date.UTC(2018, 1, 13, 0, 0, 0)
         }
     },

@@ -826,7 +826,7 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+        <a href="https:
             Published with GitBook
         </a>
     </li>
@@ -1002,34 +1002,34 @@
 <h2 id="legend-item-interface">Legend Item Interface</h2>
 <p>Items passed to the legend <code>onClick</code> function are the ones returned from <code>labels.generateLabels</code>. These items must implement the following interface.</p>
 <pre><code class="lang-javascript">{
-    <span class="hljs-comment">// Label that will be displayed</span>
+    <span class="hljs-comment">
     text: <span class="hljs-built_in">String</span>,
 
-    <span class="hljs-comment">// Fill style of the legend box</span>
+    <span class="hljs-comment">
     fillStyle: Color,
 
-    <span class="hljs-comment">// If true, this item represents a hidden dataset. Label will be rendered with a strike-through effect</span>
+    <span class="hljs-comment">
     hidden: <span class="hljs-built_in">Boolean</span>,
 
-    <span class="hljs-comment">// For box border. See https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D/lineCap</span>
+    <span class="hljs-comment">
     lineCap: <span class="hljs-built_in">String</span>,
 
-    <span class="hljs-comment">// For box border. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash</span>
+    <span class="hljs-comment">
     lineDash: <span class="hljs-built_in">Array</span>[<span class="hljs-built_in">Number</span>],
 
-    <span class="hljs-comment">// For box border. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset</span>
+    <span class="hljs-comment">
     lineDashOffset: <span class="hljs-built_in">Number</span>,
 
-    <span class="hljs-comment">// For box border. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin</span>
+    <span class="hljs-comment">
     lineJoin: <span class="hljs-built_in">String</span>,
 
-    <span class="hljs-comment">// Width of box border</span>
+    <span class="hljs-comment">
     lineWidth: <span class="hljs-built_in">Number</span>,
 
-    <span class="hljs-comment">// Stroke style of the legend box</span>
+    <span class="hljs-comment">
     strokeStyle: Color
 
-    <span class="hljs-comment">// Point style of the legend box (only used if usePointStyle is true)</span>
+    <span class="hljs-comment">
     pointStyle: <span class="hljs-built_in">String</span>
 }
 </code></pre>
@@ -1056,10 +1056,10 @@
     <span class="hljs-keyword">var</span> ci = <span class="hljs-keyword">this</span>.chart;
     <span class="hljs-keyword">var</span> meta = ci.getDatasetMeta(index);
 
-    <span class="hljs-comment">// See controller.isDatasetVisible comment</span>
+    <span class="hljs-comment">
     meta.hidden = meta.hidden === <span class="hljs-literal">null</span>? !ci.data.datasets[index].hidden : <span class="hljs-literal">null</span>;
 
-    <span class="hljs-comment">// We hid a dataset ... rerender the chart</span>
+    <span class="hljs-comment">
     ci.update();
 }
 </code></pre>
@@ -1069,7 +1069,7 @@
     <span class="hljs-keyword">var</span> index = legendItem.datasetIndex;
 
     <span class="hljs-keyword">if</span> (index &gt; <span class="hljs-number">1</span>) {
-        <span class="hljs-comment">// Do the original logic</span>
+        <span class="hljs-comment">
         defaultLegendClickHandler(e, legendItem);
     } <span class="hljs-keyword">else</span> {
         <span class="hljs-keyword">let</span> ci = <span class="hljs-keyword">this</span>.chart;
@@ -1100,7 +1100,7 @@
     data: data,
     options: {
         legendCallback: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chart</span>) </span>{
-            <span class="hljs-comment">// Return the HTML string here.</span>
+            <span class="hljs-comment">
         }
     }
 });
@@ -1166,7 +1166,7 @@
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        <script src="https:
 
 
 

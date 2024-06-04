@@ -1,5 +1,5 @@
-//接收地址栏传递来的参数
-//部门信息列表中查询寻指定部门编号的信息
+
+
 
 var mid = getParam("mid");
 var meetingJsonArray = window.parent.meetingJsonArray;
@@ -17,7 +17,7 @@ $(function (){
 });
 
 function updateDept(){
-    //获取用户输入的修改后的信息
+
     var dname = $("#name").val();
     var desc = $("#remark").val();
 

@@ -23,19 +23,19 @@ function updateMeet(){
 
     if(name==""){
         parent.swal("会议室修改", "会议室名称不能为空", "error")
-        // alert("会议名称不能为空");
+
         return;
     }
 
     if(place==""){
         parent.swal("会议室修改", "会议室地点不能为空", "error")
-        // alert("会议地点不能为空");
+
         return;
     }
 
     if(large==""){
         parent.swal("会议室修改", "会议室大小不能为空", "error")
-        // alert("会议大小不能为空");
+
         return;
     }
 
@@ -48,7 +48,7 @@ function updateMeet(){
             if(meet.name==name&&meet.place==place&&meet.large==large)
             {
                 parent.swal("会议室修改", "您未作修改", "success")
-                // alert("会议名称不能为空");
+
                 window.location.href = "meeting.html"
                 return;
             }
@@ -58,12 +58,12 @@ function updateMeet(){
         {
             if (name == meet.name) {
                 parent.swal("警告!", "会议室门牌号重复", "error")
-                // alert("门牌号重复");
+
                 return;
             }
             if (place == meet.place) {
                 parent.swal("警告!", "会议室地点重复", "error")
-                // alert("会议室地点重复");
+
                 return;
             }
         }

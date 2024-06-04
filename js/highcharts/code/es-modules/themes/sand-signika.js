@@ -1,27 +1,16 @@
-/**
- * (c) 2010-2017 Torstein Honsi
- *
- * License: www.highcharts.com/license
- *
- * Sand-Signika theme for Highcharts JS
- * @author Torstein Honsi
- */
 
-'use strict';
-import Highcharts from '../parts/Globals.js';
-/* global document */
-// Load the fonts
+
 Highcharts.createElement('link', {
-    href: 'https://fonts.googleapis.com/css?family=Signika:400,700',
+    href: 'https:
     rel: 'stylesheet',
     type: 'text/css'
 }, null, document.getElementsByTagName('head')[0]);
 
-// Add the background image to the container
+
 Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
     proceed.call(this);
     this.container.style.background =
-        'url(https://www.highcharts.com/samples/graphics/sand.png)';
+        'url(https:
 });
 
 
@@ -81,7 +70,7 @@ Highcharts.theme = {
         }
     },
 
-    // Highstock specific
+
     navigator: {
         xAxis: {
             gridLineColor: '#D0D0D8'
@@ -103,10 +92,10 @@ Highcharts.theme = {
         trackBorderColor: '#C0C0C8'
     },
 
-    // General
+
     background2: '#E0E0E8'
 
 };
 
-// Apply the theme
+
 Highcharts.setOptions(Highcharts.theme);

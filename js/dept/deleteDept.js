@@ -1,4 +1,4 @@
-//全选操作
+
 function checkAll(){
 	var isChecked = $("#checkAll").prop("checked");
 	var checkboxes = $("input[name='id']");

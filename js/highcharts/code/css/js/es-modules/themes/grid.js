@@ -1,11 +1,4 @@
-/**
- * (c) 2010-2017 Torstein Honsi
- *
- * License: www.highcharts.com/license
- *
- * Grid theme for Highcharts JS
- * @author Torstein Honsi
- */
+
 
 'use strict';
 import Highcharts from '../parts/Globals.js';
@@ -106,5 +99,5 @@ Highcharts.theme = {
     }
 };
 
-// Apply the theme
+
 Highcharts.setOptions(Highcharts.theme);

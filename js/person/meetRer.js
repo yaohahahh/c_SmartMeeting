@@ -11,7 +11,7 @@ function showSearchList(){
     $("#meetRer").html("");
     $(".pagination-container").html("");
     var name=$("#name").val();
-	//var loginUserId = getParam("loginUserId");
+
 	/*for (var i=0; i<employeeJsonArray.length; i++) {
 		if (employeeJsonArray[i].id == loginUserId && employeeJsonArray[i]!=undefined) {
 			loginUser = employeeJsonArray[i];

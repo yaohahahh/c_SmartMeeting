@@ -1,6 +1,4 @@
-/**
- * 平台弹出框
- */
+
 layui.define(["jquery","layer"],function(exports){
 	var $ = layui.jquery,layer = layui.layer;
 	var f = function(){}
@@ -18,9 +16,9 @@ layui.define(["jquery","layer"],function(exports){
 	        type: 2,title: title
 	        ,area: [width+"px", height+"px"]
 	        ,shade: 0.8,maxmin: true
-	        ,content: url,zIndex: layer.zIndex //重点1
+	        ,content: url,zIndex: layer.zIndex
 	        ,success: function(layero){
-	          layer.setTop(layero); //重点2
+	          layer.setTop(layero);
 	        }
 	    });
 	});

@@ -53,10 +53,10 @@ function showSearchList(){
 
 
 
-//使用分页插件，进行分页展现
+
 function setPage(){
 	$('.table tbody').paginathing({
-	  perPage: 3,//每页展现条数
+	  perPage: 3,
 	  insertAfter: '.table',
 	  pageNumbers: true
 	});

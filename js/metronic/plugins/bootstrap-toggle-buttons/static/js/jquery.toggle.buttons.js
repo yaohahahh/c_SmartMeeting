@@ -1,7 +1,7 @@
 !function ($) {
   "use strict";
-  // version: 2.8
-  // by Mattia Larentis - follow me on twitter! @SpiritualGuru
+
+
 
   var addToAttribute = function (obj, array, value) {
     var i = 0
@@ -50,7 +50,7 @@
               $spanLeft = $('<span></span>').addClass("labelLeft").text(options.label.enabled === undefined ? "ON" : options.label.enabled);
               $spanRight = $('<span></span>').addClass("labelRight").text(options.label.disabled === undefined ? "OFF " : options.label.disabled);
 
-              // html layout
+
               $div = $element.find('input:checkbox').wrap($('<div></div>')).parent();
               $div.append($spanLeft);
               $div.append($('<label></label>').attr('for', $element.find('input').attr('id')));
@@ -62,7 +62,7 @@
 
               if (options.animated) {
                 if (options.transitionspeed !== undefined)
-                  if (/^(\d*%$)/.test(options.transitionspeed))  // is a percent value?
+                  if (/^(\d*%$)/.test(options.transitionspeed))
                     transitionSpeed = 0.05 * parseInt(options.transitionspeed) / 100;
                   else
                     transitionSpeed = options.transitionspeed;
@@ -74,13 +74,13 @@
 
               options["width"] /= 2;
 
-              // width of the bootstrap-toggle-button
+
               $element
                 .css('width', options.width * 2)
                 .find('>div').css('width', options.width * 3)
                 .find('>span, >label').css('width', options.width);
 
-              // height of the bootstrap-toggle-button
+
               $element
                 .css('height', options.height)
                 .find('span, label')
@@ -94,7 +94,7 @@
               $element.find('span').css(options.font);
 
 
-              // enabled custom color
+
               if (options.style.enabled === undefined) {
                 if (options.style.custom !== undefined && options.style.custom.enabled !== undefined && options.style.custom.enabled.background !== undefined) {
                   $spanLeft.css('color', options.style.custom.enabled.color);
@@ -107,7 +107,7 @@
               }
               else $spanLeft.addClass(options.style.enabled);
 
-              // disabled custom color
+
               if (options.style.disabled === undefined) {
                 if (options.style.custom !== undefined && options.style.custom.disabled !== undefined && options.style.custom.disabled.background !== undefined) {
                   $spanRight.css('color', options.style.custom.disabled.color);

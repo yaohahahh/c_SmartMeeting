@@ -1,7 +1,7 @@
 var loginUser = window.parent.loginUser;
 $(function(){
 	
-	//每1秒刷新一次时间
+
     setInterval(function(){
     	$("#nowTime").html(getTime());
     },1000);

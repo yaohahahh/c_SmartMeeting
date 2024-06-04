@@ -53,11 +53,11 @@ function showSearchMeet(){
     setPage();
 }
 
-//使用分页插件，进行分页展现
+
 function setPage(){
     $('.pagination-container').html("")
     $('.table tbody').paginathing({
-        perPage: 3,//每页展现条数
+        perPage: 3,
         insertAfter: '.table',
         pageNumbers: true
     });
@@ -92,7 +92,7 @@ function delJson(delmid)
         var meet =meetJsonArray[i];
         if(meet.id==delmid)
         {
-            // delete meetJsonArray[i];
+
             meetJsonArray[i].name="undefined";
             return;
         }
@@ -101,23 +101,23 @@ function delJson(delmid)
 
 function delChecked(){
     var checked=$("input[name='id']:checked")
-    // if(checked.length>0)
-    // {
-    //     var flag =window.confirm("确定要删除么");
-    //     if(flag)
-    //     {
-    //         for(var i=0;i<checked.length;i++)
-    //         {
-    //             var thisChecke =checked[i];
-    //             var delmid =$(thisChecke).val();
-    //             delJson(delmid);
-    //         }
-    //     }
-    //     showSearchMeet(); }
-    //     else
-    //     {
-    //         alert("请选择要删除的数据");
-    //     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if(checked.length>0){
         parent.swal({
             title: "你确定？",

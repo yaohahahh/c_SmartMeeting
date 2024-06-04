@@ -54,7 +54,7 @@
 
 
 		<script type="text/javascript">
-var defaultData = 'https://demo-live-data.highcharts.com/time-data.csv';
+var defaultData = 'https:
 var urlInput = document.getElementById('fetchURL');
 var pollingCheckbox = document.getElementById('enablePolling');
 var pollingInput = document.getElementById('pollingTime');
@@ -81,11 +81,11 @@ function createChart() {
 
 urlInput.value = defaultData;
 
-// We recreate instead of using chart update to make sure the loaded CSV
-// and such is completely gone.
+
+
 pollingCheckbox.onchange = urlInput.onchange = pollingInput.onchange = createChart;
 
-// Create the chart
+
 createChart();
 
 		</script>

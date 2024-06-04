@@ -17,7 +17,7 @@
 		</style>
 	</head>
 	<body>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https:
 <script src="../../code/highcharts.js"></script>
 <script src="../../code/highcharts-3d.js"></script>
 <script src="../../code/modules/exporting.js"></script>
@@ -44,7 +44,7 @@
 
 		<script type="text/javascript">
 
-// Set up the chart
+
 var chart = new Highcharts.Chart({
     chart: {
         renderTo: 'container',
@@ -79,7 +79,7 @@ function showValues() {
     $('#depth-value').html(chart.options.chart.options3d.depth);
 }
 
-// Activate the sliders
+
 $('#sliders input').on('input change', function () {
     chart.options.chart.options3d[this.id] = parseFloat(this.value);
     showValues();

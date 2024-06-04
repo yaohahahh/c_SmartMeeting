@@ -1,31 +1,4 @@
-/**
- * @license Highcharts JS v6.1.4 (2018-09-25)
- * StaticScale
- *
- * (c) 2016 Torstein Honsi, Lars A. V. Cabrera
- *
- * --- WORK IN PROGRESS ---
- *
- * License: www.highcharts.com/license
- */
-'use strict';
-(function (factory) {
-	if (typeof module === 'object' && module.exports) {
-		module.exports = factory;
-	} else if (typeof define === 'function' && define.amd) {
-		define(function () {
-			return factory;
-		});
-	} else {
-		factory(Highcharts);
-	}
-}(function (Highcharts) {
-	(function (H) {
-		/**
-		 * (c) 2017 Torstein Honsi, Lars Cabrera
-		 *
-		 * License: www.highcharts.com/license
-		 */
+
 
 		var Chart = H.Chart,
 		    each = H.each,
@@ -48,7 +21,7 @@
 		                axis.max + axis.tickInterval - axis.min
 		            ) * staticScale;
 
-		            // Minimum height is 1 x staticScale.
+
 		            height = Math.max(height, staticScale);
 
 		            diff = height - chart.plotHeight;

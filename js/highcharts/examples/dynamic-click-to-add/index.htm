@@ -26,12 +26,12 @@ Highcharts.chart('container', {
         margin: [70, 50, 60, 80],
         events: {
             click: function (e) {
-                // find the clicked values and the series
+
                 var x = Math.round(e.xAxis[0].value),
                     y = Math.round(e.yAxis[0].value),
                     series = this.series[0];
 
-                // Add it
+
                 series.addPoint([x, y]);
 
             }

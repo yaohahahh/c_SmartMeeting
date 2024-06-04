@@ -48,42 +48,7 @@ html, body {
 }
 
 .charts-view {
-    /*margin-left: 49%!important;*/
-    width: 50%;
-    margin-left: 49%;
-    height: 400px;
-}
 
-.charts-container {
-    border-left: 1px solid #c3c3c3;
-}
-
-.charts-format fieldset {
-    padding-left: 20px;
-    margin-bottom: 50px;
-}
-
-.charts-format legend {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.format-item-container {
-    padding: 20px;
-}
-
-.format-item-container label {
-    display: block;
-    margin: 10px 0;
-}
-
-.charts-format .data-item {
-    border: 1px solid black;
-    outline: none;
-    padding: 2px 3px;
-}
-
-/* 图表类型 */
 
 .charts-type {
     margin-top: 50px;

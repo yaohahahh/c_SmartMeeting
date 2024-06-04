@@ -25,7 +25,7 @@ Highcharts.chart('container', {
         events: {
             load: function () {
 
-                // Draw the flow chart
+
                 var ren = this.renderer,
                     colors = Highcharts.getOptions().colors,
                     rightArrow = ['M', 0, 0, 'L', 100, 0, 'L', 95, 5, 'M', 100, 0, 'L', 95, -5],
@@ -33,7 +33,7 @@ Highcharts.chart('container', {
 
 
 
-                // Separator, client from service
+
                 ren.path(['M', 120, 40, 'L', 120, 330])
                     .attr({
                         'stroke-width': 2,
@@ -42,7 +42,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Separator, CLI from service
+
                 ren.path(['M', 420, 40, 'L', 420, 330])
                     .attr({
                         'stroke-width': 2,
@@ -51,7 +51,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Headers
+
                 ren.label('Web client', 20, 40)
                     .css({
                         fontWeight: 'bold'
@@ -68,7 +68,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // SaaS client label
+
                 ren.label('SaaS client<br/>(browser or<br/>script)', 10, 82)
                     .attr({
                         fill: colors[0],
@@ -83,7 +83,7 @@ Highcharts.chart('container', {
                     .add()
                     .shadow(true);
 
-                // Arrow from SaaS client to Phantom JS
+
                 ren.path(rightArrow)
                     .attr({
                         'stroke-width': 2,
@@ -111,7 +111,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Arrow from Phantom JS to Batik
+
                 ren.path(['M', 250, 110, 'L', 250, 185, 'L', 245, 180, 'M', 250, 185, 'L', 255, 180])
                     .attr({
                         'stroke-width': 2,
@@ -138,7 +138,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Arrow from Batik to SaaS client
+
                 ren
                     .path([
                         'M', 235, 185,
@@ -162,7 +162,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Browser label
+
                 ren.label('Browser<br/>running<br/>Highcharts', 10, 180)
                     .attr({
                         fill: colors[0],
@@ -180,7 +180,7 @@ Highcharts.chart('container', {
 
 
 
-                // Arrow from Browser to Batik
+
                 ren.path(rightArrow)
                     .attr({
                         'stroke-width': 2,
@@ -196,7 +196,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Arrow from Batik to Browser
+
                 ren.path(leftArrow)
                     .attr({
                         'stroke-width': 2,
@@ -212,7 +212,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Script label
+
                 ren.label('Script', 450, 82)
                     .attr({
                         fill: colors[2],
@@ -228,7 +228,7 @@ Highcharts.chart('container', {
                     .add()
                     .shadow(true);
 
-                // Arrow from Script to PhantomJS
+
                 ren.path(leftArrow)
                     .attr({
                         'stroke-width': 2,
@@ -244,7 +244,7 @@ Highcharts.chart('container', {
                     })
                     .add();
 
-                // Arrow from PhantomJS to Script
+
                 ren.path(rightArrow)
                     .attr({
                         'stroke-width': 2,

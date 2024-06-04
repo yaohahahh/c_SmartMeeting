@@ -42,7 +42,7 @@ $(function () {
       },
       scales             : {
         yAxes: [{
-          // display: false,
+
           gridLines: {
             display      : true,
             lineWidth    : '4px',
@@ -52,7 +52,7 @@ $(function () {
           ticks    : $.extend({
             beginAtZero: true,
 
-            // Include a dollar sign in the ticks
+
             callback: function (value, index, values) {
               if (value >= 1000) {
                 value /= 1000
@@ -85,8 +85,8 @@ $(function () {
         pointBorderColor    : '#007bff',
         pointBackgroundColor: '#007bff',
         fill                : false
-        // pointHoverBackgroundColor: '#007bff',
-        // pointHoverBorderColor    : '#007bff'
+
+
       },
         {
           type                : 'line',
@@ -96,8 +96,8 @@ $(function () {
           pointBorderColor    : '#ced4da',
           pointBackgroundColor: '#ced4da',
           fill                : false
-          // pointHoverBackgroundColor: '#ced4da',
-          // pointHoverBorderColor    : '#ced4da'
+
+
         }]
     },
     options: {
@@ -115,7 +115,7 @@ $(function () {
       },
       scales             : {
         yAxes: [{
-          // display: false,
+
           gridLines: {
             display      : true,
             lineWidth    : '4px',

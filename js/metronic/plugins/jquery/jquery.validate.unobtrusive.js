@@ -1,5 +1,5 @@
-﻿/// <reference path="jquery-1.7.1.js" />
-/// <reference path="jquery.validate.js" />
+﻿
+
 
 /*!
 ** Unobtrusive validation support library for jQuery and jQuery Validate
